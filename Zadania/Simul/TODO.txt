@@ -1,0 +1,9 @@
+﻿Znajdź błąd:
+
+1. Symulacja haczy, ma z 4 klatki na sekundę. Powinna być ustawiona na 60 klatek.
+2. Ramka wyznaczająca granice świata wystaje poza górną krawędź okna, a poza tym jest kwadratowa chociaż rozmiar świata jest ustawiony na 400x200.
+3. Rozszerzyć klasę WorldSettings o możliwość zdefiniowania liczby stworków tworzonych na starcie.
+4. Tak zmienić SimulatorRoot żeby czytać liczbę stworków do stworzenia na starcie z ustawień (WorldSettings) i tworzyć dokładnie tyle stworków. Pozycja stworków powinna być losowana w zakresie rozmiaru świata.
+5. Sprawdzić żeby działo się tak, że jak stworek opuści świat z którejś strony to pojawia się po drugiej stronie.
+   Np. dla świata o wymiarach 400x200 jak stworek w osi X wykroczy poza 400 w prawo o 3 to powinien pojawić się w punkcie 3 (0 + (403 - 400) = 3). A np. jak przekroczy 0 w lewo o 4 to powinien pojawić się w punkcie 396 (400 + (0 - 4) = 396).
+       i to samo dla osi Y w zakresie 0 - 200.

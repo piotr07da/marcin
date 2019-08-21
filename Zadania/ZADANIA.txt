@@ -1,0 +1,88 @@
+Zasady ogólne
+- potrzebny jest nowy projekt konsolowy o nazwie Reloaded
+- standardowo każde zadanie będzie realizowane w osobnym podfolderze (a zarazem namespace) w projekcie,
+  chyba że w zadaniu będzie napisane inaczej
+- foldery dla zadań będą nazywane następująco: Task<numer zadania>. Np. Task1, Task2, Task999
+- dla każdego zadania utwórz klasę o nazwie TaskClass<numer zadania>, a w metodzie Main utwórz instancję
+  tej klasy i wywołaj metodę Test, w której zaimplementujesz zadanie. Oczywiście możesz napisać więcej metod
+  i wywoływać jedne w drugich, ale ważne żeby punktem wejściowym była publiczna metoda Test.
+  Pozostałe mogą być prywatne. W bardziej złożonych zadaniach jeżeli jest mowa o napisaniu klasy lub klas
+  o jakiejś nazwie to tak zrób, ale punktem wejściowym do testu danego zadania dalej będzie klasa
+  TestClass<numer zadania> i metoda Test.
+
+
+0. Zadeklaruj tablicę 10 elementową. Wypełnij ją liczbami całkowitymi zaczynając od 0. (0, 1, 2, 3, ...)
+   *** czyli zgodnie z zasadami ogólnymi tworzysz folder Task1. W środku klasę TaskClass1 z metodą Test,
+   a w tej metodzie implementacja zadania. ***
+
+
+1. Zadeklaruj tablicę 100 elementową. Wypełnij ją liczbami całkowitymi zaczynając od 800. (800, 801, 802, 803, ...)
+
+
+2. Zadeklaruj tablicę 1000 elementową. Wypełnij ją liczbami parzystymi zaczynając od -4. (-4, -2, 0, 2, 4, 6, ...)
+
+
+3. Zadeklaruj tablicę 10000 elementową. Wypełnij ją liczbami będącymi wielkrotnością liczby 10 zaczynając od 50. (50, 60, 70, ...)
+
+
+4. Zadeklaruj dwie tablice 100 elementowe. Wypełnij pierwszą tablicę liczbami całkowitymi od 55. (55, 56, 57, ...).
+   Przepisz wartości z tablicy pierwszej do tablicy drugiej.
+
+   
+5. Zadeklaruj dwie tablice 999 elementowe. Wypełnij pierwszą tablicę liczbami całkowitymi od 0. (0, 1, 2, ...).
+   Przepisz pomnożone przez 15 wartości z tablicy pierwszej do tablicy drugiej czyli w tablicy drugiej ma być (0, 15, 30, ...).
+
+   
+6. Zadeklaruj dwie tablice 999 elementowe. Wypełnij pierwszą tablicę liczbami całkowitymi od 0. (0, 1, 2, ...).
+   Przepisz pomnożone przez 3 wartości z tablicy pierwszej do tablicy drugiej o ile wartość z tablicy pierwszej jest parzysta. W przeciwnym wypadku przepisz liczbę przeciwną do liczby z tablicy pierwszej.
+
+   
+7. Zadeklaruj dwie tablice 20 elementowe. Wypełnij pierwszą tablicę liczbami parzystymi całkowitymi od 10. (10, 12, 14, ...).
+   Przepisz wartości z tablicy pierwszej do tablicy drugiej w odwrotnej kolejności.
+
+   
+8. Zadeklaruj tablicę 20 elementową. Wypełnij ją liczbami parzystymi całkowitymi od 10. (10, 12, 14, ...).
+   Stwórz listę generyczną (do wygooglania generic list).
+   Przepisz wartości z tablicy pierwszej do listy generycznej.
+
+   
+9. Zadeklaruj tablicę 20 elementową. Wypełnij ją liczbami całkowitymi od 0. (0, 1, 2, ...).
+   Stwórz listę generyczną.
+   Przepisz wartości z tablicy pierwszej do listy generycznej pod warunkiem, że wartość jest nieparzysta.
+   Wyświetl na ekranie wszystkie wartości z listy używając pętli for.
+   Wyświetl na ekranie wszystkie wartości z listy używając pętli while.
+   Wyświetl na ekranie wszystkie wartości z listy używając pętli foreach.
+
+   
+10. Napisz program, który poprosi użytkownika o wpisanie tekstu, a następnie wyświetli ten tekst.
+
+
+11. Napisz program, który poprosi użytkownika o wpisanie tekstu, a następnie wyświetli ten tekst ale wielkimi literami i pod warunkiem, że tekst nie jest słowem "socjalizm".
+
+   
+12. Napisz program, który zdefiniuje tablicę z brzydkimi słowami - na potrzeby testu niech to będzie 5 niedozwolonych słów. Program poprosi użytkownika o wpisanie tekstu/słowa, a następnie wyświetli ten tekst ale małymi literami i pod warunkiem, że tekst nie jest słowem niedozwolonym wprowadzonym do wcześniej zdefiniowanej tablicy słów niedozwolonych oraz nie jest słowem "komunizm".
+
+
+13. Napisz klasę Rectangle. Powinna pozwalać na określenie szerokości i wysokości (chodzi o property). Powinna też udostępniać możliwość obliczenia pola (chodzi o metodę). W klasie TestClass13 napisz kod testujący klasę Rectangle tak aby to użytkownik podawał wartości dla wysokości i szerokości, a program będzie korzystał z metody w klasie Rectangle do obliczenia pola, a następnie wynik zostanie wyświetlony użytkownikowi.
+
+
+14. Analogicznie do 13 tylko tym razem piszemy klasę Circle, a podajemy promień koła.
+
+
+15. Napisz klasy Rectangle i Circle tak jak w zadaniu 13 i 14, ale wzbogać te klasy o metodę Scale pozwalającą na podanie współczynnika przeskalowania prostokąta i okręgu. Np. dla prostokąta 2x10 metoda zwracająca pole powinna zwrócić 20, ale po wywołaniu metody Scale z parametrem 3 prostoką powinien mieć już wymiary 6x30 i pole 180. Analogicznie dla Circle.
+
+
+16. Skopiuj klasy Rectangle i Circle z zadania 15, ale w klasie TestClass16 utwórz 4 instancje klasy Rectangle i 4 instancje klasy Circle. Instancje umieść w dwóch listach generycznych List<Rectangle> i List<Circle>. W dwóch pętlach przeskaluj wszystkie prostokąty i okręgi używając wpsółczynnika 7.789.
+
+
+17. To samo co w zadaniu 16, ale chodzi o utworzenie interfejsu IScalable z metodą Scale. Klasy Rectangle i Circle powinny implementować ten interfejs. Dzięki temu w metodzie testującej można wszystkie skalowalne kształty wstawić do jednej generycznej listy List<IScalable> i przeskalować wszystkie kształty w pojedynczej pętli.
+    
+	!!! -> można tak zrobić bo kod skalujący (czyli pętla, która dla każdego elementu listy woła metodę Scale) nie jest zupełnie zainteresowany tym, że skaluje prostokąt, koło, odcinek czy cokolwiek innego. Ten kod jest zainteresowany wyłącznie skalowaniem (Scale) czegoś skalowalnego (IScalable).
+	Pomyśl o tym tak, że piszesz grę i zbierasz z lokacji powerup, który pomniejsza fizycznie wszystkich przeciwników (żołnierzy, potwory, pojazdy), przez co stają się wolniejsze. Nie będziesz pisał 3 pętli na każdy typ przeciwnika bo to jest powielanie tego samego kodu,
+    a poza tym jak dojdzie kolejny typ przeciwnika to byś musiał dopisywać następną pętlę więc utrzymanie takiego kodu to będzie pain in the ass. Zamiast tego wystarczy, że każdy pomniejszalny typ przeciwnika będzie implementował interface IScalableEnemy, a Ty w grze każdego takiego zespawnowanego przeciwnika będziesz dodawał
+	do kolekcji List<IScalableEnemy> i do końca świata wystarczy jedna pętla po tej kolekcji żeby przeskalować wszystkich przeciwników, nawet jak za rok będzie 200 typów przeciwników to Ty będziesz miał tę jedną pętlę zamiast 200 pętli z tym samym kodem.
+
+18. Napisz program, który stowrzy kilka instancji klasy Cube, Sphere, Cylinder oraz Cone, a następnie wyliczy zsumowane pole całkowite tych brył oraz zsumowaną obiętość tych brył. Pamiętaj o interfejsach.
+
+
+
