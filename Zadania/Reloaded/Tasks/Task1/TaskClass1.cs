@@ -10,7 +10,10 @@ namespace Reloaded.Tasks.Task1
     {
         public void Test()
         {
-            // TODO
+            for (int i = 0; i < length; i++)
+            {
+
+            }
         }
 
     }
