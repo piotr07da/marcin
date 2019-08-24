@@ -5,6 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Reloaded.Tasks.Task0;
 using Reloaded.Tasks.Task1;
+using Reloaded.Tasks.Task2;
+using Reloaded.Tasks.Task3;
+using Reloaded.Tasks.Task4;
+using Reloaded.Tasks.Task5;
+
+
 
 // test
 
@@ -20,11 +26,17 @@ namespace Reloaded
             var task1 = new TaskClass1();
             task1.Test();
 
-            var task2 = new Tasks.Task2.TaskClass2(); //Innaczej nie widzi tej klasy
+            var task2 = new TaskClass2(); 
             task2.Test();
 
-            var task3 = new Tasks.Task3.TaskClass3(); // jw
+            var task3 = new TaskClass3(); 
             task3.Test();
+
+            var task4 = new TaskClass4();
+            task4.Test();
+
+            var task5 = new TaskClass5();
+            task5.Test();
         }
     }
 
