@@ -12,9 +12,9 @@ namespace Reloaded.Tasks.Task1
         {
             int[] tab1 = new int[100];
 
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < tab1.Length ; i++)
             {
-                //
+                tab1[i] = i + 800;
             }
         }
 
