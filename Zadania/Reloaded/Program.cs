@@ -20,8 +20,13 @@ namespace Reloaded
             var task1 = new TaskClass1();
             task1.Test();
 
-            
+            var task2 = new Tasks.Task2.TaskClass2(); //Innaczej nie widzi tej klasy
+            task2.Test();
 
+            var task3 = new Tasks.Task3.TaskClass3(); // jw
+            task3.Test();
         }
     }
+
+    
 }
