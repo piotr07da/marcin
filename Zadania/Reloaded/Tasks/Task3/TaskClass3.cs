@@ -21,6 +21,17 @@ namespace Reloaded.Tasks.Task3
             }
 
         }
+
+        public void TestAlternative()
+        {
+            int[] tab3 = new int[10000];
+
+            for (int i = 0; i < tab3.Length; i++)
+            {
+                tab3[i] = 50 + i * 10;
+            }
+
+        }
     }
 }
 

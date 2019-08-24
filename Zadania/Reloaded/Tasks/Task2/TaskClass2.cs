@@ -20,5 +20,16 @@ namespace Reloaded.Tasks.Task2
                 a += 2;
             }
         }
+
+
+        public void TestAlternative()
+        {
+            int[] tab2 = new int[1000];
+
+            for (int i = 0; i < tab2.Length; i++)
+            {
+                tab2[i] = -4 + i * 2;
+            }
+        }
     }
 }
