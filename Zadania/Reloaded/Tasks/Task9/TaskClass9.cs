@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Reloaded.Tasks.Task9
 {
@@ -52,6 +49,48 @@ namespace Reloaded.Tasks.Task9
             }
 
             Console.ReadKey();
+        }
+    }
+
+    // Poniżej przykład w jaki sposób można PRZEKAZAĆ LISTĘ DO INNEJ METODY.
+    public class TaskClass9_Example_1
+    {
+        public void Test()
+        {
+            var list = new List<int>(); // zmienna list jest widoczna tylko w kontekście metody Test - to jest zmienna lokalna
+
+            ShowListUsingFor(list); // lokalną zmienną list przekazujemy do metody jako parametr tej metody
+        }
+
+        private void ShowListUsingFor(List<int> listToShow) // deklaracja, że metoda przyjmuje parametr typu List<int> (listToShow widoczne jest wyłącznie w środku metody ShowListUsingFor
+        {
+            Console.WriteLine("for : ");
+            for (int i = 0; i < listToShow.Count; i++)
+            {
+                Console.Write(listToShow[i] + ",");
+            }
+        }
+    }
+
+    // Poniżej przykład w jaki sposób można WYKORZYSTAĆ POLE W KLASIE.
+    public class TaskClass9_Example_2
+    {
+        private List<int> _list; // Deklaracja prywatnego pola _list; Pola są widoczne w obrębie każdej metody w tej klasie.
+
+        public void Test()
+        {
+            _list = new List<int>(); // Inicjalizacja pola _list
+
+            ShowListUsingFor();
+        }
+
+        private void ShowListUsingFor()
+        {
+            Console.WriteLine("for : ");
+            for (int i = 0; i < _list.Count; i++) // odwołanie do pola _list
+            {
+                Console.Write(_list[i] + ",");
+            }
         }
     }
 }
