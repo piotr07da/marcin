@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Reloaded.Tasks.Task5
 {
-    class TaskClass5
+    public class TaskClass5 //przed tem nie było : public, i też działało
     {
         public void Test()
         {
