@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Reloaded.Tasks.Task11
 {
-    class TaskClass11
+    public class TaskClass11
     {
         public void Test()
         {
