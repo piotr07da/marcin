@@ -18,18 +18,18 @@ namespace Reloaded.Tasks.Task12
                 string text;
                 text = Console.ReadLine();
 
-                int a=0 ;
+                bool wordlsForbidden = false;
 
                 for (int i = 0; i < tab.Length; i++)
                 {
                     if (text == tab[i])
                     {
-                        a = 1;
+                        wordlsForbidden = true;
                         break;
                     }
                 }
 
-                if (a == 1)
+                if (wordlsForbidden)
                 {
                     Console.WriteLine("Nie przeklinaj : ({0})", text);
                     Console.ReadKey();
