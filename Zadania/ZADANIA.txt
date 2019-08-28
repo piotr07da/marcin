@@ -84,5 +84,17 @@ Zasady ogólne
 
 18. Napisz program, który stowrzy kilka instancji klasy Cube, Sphere, Cylinder oraz Cone, a następnie wyliczy zsumowane pole całkowite tych brył oraz zsumowaną obiętość tych brył. Pamiętaj o interfejsach.
 
+19. Napisz program, który stworzy na dysku plik tekstowy i umieści w nim aktualną datę i czas (w chwili wywołania zapisu tego pliku) oraz jakiś tekst.
+
+20. Napisz program, który poprosi użytkownika o podanie ścieżki do pliku, a następnie:
+    - jeżeli plik nie istnieje to wyświetli stosowny komunikat
+	- jeżeli plik istnieje to wyświetli jego zawartość
+
+21. Napisz klasę Person z następującymi property: FirstName, LastName, DateOfBirth, Sex.
+    Property Sex ma być typu Sex - trzeba taki typ zadeklarować jako enum, który będzie posiadał wartości Male i Female. Typy dla pozostałych property takie jak logika podpowiada ;)
+	W programie stwórz kolekcję (tablica bądź lista) osób.
+	Zserializuj tę kolekcję do formatu json (tutaj trzeba będzie dodać referencję do paczki nugetowej - do celów serializacji/deserializacji json najpopularniejsza paczka to Newtonsoft JSON).
+	Zserializowaną wartość zapisz do pliku tekstowego.
+	Wejdź do pliku i zobacz co się zapisało.
 
 
