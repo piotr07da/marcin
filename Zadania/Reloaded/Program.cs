@@ -17,6 +17,8 @@ using Reloaded.Tasks.Task10;
 using Reloaded.Tasks.Task11;
 using Reloaded.Tasks.Task12;
 using Reloaded.Tasks.Task13;
+using Reloaded.Tasks.Task14;
+
 
 
 
@@ -72,6 +74,9 @@ namespace Reloaded
 
             var task13 = new TaskClass13();
             task13.Test();
+
+            var task14 = new TaskClass14();
+            task14.Test();
         }
     }
 
