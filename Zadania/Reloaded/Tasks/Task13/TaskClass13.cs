@@ -15,42 +15,43 @@ namespace Reloaded.Tasks.Task13
             var rectangle = new Rectangle();
             Console.Clear();
 
-            rectangle.width = ReadDoubleFromConsole("Wpisz szerokość : ");
+            rectangle.Width = ReadDoubleFromConsole("Wpisz szerokość : ");
 
-            rectangle.height = ReadDoubleFromConsole("Wpisz wysokość : ");
+            rectangle.Height = ReadDoubleFromConsole("Wpisz wysokość : ");
 
             double calculateArea = rectangle.CalculateArea();
             Console.WriteLine("Pole prostokąta = " + calculateArea);
             Console.ReadKey();
 
-            double ReadDoubleFromConsole(string enterValueMessage)
+            
+            return rectangle;
+        }
+        double ReadDoubleFromConsole(string enterValueMessage)
 
+        {
+            double value = 0;
+            Console.Write(enterValueMessage);
+            for (; ; )
             {
-                double value=0;
-                Console.Write(enterValueMessage);
-                for (; ; )
-                {
-                    bool results = double.TryParse(Console.ReadLine(), out value);
+                bool results = double.TryParse(Console.ReadLine(), out value);
 
-                    if (results)
+                if (results)
+                {
+                    if (value <= 0)
                     {
-                        if (value <= 0)
-                        {
-                            Console.Write("Wpisz liczbę większą od 0 : ");
-                        }
-                        else
-                        {
-                            break;
-                        }
+                        Console.Write("Wpisz liczbę większą od 0 : ");
                     }
                     else
                     {
-                        Console.Write("Wpisz LICZBĘ większą od 0 : ");
+                        break;
                     }
                 }
-                return value;
+                else
+                {
+                    Console.Write("Wpisz LICZBĘ większą od 0 : ");
+                }
             }
-            return rectangle;
+            return value;
         }
     }
 }

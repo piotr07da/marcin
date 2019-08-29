@@ -8,15 +8,38 @@ namespace Reloaded.Tasks.Task13
 {
     public class Rectangle
     {
-        public double width;
-        public double height;
-
+        private double _width;
+        private double _height;
+        public double Width
+        {
+            get
+            {
+                return _width;
+            }
+            set
+            {
+                _width = value;
+            }
+        }
+        
+        public double Height
+        {
+            get
+            {
+                return _height;
+            }
+            set
+            {
+                _height = value;
+            }
+        }
         public double CalculateArea()
         {
-            return width * height;
-            //double calculateArea = width * height;
-            //Console.WriteLine("Pole prostokąta = "+calculateArea);
+            return Width * Height;
+            
         }
 
+
     }
+    
 }
