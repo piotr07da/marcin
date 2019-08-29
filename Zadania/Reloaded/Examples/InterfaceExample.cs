@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Reloaded
+namespace Reloaded.Examples
 {
-    public class Example
+    public class InterfaceExample
     {
         public void Test()
         {
