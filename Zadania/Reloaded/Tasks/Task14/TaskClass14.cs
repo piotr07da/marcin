@@ -11,30 +11,10 @@ namespace Reloaded.Tasks.Task14
         public Circle Test()
         {
             var circle = new Circle();
+            var consoleValueReader = new ConsoleValueReader();
 
-            double value;
-
-            Console.Clear();
-
-            Console.Write("Wpisz promień koła : ");
-           
-            for(; ; )
-            {
-                bool results = double.TryParse(Console.ReadLine(), out value);
-                if (results)
-                {
-                    if (value <= 0)
-                    {
-                        Console.WriteLine("Wpisz liczbę większą od 0 : ");
-                    }
-                    else break;
-                }
-                else
-                {
-                    Console.WriteLine("Wpisz LICZBĘ : ");
-                }
-            }
-            circle.CircleRadius = value;
+            circle.CircleRadius = consoleValueReader.ReadDouble("Wpisz promień koła : ");
+                        
             double circleArea = circle.CircleArea();
             Console.WriteLine("Pole koła = " + circleArea);
             Console.ReadKey();

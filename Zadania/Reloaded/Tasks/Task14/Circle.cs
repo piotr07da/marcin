@@ -24,7 +24,9 @@ namespace Reloaded.Tasks.Task14
 
         public double CircleArea()
         {
-            return CircleRadius * CircleRadius * 3.14; //nie wiem czy można jakoś potęgować, albo pobrać pi
+            var pi = Math.PI;
+
+            return Math.Pow(CircleRadius, 2) * pi;
         }
     }
 }
