@@ -8,8 +8,11 @@ namespace Reloaded.Tasks.Task13
 {
     public class Rectangle
     {
+        
+
         private double _width;
         private double _height;
+
         public double Width
         {
             get
@@ -21,7 +24,7 @@ namespace Reloaded.Tasks.Task13
                 _width = value;
             }
         }
-        
+
         public double Height
         {
             get
@@ -35,11 +38,12 @@ namespace Reloaded.Tasks.Task13
         }
         public double CalculateArea()
         {
-            return Width * Height;
-            
+            var scale = new Scale();
+            return Width * scale.Rescale * Height * scale.Rescale;
+
         }
 
 
     }
-    
+
 }
