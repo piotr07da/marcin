@@ -36,16 +36,16 @@ namespace Reloaded.Tasks.Task13
                 _height = value;
             }
         }
+
         public double CalculateArea()
         {
-            return Width *  Height ;
+            return Width *  Height;
         }
 
-        public double Scale(double factor)
+        public void Scale(double factor)
         {
             Width = Width * factor;
             Height = Height * factor;
-            return factor;
         }
 
 

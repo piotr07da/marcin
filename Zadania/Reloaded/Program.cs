@@ -19,6 +19,7 @@ using Reloaded.Tasks.Task12;
 using Reloaded.Tasks.Task13;
 using Reloaded.Tasks.Task14;
 using Reloaded.Tasks;
+using Reloaded.Examples;
 
 // test
 
@@ -28,44 +29,46 @@ namespace Reloaded
     {
         static void Main(string[] args)
         {
-            var task0 = new TaskClass0();
-            task0.Test();
+            new PersonTester().Test();
 
-            var task1 = new TaskClass1();
-            task1.Test();
+            //var task0 = new TaskClass0();
+            //task0.Test();
 
-            var task2 = new TaskClass2(); 
-            task2.Test();
+            //var task1 = new TaskClass1();
+            //task1.Test();
 
-            var task3 = new TaskClass3(); 
-            task3.Test();
+            //var task2 = new TaskClass2(); 
+            //task2.Test();
 
-            var task4 = new TaskClass4();
-            task4.Test();
+            //var task3 = new TaskClass3(); 
+            //task3.Test();
 
-            var task5 = new TaskClass5();
-            task5.Test();
+            //var task4 = new TaskClass4();
+            //task4.Test();
 
-            var task6 = new TaskClass6();
-            task6.Test();
+            //var task5 = new TaskClass5();
+            //task5.Test();
 
-            var task7 = new TaskClass7();
-            task7.Test();
+            //var task6 = new TaskClass6();
+            //task6.Test();
 
-            var task8 = new TaskClass8();
-            task8.Test();
+            //var task7 = new TaskClass7();
+            //task7.Test();
 
-            var task9 = new TaskClass9();
-            task9.Test();
+            //var task8 = new TaskClass8();
+            //task8.Test();
 
-            var task10 = new TaskClass10();
-            task10.Test();
+            //var task9 = new TaskClass9();
+            //task9.Test();
 
-            var task11 = new TaskClass11();
-            task11.Test();
+            //var task10 = new TaskClass10();
+            //task10.Test();
 
-            var task12 = new TaskClass12();
-            task12.Test();
+            //var task11 = new TaskClass11();
+            //task11.Test();
+
+            //var task12 = new TaskClass12();
+            //task12.Test();
 
             var task13 = new TaskClass13();
             task13.Test();

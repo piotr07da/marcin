@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Reloaded.Examples
@@ -49,6 +50,13 @@ namespace Reloaded.Examples
                 Felga = UtworzNowaFelgeSparco_BEZ_CzujnikaCisnienia(),
                 Opona = new Opona(TypOpony.Zimowa),
             };
+
+            var fel1 = new Felga();
+            fel1.Marka = "Ronal";
+
+            var mmmm = fel1.Marka;
+
+            var fel2 = new Felga("Ronal");
 
             var samochod = new Samochod();
 
@@ -121,6 +129,11 @@ namespace Reloaded.Examples
 
     public class Felga
     {
+        public Felga()
+        {
+            Marka = "marka nieznana";
+        }
+
         public Felga(string m)
         {
             Marka = m;
