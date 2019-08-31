@@ -74,6 +74,23 @@ Zasady ogólne
 
 16. Skopiuj klasy Rectangle i Circle z zadania 15, ale w klasie TestClass16 utwórz 4 instancje klasy Rectangle i 4 instancje klasy Circle. Instancje umieść w dwóch listach generycznych List<Rectangle> i List<Circle>. W dwóch pętlach przeskaluj wszystkie prostokąty i okręgi używając wpsółczynnika 7.789.
 
+16a. [Czyli w folderze Tasks/Task16a]
+     Napisz klasę Ksiazka. Ta klasa musi mieć takie cechy:
+	 - Tytul
+	 - RokWydania
+	 - Gatunek
+	 - Autor typu AutorKsiazki (będzie trzeba napisać stosowną klasę, póki co AutorKsiazki niech ma takie cechy jak: Imie, Nazwisko)
+	 - Liczba stron
+	 - CzyWypozyczona (tylko getter)
+	 oraz takie metody:
+	 - Wypozycz (UWAGA - książki wypożyczonej nie można wypożyczyć - przy próbie wypożyczenia wypożyczonej książki powinien być rzucony wyjątek - throw new Exception)
+	 - Oddaj (UWAGA - podobnie jak wyżej tylko tym razem nie można oddać książki, która nie jest wypożyczona)
+	 Utwórz kilka instancji klasy AutorKsiazki i kilka instancji klasy Ksiazka.
+	 Wypełnij cechy tych książek przpisując jakieś przykładowe wartości.
+	 Wywołaj metody Wypozycz i Oddaj
+
+
+16d. Napisz klasę Ksiazka. Ta klasa musi mieć  
 
 17. To samo co w zadaniu 16, ale chodzi o utworzenie interfejsu IScalable z metodą Scale. Klasy Rectangle i Circle powinny implementować ten interfejs. Dzięki temu w metodzie testującej można wszystkie skalowalne kształty wstawić do jednej generycznej listy List<IScalable> i przeskalować wszystkie kształty w pojedynczej pętli.
     
