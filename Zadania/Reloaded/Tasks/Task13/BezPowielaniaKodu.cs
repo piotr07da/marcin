@@ -25,9 +25,10 @@ namespace Reloaded.Tasks.Task13
         private int WriteMessageAndReturnMessageLength(int messageNumber, string message)
         {
             Console.WriteLine(messageNumber + ".");
-            Console.WriteLine("******************");
+            Console.WriteLine("^^^^^^^^^^^^^^^^^");
             Console.WriteLine(message);
             Console.WriteLine("##################");
+
             return message.Length;
         }
     }
