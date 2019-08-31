@@ -38,9 +38,14 @@ namespace Reloaded.Tasks.Task13
         }
         public double CalculateArea()
         {
-            var scale = new Scale();
-            return Width * scale.Rescale * Height * scale.Rescale;
+            return Width *  Height ;
+        }
 
+        public double Scale(double factor)
+        {
+            Width = Width * factor;
+            Height = Height * factor;
+            return factor;
         }
 
 

@@ -15,14 +15,14 @@ namespace Reloaded.Tasks.Task13
         {
             var consoleValueReader = new ConsoleValueReader();
             var rectangle = new Rectangle();
-            var scale = new Scale();
-            
+                                   
             rectangle.Width = consoleValueReader.ReadDouble("Wpisz szerokość : ");
             
             rectangle.Height = consoleValueReader.ReadDouble("Wpisz wysokość : ");
 
-            scale.Rescale = consoleValueReader.ReadDouble("Wpisz skalę : ");
-            
+            rectangle.Scale(factor:consoleValueReader.ReadDouble("Wpisz Skalę : "));            
+               
+
             double calculateArea = rectangle.CalculateArea();
             Console.WriteLine("Pole prostokąta = " + calculateArea);
             Console.ReadKey();
