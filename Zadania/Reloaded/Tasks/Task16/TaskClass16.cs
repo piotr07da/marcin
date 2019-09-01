@@ -12,15 +12,53 @@ namespace Reloaded.Tasks.Task16
     {
         public void Test()
         {
-            var rect1 = new Rectangle();
-            var rect2 = new Rectangle();
-            var rect3 = new Rectangle();
-            var rect4 = new Rectangle();
+            var rectangle = new Rectangle ();
 
-            var circ1 = new Circle();
-            var circ2 = new Circle();
-            var circ3 = new Circle();
-            var circ4 = new Circle();
+            List<Rectangle> rectList = new List<Rectangle>();
+            List<Circle> circList = new List<Circle>();
+
+            var rect1 = new Rectangle(2, 2);
+            var rect2 = new Rectangle(3, 3);
+            var rect3 = new Rectangle(4, 4);
+            var rect4 = new Rectangle(5, 5);
+
+            var circ1 = new Circle(2);
+            var circ2 = new Circle(3);
+            var circ3 = new Circle(4);
+            var circ4 = new Circle(5);
+
+            rectList.Add(rect1);
+            rectList.Add(rect2);
+            rectList.Add(rect3);
+            rectList.Add(rect4);
+
+            circList.Add(circ1);
+            circList.Add(circ2);
+            circList.Add(circ3);
+            circList.Add(circ4);
+
+            double scale=7.789;
+            
+            for (int i = 0; i < rectList.Count ; i++)
+            {
+                rectList[i].Width = rectList[i].Width * scale;
+                rectList[i].Height = rectList[i].Height * scale;
+            }
+            foreach (var current in circList)
+            {
+                current.CircleRadius = current.CircleRadius * scale;
+            }
+
+            Console.Clear();                                                                //wiem że to
+                                                                                            //nie potrzebne
+            for (int i = 0; i < rectList.Count; i++)                                        //ale chciałem zapytać czy ma to jakiś sens?
+            {
+                rectangle.Width = rectList[i].Width;
+                rectangle.Height = rectList[i].Height;
+                double calculateArea = rectangle.CalculateArea();                           //czy całkiem nie tędy droga?
+                Console.WriteLine("Pole prostokąta {0} = {1}", i + 1, calculateArea);
+            }
+            Console.ReadKey();
         }
 
     }

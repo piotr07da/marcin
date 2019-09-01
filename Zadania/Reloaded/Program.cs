@@ -20,6 +20,7 @@ using Reloaded.Tasks.Task13;
 using Reloaded.Tasks.Task14;
 using Reloaded.Tasks;
 using Reloaded.Examples;
+using Reloaded.Tasks.Task16;
 
 // test
 
@@ -29,7 +30,8 @@ namespace Reloaded
     {
         static void Main(string[] args)
         {
-            new PersonTester().Test();
+            //new ClassMembersExplanation().PropertyDalszeWyjasnienia();
+            //new PersonTester().Test();
 
             //var task0 = new TaskClass0();
             //task0.Test();
@@ -70,11 +72,14 @@ namespace Reloaded
             //var task12 = new TaskClass12();
             //task12.Test();
 
-            var task13 = new TaskClass13();
-            task13.Test();
+            //var task13 = new TaskClass13();
+            //task13.Test();
 
-            var task14 = new TaskClass14();
-            task14.Test();
+            //var task14 = new TaskClass14();
+            //task14.Test();
+
+            var task16 = new TaskClass16();
+            task16.Test();
 
             
         }
