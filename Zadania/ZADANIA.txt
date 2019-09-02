@@ -83,14 +83,54 @@ Zasady ogólne
 	 - Liczba stron
 	 - CzyWypozyczona (tylko getter)
 	 oraz takie metody:
-	 - Wypozycz (UWAGA - książki wypożyczonej nie można wypożyczyć - przy próbie wypożyczenia wypożyczonej książki powinien być rzucony wyjątek - throw new Exception)
+	 - Wypozycz (UWAGA - książki wypożyczonej nie można wypożyczyć - przy próbie wypożyczenia już wypożyczonej książki powinien być rzucony wyjątek - throw new Exception)
 	 - Oddaj (UWAGA - podobnie jak wyżej tylko tym razem nie można oddać książki, która nie jest wypożyczona)
 	 Utwórz kilka instancji klasy AutorKsiazki i kilka instancji klasy Ksiazka.
 	 Wypełnij cechy tych książek przpisując jakieś przykładowe wartości.
 	 Wywołaj metody Wypozycz i Oddaj
 
+16b. Napisz klasę Laptop. Ta klasa musi mieć następujące property:
+	 - Firma
+	 - Model
+	 - Procesor typu Procesor
+	 - Ram typu Ram
+	 - Ekran typu Ekran
+	 W zwiąku z tym będą siłą rzeczy potrzebne takie oto 3 dodatkowe klasy:
+	 1) Procesor o następujących cechach:
+	    - Nazwa
+	    - Taktowanie
+	    - LiczbaRdzeni
+	 2) Ram o następujących cechach:
+	    - Typ typu TypRamu (TypRamu to powinien być enum o np. takich wartościach: DDR2, DDR3, DD4)
+	    - Rozmiar
+	 3) Ekran
+	    - Przekatna
+		- CzyPolysk
+		- Rozdzielczosc typu Rozdzielczosc (Klasa Rozdzielczosc powinna mieć dwa property Width i Height)
+	 Czyli reasumując będą takie klasy: Laptop, Procesor, Ram, Ekran, Rozdzielczosc oraz enum TypRamu
+	 W klasie TestClass16b stwórz przynajmniej dwa laptopy czyli dwie instancje klasy Laptop z wypełnionymi wszystkimi cechami.
 
-16d. Napisz klasę Ksiazka. Ta klasa musi mieć  
+16c. Napisz klasę FunkcjaLiniowa - ta klasa będzie reprezentowała taki matematyczny byt jak funkcja liniowa czyli: y = a * x + b
+     A zatem klasa FunkcjaLiniowa powinna mieć takie cechy:
+	 - A
+	 - B
+	 - CzyRosnaca - tutaj tylko getter, który zwróci informację czy funckja jest rosnąca
+	 - CzyMalejaca - też tylko getter
+	 - CzyStala - też tylko getter
+	 oraz metody:
+	 double ObliczWartosc(double x); // ta metoda ma na podstawie parametru x oraz wartości współczynników a i b obliczyć wartość funkcji czyli y. Czyli trzeba w tej metodzie skorzystać po prostu ze wzoru na funkcję liniową.
+	 double ObliczMiejsceZerowe(); // ta metoda ma policzyć jaki będzie x gdy y będzie 0
+	 Tutaj przykładowo jak zrobisz:
+	    var f1  = new FunkcjaLiniowa(10, -12);
+	    to będzie to reprezentowało funckję: y = 10 * x - 12;
+		i oczekiwany efekt będzie taki, że:
+		A będzie równe 10
+		B będzie równe -12
+		CzyRosnaca będzie równe true
+		CzyMalejaca będzie false
+		CzyStala będzie równe false
+		metoda ObliczWartosc przy podaniu parametru x równego np. 3 powinna zwrócić wynik równy 18
+		metoda ObliczMiejsceZerowe zwróci 1.2
 
 17. To samo co w zadaniu 16, ale chodzi o utworzenie interfejsu IScalable z metodą Scale. Klasy Rectangle i Circle powinny implementować ten interfejs. Dzięki temu w metodzie testującej można wszystkie skalowalne kształty wstawić do jednej generycznej listy List<IScalable> i przeskalować wszystkie kształty w pojedynczej pętli.
     
