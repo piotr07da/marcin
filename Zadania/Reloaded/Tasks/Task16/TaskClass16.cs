@@ -12,7 +12,7 @@ namespace Reloaded.Tasks.Task16
     {
         public void Test()
         {
-            var rectangle = new Rectangle ();
+            var rectangle = new Rectangle();
 
             List<Rectangle> rectList = new List<Rectangle>();
             List<Circle> circList = new List<Circle>();
@@ -37,28 +37,27 @@ namespace Reloaded.Tasks.Task16
             circList.Add(circ3);
             circList.Add(circ4);
 
-            double scale=7.789;
-            
-            for (int i = 0; i < rectList.Count ; i++)
+            double scale = 7.789;
+
+            for (int i = 0; i < rectList.Count; i++)
             {
-                rectList[i].Width = rectList[i].Width * scale;
-                rectList[i].Height = rectList[i].Height * scale;
+                rectList[i].Scale(scale);
             }
             foreach (var current in circList)
             {
-                current.CircleRadius = current.CircleRadius * scale;
+                current.Scale(scale);
             }
 
-            Console.Clear();                                                                //wiem że to
-                                                                                            //nie potrzebne
-            for (int i = 0; i < rectList.Count; i++)                                        //ale chciałem zapytać czy ma to jakiś sens?
-            {
-                rectangle.Width = rectList[i].Width;
-                rectangle.Height = rectList[i].Height;
-                double calculateArea = rectangle.CalculateArea();                           //czy całkiem nie tędy droga?
-                Console.WriteLine("Pole prostokąta {0} = {1}", i + 1, calculateArea);
-            }
-            Console.ReadKey();
+            //Console.Clear();                                                                //wiem że to
+            //                                                                                //nie potrzebne
+            //for (int i = 0; i < rectList.Count; i++)                                        //ale chciałem zapytać czy ma to jakiś sens?
+            //{
+            //    rectangle.Width = rectList[i].Width;
+            //    rectangle.Height = rectList[i].Height;
+            //    double calculateArea = rectangle.CalculateArea();                           //czy całkiem nie tędy droga?
+            //    Console.WriteLine("Pole prostokąta {0} = {1}", i + 1, calculateArea);
+            //}
+            //Console.ReadKey();
         }
 
     }
