@@ -10,35 +10,14 @@ namespace Reloaded.Tasks.Task16a
     {
         public void Test()
         {
-            var ksiazka = new Ksiazka();
-            var autorKsiazki = new AutorKsiazki();
-            autorKsiazki.Imie = "Mirosław";
-            autorKsiazki.Nazwisko = "Kardaś";
-            ksiazka.AutorKsiazki = autorKsiazki;
-            ksiazka.Tytul = "Język C";
-            ksiazka.RokWydania = 2013;
-            ksiazka.Gatunek = "Kurs";
-            ksiazka.LiczbaStron = 519;
+            var autorKsiazki = new AutorKsiazki("Mirosław","Kardaś");
+            var ksiazka = new Ksiazka("Język C",autorKsiazki, 2013, "Kurs", 519);
+           
+            var autorKsiazki2 = new AutorKsiazki("Henryk", "Prochniewicz");
+            var ksiazka2 = new Ksiazka("Kierowca Doskonały", autorKsiazki2, 2015, "Podręcznik", 369);
 
-            var ksiazka2 = new Ksiazka();
-            var autorKsiazki2 = new AutorKsiazki();
-            ksiazka2.AutorKsiazki = autorKsiazki2;
-            autorKsiazki2.Imie = "Henryk";
-            autorKsiazki2.Nazwisko = "Prochniewicz";
-            ksiazka2.Tytul = "Kierowca Doskonały";
-            ksiazka2.RokWydania = 2015;
-            ksiazka2.Gatunek = "Podręcznik";
-            ksiazka2.LiczbaStron = 369;
-
-            var ksiazka3 = new Ksiazka();
-            var autorKsiazki3 = new AutorKsiazki();
-            ksiazka3.AutorKsiazki = autorKsiazki3;
-            autorKsiazki3.Imie = "Jarosław";
-            autorKsiazki3.Nazwisko = "Psikuta";
-            ksiazka3.Tytul = "Patatajnia";
-            ksiazka3.RokWydania = 2019;
-            ksiazka3.Gatunek = "Romans";
-            ksiazka3.LiczbaStron = 14;
+            var autorKsiazki3 = new AutorKsiazki("Jarosław", "Psikuta");
+            var ksiazka3 = new Ksiazka("Patatajnia", autorKsiazki3, 2019, "Romans", 14);
 
             ksiazka.Wypozycz();
             ksiazka2.Wypozycz();
@@ -46,25 +25,34 @@ namespace Reloaded.Tasks.Task16a
             ksiazka.Oddaj();
             ksiazka2.Oddaj();
             //ksiazka2.Oddaj();
-            ksiazka3.Wypozycz();
+            //ksiazka3.Wypozycz();
         }
-        
-        
+
+
     }
     class Ksiazka
     {
+        public Ksiazka(string Tytul, AutorKsiazki autorKsiazki, int RokWydania, string Gatunek, int LiczbaStron)
+        {
+            this.Tytul = Tytul;
+            AutorKsiazki = autorKsiazki;
+            this.RokWydania = RokWydania;
+            this.Gatunek = Gatunek;
+            this.LiczbaStron = LiczbaStron;
+        }
+
         
         public string Tytul { get; set; }
         public int RokWydania { get; set; }
         public string Gatunek { get; set; }
         public AutorKsiazki AutorKsiazki { get; set; }
         public int LiczbaStron { get; set; }
-        private bool _czyWypozyczona ;
+        private bool _czyWypozyczona ;                 //niby w property chodzi o to żeby z tego pola nie korzystać? czy chodzi o to że i tak korzystamy z metod Wypozycz Oddaj żeby się do niego dobrać i domniemanemu interfejsowi nie będzie to przeszkadzać?
         public bool CzyWypozyczona { get { return _czyWypozyczona; } }
 
         public void Wypozycz()
         {
-            if (!(_czyWypozyczona))
+            if (!(_czyWypozyczona))                   //czy w C# można tak robić?
             {
                 _czyWypozyczona = true;
             }
@@ -87,6 +75,11 @@ namespace Reloaded.Tasks.Task16a
     }
     class AutorKsiazki
     {
+        public AutorKsiazki(string Imie, string Nazwisko)
+        {
+            this.Imie = Imie;
+            this.Nazwisko = Nazwisko;
+        }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
 
