@@ -60,6 +60,7 @@
     <Compile Include="Tasks\Task14\Circle.cs" />
     <Compile Include="Tasks\Task14\TaskClass14.cs" />
     <Compile Include="Tasks\Task14\ZlosliwyTrol.cs" />
+    <Compile Include="Tasks\Task16a\TaskClass16a.cs" />
     <Compile Include="Tasks\Task16\Circle.cs" />
     <Compile Include="Tasks\Task16\Rectangle.cs" />
     <Compile Include="Tasks\Task16\TaskClass16.cs" />

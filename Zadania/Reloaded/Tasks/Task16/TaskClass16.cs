@@ -12,7 +12,7 @@ namespace Reloaded.Tasks.Task16
     {
         public void Test()
         {
-            var rectangle = new Rectangle();
+            //var rectangle = new Rectangle();
 
             List<Rectangle> rectList = new List<Rectangle>();
             List<Circle> circList = new List<Circle>();
