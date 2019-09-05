@@ -165,7 +165,17 @@ Zasady ogólne
 	Przetestuj klasę RichText tworząc jedną instancję tej klasy i ustawiając dowolnie property, a następnie wywołując metodę Show.
 	Później zmień wartoś property Text i wywołaj metodę Show jeszcze raz. Później zmień jakieś property i wywołaj metodę Show.
 
-16e.
+16e. Napisz klasę Vector i klasę VectorMath.
+     Klasa Vector ma mieć takie cechy: X, Y, Z
+	 Klasa VectorMath ma mieć takie metody:
+	 Vector Sum(Vector a, Vector b); - suma wektorów
+	 Vector Sub(Vector a, Vector c); - róznica wektorów
+	 Vector CrossProduct(Vector a, Vector c); - iloczyn wektorowy
+	 double DotProduct(Vector a, Vector c); - iloczyn skalarny
+	 Vector Neg(Vector v); - wektor przeciwny
+	 double Length(Vector v); - długość wektora
+	 Vector Mul(Vector v, double factor); - wynik mnożenia wektora przez współczynnik
+	 W kalsie TestClass16e stwórz kilka wektorów oraz obiekt klasy VectorMath i potestuj na różne metody z VectorMath
 
 16f.
 
