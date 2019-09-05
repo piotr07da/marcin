@@ -61,7 +61,14 @@
     <Compile Include="Tasks\Task14\TaskClass14.cs" />
     <Compile Include="Tasks\Task14\ZlosliwyTrol.cs" />
     <Compile Include="Tasks\Task16a\TaskClass16a.cs" />
+    <Compile Include="Tasks\Task16b\Ekran.cs" />
+    <Compile Include="Tasks\Task16b\Laptop.cs" />
+    <Compile Include="Tasks\Task16b\Procesor.cs" />
+    <Compile Include="Tasks\Task16b\Ram.cs" />
+    <Compile Include="Tasks\Task16b\Rozdzielczosc.cs" />
     <Compile Include="Tasks\Task16b\TaskClass16b.cs" />
+    <Compile Include="Tasks\Task16c\FunkcjaLiniowa.cs" />
+    <Compile Include="Tasks\Task16c\TaskClass16c.cs" />
     <Compile Include="Tasks\Task16\Circle.cs" />
     <Compile Include="Tasks\Task16\Rectangle.cs" />
     <Compile Include="Tasks\Task16\TaskClass16.cs" />
