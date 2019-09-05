@@ -132,6 +132,43 @@ Zasady ogólne
 		metoda ObliczWartosc przy podaniu parametru x równego np. 3 powinna zwrócić wynik równy 18
 		metoda ObliczMiejsceZerowe zwróci 1.2
 
+16d. Napisz klasę RichText. Cel jest taki żeby ta klasa pozwalała ustawić dowolny tekst i skonfigurować jakieś różne sposoby jego wyświetlania i żeby pozwalała go na koniec wyświetlić.
+     
+	 Np. takie coś:
+	 var txt = new RichText("Piotr");
+	 txt.Show();
+	 powinno wyświetlić:
+		Piotr
+
+	 ale takie coś:
+	 var txt = new RichText("Piotr");
+	 txt.LetterSeparator = "-";
+	 txt.LetterCase = LetterCaseType.Upper;
+	 txt.Underline = true;
+	 txt.ReverseOrder = true;
+	 txt.Color = ConsoleColor.Red;
+	 txt.Show();
+	 powinno wyświetlić na czerwono taki napis:
+		R-T-O-I-P
+		---------
+
+	Czyli cel jest taki żeby napisać klasę RichText z takimi property:
+	- Text
+	- LetterSeparator - separator, który podczas wyświetlania zostanie użyty od odzielenia od siebie liter
+	- LetterCase typu LetterCaseType (enum z opcjami Original, Upper, Lower) - informacja czy wyświetlany tekst ma być z oryginalną wielkością liter czy może ma być wielkimi czy małymi literami
+	- Underline - czy wyświetlić dodatkową linię pod napisem długości takiej samej jak napis
+	- ReverseOrder - czy litery mają być wypisane w odwrotnej kolejności
+	- Color - kolor w jakim będzie wyświetlony tekst
+	oraz metodę:
+	- Show, która wyświetli ten przekazany w konstruktorze text z zastosowaniem wszystkich property
+
+	Przetestuj klasę RichText tworząc jedną instancję tej klasy i ustawiając dowolnie property, a następnie wywołując metodę Show.
+	Później zmień wartoś property Text i wywołaj metodę Show jeszcze raz. Później zmień jakieś property i wywołaj metodę Show.
+
+16e.
+
+16f.
+
 17. To samo co w zadaniu 16, ale chodzi o utworzenie interfejsu IScalable z metodą Scale. Klasy Rectangle i Circle powinny implementować ten interfejs. Dzięki temu w metodzie testującej można wszystkie skalowalne kształty wstawić do jednej generycznej listy List<IScalable> i przeskalować wszystkie kształty w pojedynczej pętli.
     
 	!!! -> można tak zrobić bo kod skalujący (czyli pętla, która dla każdego elementu listy woła metodę Scale) nie jest zupełnie zainteresowany tym, że skaluje prostokąt, koło, odcinek czy cokolwiek innego. Ten kod jest zainteresowany wyłącznie skalowaniem (Scale) czegoś skalowalnego (IScalable).
