@@ -22,7 +22,7 @@ namespace Reloaded.Tasks.Task16d
         public string Text { get; set; }
         public string LetterSeparator { get; set; }
        
-        public LetterCaseType LetterCase { get; set; }
+        public LetterCaseType LetterCase { get; set; }     
 
         //private bool _underline;
         public bool Underline { get; set; }
@@ -37,10 +37,10 @@ namespace Reloaded.Tasks.Task16d
         {
             var temporaryText = Text;
            
-            if (Color==ConsoleColor.Red)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
+            //if (Color==ConsoleColor.Red)
+            //{
+                Console.ForegroundColor = Color;
+            //}
             if (LetterCase == LetterCaseType.Upper)
             {
                 temporaryText = temporaryText.ToUpper();
