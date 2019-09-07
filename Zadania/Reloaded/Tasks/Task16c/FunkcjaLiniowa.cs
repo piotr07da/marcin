@@ -13,47 +13,41 @@ namespace Reloaded.Tasks.Task16c
             A = a;
             B = b;
         }
-        double y;
-        double x0;
+      
         public double A { get; set; }
         public double B { get; set; }
-        private bool _czyRosnaca;
+       
         public bool CzyRosnaca
         {
             get
             {
-                if (A > 0) { _czyRosnaca = true; }
-                return _czyRosnaca;
+                return A > 0;
             }
         }
-        private bool _czyMalejaca;
+       
         public bool CzyMalejaca
         {
             get
             {
-                if (A < 0) { _czyMalejaca = true; }
-                return _czyMalejaca;
+                return A < 0;
             }
         }
-        private bool _czyStala;
+       
         public bool CzyStala
         {
             get
             {
-                if (A == 0) { _czyStala = true; }
-                return _czyStala;
+                return A == 0;
             }
         }
 
         public double ObliczWartosc(double x)
         {
-            y = A * x + B;
-            return y;
+            return A * x + B;
         }
         public double ObliczMiejsceZerowe()
         {
-            x0 = -(B / A);
-            return x0;
+            return -(A / B);
         }
     }
 }
