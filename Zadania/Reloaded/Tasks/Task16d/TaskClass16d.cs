@@ -11,9 +11,9 @@ namespace Reloaded.Tasks.Task16d
         public void Test()
         {
             var letterCase = new RichText.LetterCaseType ();
-            letterCase = RichText.LetterCaseType.Upper;
-            var richTekst = new RichText("Piotr","-",letterCase,ConsoleColor.Red);
-            richTekst.Show(true, true);
+            letterCase = RichText.LetterCaseType.Lowwer;
+            var richTekst = new RichText("Piotr", "*", letterCase, ConsoleColor.Red, true, true);
+            richTekst.Show();
            
         }
     }
