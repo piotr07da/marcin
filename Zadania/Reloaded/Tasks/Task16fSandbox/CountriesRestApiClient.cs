@@ -43,7 +43,7 @@ namespace Reloaded.Tasks.Task16fSandbox
 
             // deserializujemy treść odpowiedzi do przekazanego typu generycznego T (odpowiedzi przyjeżdżają z https://restcountries-v1.p.rapidapi.com w formacie JSON)
 
-            var serializer = new DataContractJsonSerializer(typeof(CountryDto[]));
+            var serializer = new DataContractJsonSerializer(typeof(T));
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(responseContent));
             var data = serializer.ReadObject(stream) as T;
             return data;
