@@ -89,19 +89,20 @@ namespace Reloaded
             //var task16a = new TaskClass16a();
             //task16a.Test();
 
-            var task16b = new TaskClass16b();
-            task16b.Test();
+            //var task16b = new TaskClass16b();
+            //task16b.Test();
 
-            var task16c = new TaskClass16c();
-            task16c.Test();
+            //var task16c = new TaskClass16c();
+            //task16c.Test();
 
-            var task16d = new TaskClass16d();
-            task16d.Test();
-
-            var task16e = new TaskClass16e();
-            task16e.Test();
+            //var task16d = new TaskClass16d();
+            //task16d.Test();
 
 
+            //var task16e = new TaskClass16e();
+            //task16e.Test();
+
+           
             
         }
     }

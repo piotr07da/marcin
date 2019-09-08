@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,6 +77,10 @@
     <Compile Include="Tasks\Task16e\TaskClass16e.cs" />
     <Compile Include="Tasks\Task16e\Vector.cs" />
     <Compile Include="Tasks\Task16e\VectorMath.cs" />
+    <Compile Include="Tasks\Task16fSandbox\ConsoleCountriesSearchReportWriter.cs" />
+    <Compile Include="Tasks\Task16fSandbox\CountriesRestApiClient.cs" />
+    <Compile Include="Tasks\Task16fSandbox\CountryDto.cs" />
+    <Compile Include="Tasks\Task16fSandbox\TaskClass16fSandbox.cs" />
     <Compile Include="Tasks\Task16\Circle.cs" />
     <Compile Include="Tasks\Task16\Rectangle.cs" />
     <Compile Include="Tasks\Task16\TaskClass16.cs" />
