@@ -177,7 +177,38 @@ Zasady ogólne
 	 Vector Mul(Vector v, double factor); - wynik mnożenia wektora przez współczynnik
 	 W kalsie TestClass16e stwórz kilka wektorów oraz obiekt klasy VectorMath i potestuj na różne metody z VectorMath
 
-16f.
+16fSandbox.
+	Zapoznaj się z klasami w katalogu Tasks/Task16fSandbox
+	(uwaga - ważne pojęcie - deserializacja - to jest zamiana ze stringa (w jakimś formacie - np. json, xml, csv) do jakiegoś typu - np. do jakiejś klasy; serializacja jest w drugą stronę)
+	Uruchom program. Zobacz jak działa - wpisz np. Poland
+	Program składa się z kilku elementów:
+	- klasa Task16fSandbox - główna klasa uruchamiająca
+	- klasa CountriesRestApiClient - klient api ze stronki https://rapidapi.com/apilayernet/api/rest-countries-v1 - po prostu w necie jest wystawione api, które można odpytywać o dane różnych państw, a klasa pełni funkcję strzelania właśnie do tego Api, pobierania odpowiedzi i deserializowania ich do klasy CountryDto
+	- klasa CountryDto - do tej klasy są deserializowane odpowiedzi zwracane z https://restcountries-v1.p.rapidapi.com
+	- klasa ConsoleCountriesSearchReportWriter - to jest klasa, której zadaniem jest wypisywanie raportu dotyczącego odnalezionych państwa na konsolę
+	Zadania:
+	0) Np. dla wyszukiwania poland, w raporcie wyświetla się:
+	   - Poland ze stolica w Warsaw.
+		  - ludnosc: 38.484 milionów
+		  - powierzchnia: 312679 km^2
+	   przerób żeby raport wyglądał tak:
+	   - POLAND
+	      - stolica: Warsaw
+		  - ludnosc: 38.484 milionów
+		  - powierzchnia: 312679 km^2
+	1) W raporcie wyświetla się tylko stolica, ludność i powierzchnia. Rozbuduj raport o długość i szerokość geograficzną.
+	2) Rozbuduj raport o gęstość zaludnienia wyliczony na podstawie populacji i powierzchni
+	3) Wyszukaj danych dla jakiegoś państwa, np. germany i w debugu podpatrz w klasie CountriesRestApiClient zmienną responseContent - zobaczysz, że jest tam taka informacja jak alpha3Code.
+	   Jak popatrzysz na klasę CountryDto to nie ma tam takiego property, do którego ta informacja miała by szansę się zdeserializować - dorób odpowiednie property.
+	   Rozbuduj raport o wartość tego property.
+	4) Wpisz w wyszukiwaniu niepełną nazwę państwa:
+	   ger
+	   Raport powinien zawierać 4 państwa: Algeria, Germany, Niger, Nigeria bo w nazwie jest ger, ale zawiera też Denmark i Norway
+	   Sprawdziłem, że dzieje się tak dlatego, że https://restcountries-v1.p.rapidapi.com przeszukuje także altSpelling, a Norwegia ma między innymi taką alternatywną (altSpelling) nazwę: Kongeriket Norge
+	   Sprawdź to sam: w debugu, po wpisaniu ger, zatrzymaj się w klasie CountriesRestApiClient i podpatrz zmienną responseContent - poszukaj tam altSpelling, np. dla Norwegii powinno być tam:
+	   "altSpellings":["NO","Norge","Noreg","Kingdom of Norway","Kongeriket Norge","Kongeriket Noreg"]
+	   Chciałbym żeby te nazwy nie były brane pod uwagę dlatego w zwracanym z metody GetCountries wyniku zwróć tylko te państwa, których główna nazwa zawiera wyszukiwany ciąg (to musi być case insensitive czyli niewrażliwe na wielkość znaków).
+
 
 17. To samo co w zadaniu 16, ale chodzi o utworzenie interfejsu IScalable z metodą Scale. Klasy Rectangle i Circle powinny implementować ten interfejs. Dzięki temu w metodzie testującej można wszystkie skalowalne kształty wstawić do jednej generycznej listy List<IScalable> i przeskalować wszystkie kształty w pojedynczej pętli.
     
