@@ -50,6 +50,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tasks\ConsoleValueReader.cs" />
+    <Compile Include="Tasks\ConsoleValueReaderX.cs" />
     <Compile Include="Tasks\Task0\TaskClass0.cs" />
     <Compile Include="Tasks\Task10\TaskClass10.cs" />
     <Compile Include="Tasks\Task11\TaskClass11.cs" />
@@ -93,6 +94,8 @@
     <Compile Include="Tasks\Task7\TaskClass7.cs" />
     <Compile Include="Tasks\Task8\TaskClass8.cs" />
     <Compile Include="Tasks\Task9\TaskClass9.cs" />
+    <Compile Include="Tasks\TaskX\Task13\RectangleX.cs" />
+    <Compile Include="Tasks\TaskX\Task13\TaskClass13X.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
