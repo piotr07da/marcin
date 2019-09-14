@@ -8,17 +8,27 @@ namespace Reloaded.Tasks.TaskX.Task13
 {
     public class RectangleX
     {
-        public double Width { get; set; } 
+        public RectangleX(double width, double height)
+        {
+            Width = width;
+            Height = height;
+        }
+      
+        public double Width { get; set; }
         public double Height { get; set; }
 
-        public void Scale(double factor)
-        {
-            Width = Width * factor;
-            Height = Height * factor;
-        }
         public double CalculateArea()
         {
             return Width * Height;
         }
+        public void Scale(double factor)
+        {
+            if (factor > 0) 
+            {
+                Width = Width * factor;
+                Height = Height * factor;
+            }
+        }
+
     }
 }

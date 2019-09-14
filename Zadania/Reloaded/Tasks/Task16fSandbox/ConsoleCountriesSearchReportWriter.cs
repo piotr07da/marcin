@@ -15,9 +15,12 @@ namespace Reloaded.Tasks.Task16fSandbox
 
             foreach (var country in foundCountries)
             {
-                Console.WriteLine($"- {country.Name} ze stolicą w {country.Capital}.");
+                country.Name = country.Name.ToUpper();
+                Console.WriteLine($"-{country.Name}");
+                Console.WriteLine($"  - stolica {country.Capital}");
                 Console.WriteLine($"  - ludność: {country.Population / 1e6} milionów");
                 Console.WriteLine($"  - powierzchnia: {country.Area} km^2");
+                Console.WriteLine($"  - gęstość zaludnienia: {country.Population/country.Area}");
             }
         }
     }

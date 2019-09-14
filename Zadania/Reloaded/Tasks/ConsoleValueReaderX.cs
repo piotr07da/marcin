@@ -20,15 +20,17 @@ namespace Reloaded.Tasks
                 {
                     if (value <= 0)
                     {
-                        Console.Write("Wpisz liczbę większą od 0 : ");
+                        Console.Write("Wpisz wartość większą od 0 : ");
                     }
-                    else { break; }
+                    else
+                    {
+                        break;                       
+                    }
                 }
                 else
                 {
-                    Console.Write("Wpisz liczbę : ");
+                    Console.Write("Wpisz LICZBE : ");
                 }
-
             }
             return value;
         }

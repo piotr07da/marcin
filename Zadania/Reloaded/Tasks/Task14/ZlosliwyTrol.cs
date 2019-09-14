@@ -14,7 +14,7 @@ namespace Reloaded.Tasks.Task14
         // W przyszłych zdaniach też może pojawić się podobna potrzeba. Żeby kodu nie powielać w każdym zadaniu propozycja jest taka:
 
         // Bezpośrednio w folderze Tasks dodać klasę o nazwie ConsoleValueReader
-        // W tej klasie umieścić metodę ReadDoubleFromConsole tylko zmienić jej nazwę na ReadDouble (bo skoro będzie w klasie ConsoleValueReader to nazwa metody nie musi już zawierać słowa FromConsole)
+        // W tej klasie umieścić metodę ReadDoubleFromConsole tylko zmienić jej nazwę na ReadDouble (bo skoro będzie w klasie ConsoleValueReader to nazwa metody niC:\Users\MarcinB\source\repos\marcin\Zadania\Reloaded\Tasks\Task13\TaskClass13.cse musi już zawierać słowa FromConsole)
         // Zrobić tę metodę publiczną.
         // Skorzystać z tej klasy z tą metodą w zadaniach 13, 14 i potencjalnie kolejnych, w których będzie potrzebne wczytywanie wartości double.
         // np.
