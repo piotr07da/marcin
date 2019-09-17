@@ -12,12 +12,12 @@ namespace Reloaded.Tasks.Task16fSandbox
     public class TaskClass16fSandbox
     {
         private readonly CountriesRestApiClient _apiClient;
-        private readonly ConsoleCountriesSearchReportWriter _countriesSearchReportWriter;
+        private readonly ICountriesSearchReportWriter _countriesSearchReportWriter;
 
-        public TaskClass16fSandbox()
+        public TaskClass16fSandbox(ICountriesSearchReportWriter countriesSearchReportWriter)
         {
             _apiClient = new CountriesRestApiClient();
-            _countriesSearchReportWriter = new ConsoleCountriesSearchReportWriter();
+            _countriesSearchReportWriter = countriesSearchReportWriter;
         }
 
         public async Task Test()
@@ -28,7 +28,6 @@ namespace Reloaded.Tasks.Task16fSandbox
                 var searchText = Console.ReadLine();
 
                 var countries = await _apiClient.GetCountries(searchText);
-
                 _countriesSearchReportWriter.Write(countries);
             }
             catch (Exception ex) // jeżeli się nie uda bo z jakiejś przyczyny poleciał wyjątek...

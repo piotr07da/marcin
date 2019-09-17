@@ -27,6 +27,10 @@ namespace Reloaded.Tasks.Task16fSandbox
         public string[] Currencies { get; set; }
 
         [DataMember(Name = "alpha3Code")]
-        public double? Alpha3Code { get; set; }
-    }
+        public string Alpha3Code { get; set; }
+
+        [DataMember(Name = "altSpellings")]
+        public string[] AltSpellings { get; set; }
+
+       }
 }

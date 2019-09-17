@@ -61,6 +61,5 @@ namespace Reloaded.Tasks.Task16e
             return Math.Sqrt(a.X + a.Y + a.Z);
         }
 
-
     }
 }

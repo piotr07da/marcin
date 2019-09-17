@@ -15,13 +15,15 @@ namespace Reloaded.Tasks.Task16e
             var b = new Vector(15, 25, 40);
             var c = new Vector(10, 30, 80);
 
-            vectorMath.VectorSum(a, c);
-            vectorMath.VectorSub(b, c);
-            vectorMath.CrossProduct(a, b);
-            vectorMath.DotProduct(a, b);
-            vectorMath.Lenght(c);
+            var v1 = vectorMath.VectorSum(a, c);
+            var v2 = vectorMath.VectorSub(b, c);
+            var v3 = vectorMath.CrossProduct(a, b);
+            var v4 = vectorMath.DotProduct(a, b);
+            var look = vectorMath.Lenght(c);
             vectorMath.Mul(b, 10.5);
             vectorMath.Neg(a);
+
+            var ttt = vectorMath.CrossProduct(a, a);
         }
     }
 }

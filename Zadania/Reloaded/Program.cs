@@ -32,6 +32,9 @@ using Reloaded.Tasks.TaskX.Task16b;
 using Reloaded.Tasks.TaskX.Task16c;
 using Reloaded.Tasks.TaskX.Task16d;
 using Reloaded.Tasks.Task16fSandbox;
+using System.Threading;
+using Reloaded.Tasks.TaskX.TaskAsync;
+using Reloaded.Tasks.Task17;
 
 // test
 
@@ -47,13 +50,95 @@ namespace Reloaded
             //testClass16c.Test();
             //var test = new TestClass16d();
             //test.Test();
-            //var taskSandbox = new TaskClass16fSandbox();
+            //var taskSandbox = new TaskClass16fSandbox(new ConsoleCountriesSearchReportWriter());
             //taskSandbox.Test();
             //Console.ReadKey();
-            var taskClass16e = new TaskClass16e();
-            taskClass16e.Test();
+            //var taskClass16e = new TaskClass16e();
+            //taskClass16e.Test();
+
+
+            //var ae = new AsyncExample();
+            //ae.Working();
+
+            //var tac = new TaskAsyncClass();
+            //tac.Test();
+
+            var task17 = new TaskClass17();
+            task17.Test();
+
         }
     }
 
-    
+    public class AsyncExample
+    {
+        public void NotWorking1()
+        {
+            while (true)
+            {
+                Console.Write("*");
+                Thread.Sleep(1000);
+            }
+
+            Console.ReadKey();
+        }
+
+        public void NotWorking2()
+        {
+            while (true)
+            {
+                Console.Write("*");
+                Thread.Sleep(1000);
+                Console.ReadKey();
+                
+            }
+
+            Func<string, int, double, string> c = new Func<string, int, double, string>((string p1, int p2, double p3) =>
+            {
+                return "";
+            });
+
+            c = Method2;
+            c("", 1, 3.333);
+        }
+
+        private string Method1(string p1, int p2, double p3)
+        {
+            return "";
+        }
+
+        private string Method2(string p1, int p2, double p3)
+        {
+            return "sdfasdfa";
+        }
+
+        public void Working()
+        {
+            var task1 = ShowStringAsync("*", 1000);
+            var task2 = ShowStringAsync("#", 500);
+            Console.WriteLine("Wduś dowolny przycisk");
+            Console.ReadKey();
+        }
+
+        public async Task Test()
+        {
+            await ShowStringAsync("-", 400);
+        }
+
+        public async Task ShowStringAsync(string str, int delay)
+        {
+            await Task.Run(() =>
+            {
+                ShowString(str, delay);
+            });
+        }
+
+        public void ShowString(string str, int delay)
+        {
+            while (true)
+            {
+                Console.Write(str);
+                Thread.Sleep(delay);
+            }
+        }
+    }
 }
