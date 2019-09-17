@@ -92,6 +92,12 @@
     <Compile Include="Tasks\Task17\IScalable.cs" />
     <Compile Include="Tasks\Task17\Rectangle.cs" />
     <Compile Include="Tasks\Task17\TaskClass17.cs" />
+    <Compile Include="Tasks\Task18\Cone.cs" />
+    <Compile Include="Tasks\Task18\Cube.cs" />
+    <Compile Include="Tasks\Task18\Cylinder.cs" />
+    <Compile Include="Tasks\Task18\ICubature.cs" />
+    <Compile Include="Tasks\Task18\Sphere.cs" />
+    <Compile Include="Tasks\Task18\TaskClass18.cs" />
     <Compile Include="Tasks\Task1\TaskClass1.cs" />
     <Compile Include="Tasks\Task2\TaskClass2.cs" />
     <Compile Include="Tasks\Task3\TaskClass3.cs" />

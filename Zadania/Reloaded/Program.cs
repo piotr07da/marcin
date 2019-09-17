@@ -35,6 +35,7 @@ using Reloaded.Tasks.Task16fSandbox;
 using System.Threading;
 using Reloaded.Tasks.TaskX.TaskAsync;
 using Reloaded.Tasks.Task17;
+using Reloaded.Tasks.Task18;
 
 // test
 
@@ -63,8 +64,11 @@ namespace Reloaded
             //var tac = new TaskAsyncClass();
             //tac.Test();
 
-            var task17 = new TaskClass17();
-            task17.Test();
+            //var task17 = new TaskClass17();
+            //task17.Test();
+
+            var task18 = new TaskClass18();
+            task18.Test();
 
         }
     }

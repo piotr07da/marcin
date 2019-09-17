@@ -11,7 +11,7 @@ namespace Reloaded.Tasks.Task17
         public void Test()
         {
             List<IScalable> scalables = new List<IScalable>();
-            List<IArea> areas = new List<IArea>();
+            List<IArea> areas = new List<IArea>(); //to tak dla treningu
 
             var rect1 = new Rectangle(1, 1);
             var rect2 = new Rectangle(2, 2);
@@ -29,7 +29,7 @@ namespace Reloaded.Tasks.Task17
             scalables.Add(circ2);
             scalables.Add(circ3);
 
-            areas.Add(rect1);
+            areas.Add(rect1);  //próbowałem to zrobić w różnych pętlach ale nie pykło
             areas.Add(rect2);
             areas.Add(rect3);
 
@@ -47,6 +47,11 @@ namespace Reloaded.Tasks.Task17
             foreach (var item in scalables)
             {
                 item.Scale(2);
+            }
+
+            for (int i = 0; i < areas.Count; i++)
+            {
+                area[i] = areas[i].CalculateArea();
             }
         }
     }
