@@ -46,6 +46,7 @@
     <Compile Include="Examples\AsyncExample.cs" />
     <Compile Include="Examples\AsyncExplanation.cs" />
     <Compile Include="Examples\ClassMembersExplanation.cs" />
+    <Compile Include="Examples\DelegatesExplanation.cs" />
     <Compile Include="Examples\InterfaceExample.cs" />
     <Compile Include="Examples\PersonExamples.cs" />
     <Compile Include="Examples\PropertyExample.cs" />
