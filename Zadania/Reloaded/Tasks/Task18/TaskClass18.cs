@@ -36,7 +36,7 @@ namespace Reloaded.Tasks.Task18
 
             foreach (var item in cubatures)
             {
-                var temp = item.CalculateCubature();
+                var temp = item.CalculateCubature(); // [PIOTR] - ta linijka raczej niepotrzebna ;)
                 allCubatureSum += item.CalculateCubature();
             }
         }

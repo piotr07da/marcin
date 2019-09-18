@@ -54,5 +54,55 @@ namespace Reloaded.Tasks.Task17
                 area[i] = areas[i].CalculateArea();
             }
         }
+
+
+        public void PIOTR_Simplification()
+        {
+            List<IScalable> scalables = new List<IScalable>();
+            List<IArea> areas = new List<IArea>(); //to tak dla treningu
+
+            var rects = new Rectangle[]
+            {
+                new Rectangle(1, 1),
+                new Rectangle(2, 2),
+                new Rectangle(3, 3),
+            };
+
+            var circs = new Circle[]
+            {
+                new Circle(1),
+                new Circle(2),
+                new Circle(3),
+            };
+
+            foreach (var r in rects)
+            {
+                scalables.Add(r);
+                areas.Add(r);
+            }
+
+            foreach (var c in circs)
+            {
+                scalables.Add(c);
+                areas.Add(c);
+            }
+
+            double[] area = new double[areas.Count];
+
+            for (int i = 0; i < areas.Count; i++)
+            {
+                area[i] = areas[i].CalculateArea();
+            }
+
+            foreach (var item in scalables)
+            {
+                item.Scale(2);
+            }
+
+            for (int i = 0; i < areas.Count; i++)
+            {
+                area[i] = areas[i].CalculateArea();
+            }
+        }
     }
 }
