@@ -101,7 +101,9 @@
     <Compile Include="Tasks\Task18\ICubature.cs" />
     <Compile Include="Tasks\Task18\Sphere.cs" />
     <Compile Include="Tasks\Task18\TaskClass18.cs" />
+    <Compile Include="Tasks\Task19\TaskClass19.cs" />
     <Compile Include="Tasks\Task1\TaskClass1.cs" />
+    <Compile Include="Tasks\Task20\TaskClass20.cs" />
     <Compile Include="Tasks\Task2\TaskClass2.cs" />
     <Compile Include="Tasks\Task3\TaskClass3.cs" />
     <Compile Include="Tasks\Task4\TaskClass4.cs" />

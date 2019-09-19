@@ -36,6 +36,8 @@ using System.Threading;
 using Reloaded.Tasks.TaskX.TaskAsync;
 using Reloaded.Tasks.Task17;
 using Reloaded.Tasks.Task18;
+using Reloaded.Tasks.Task19;
+using Reloaded.Tasks.Task20;
 
 // test
 
@@ -62,14 +64,19 @@ namespace Reloaded
             //ae.Working();
 
             //var tac = new TaskAsyncClass();
-            //tac.Test();
+            //tac.Wait();
 
             //var task17 = new TaskClass17();
             //task17.Test();
 
-            var task18 = new TaskClass18();
-            task18.Test();
+            //var task18 = new TaskClass18();
+            //task18.Test();
 
+            //var task19 = new TaskClass19();
+            //task19.Test();
+
+            var task20 = new TaskClass20();
+            task20.Test();
         }
     }
 

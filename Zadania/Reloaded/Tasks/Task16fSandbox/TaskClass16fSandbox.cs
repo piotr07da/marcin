@@ -12,9 +12,9 @@ namespace Reloaded.Tasks.Task16fSandbox
     public class TaskClass16fSandbox
     {
         private readonly CountriesRestApiClient _apiClient;
-        private readonly ICountriesSearchReportWriter _countriesSearchReportWriter;
+        private readonly ICountriesSearchReportWriter _countriesSearchReportWriter; //co to za zmienna
 
-        public TaskClass16fSandbox(ICountriesSearchReportWriter countriesSearchReportWriter)
+        public TaskClass16fSandbox(ICountriesSearchReportWriter countriesSearchReportWriter) //czemu tu jest w nawiasach
         {
             _apiClient = new CountriesRestApiClient();
             _countriesSearchReportWriter = countriesSearchReportWriter;
