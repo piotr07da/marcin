@@ -14,8 +14,10 @@ namespace Reloaded.Tasks.Task16fSandbox
         private readonly CountriesRestApiClient _apiClient;
         private readonly ICountriesSearchReportWriter _countriesSearchReportWriter; //co to za zmienna
 
-        public TaskClass16fSandbox(ICountriesSearchReportWriter countriesSearchReportWriter) //czemu tu jest w nawiasach
+        public TaskClass16fSandbox(int x, int y, int z, string message, ICountriesSearchReportWriter countriesSearchReportWriter) //czemu tu jest w nawiasach
         {
+            Console.WriteLine(message);
+
             _apiClient = new CountriesRestApiClient();
             _countriesSearchReportWriter = countriesSearchReportWriter;
         }
@@ -28,6 +30,9 @@ namespace Reloaded.Tasks.Task16fSandbox
                 var searchText = Console.ReadLine();
 
                 var countries = await _apiClient.GetCountries(searchText);
+
+                //...
+
                 _countriesSearchReportWriter.Write(countries);
             }
             catch (Exception ex) // jeżeli się nie uda bo z jakiejś przyczyny poleciał wyjątek...

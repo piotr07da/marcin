@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -44,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Examples\AsyncExample.cs" />
+    <Compile Include="Examples\AsyncExample2.cs" />
     <Compile Include="Examples\AsyncExplanation.cs" />
     <Compile Include="Examples\ClassMembersExplanation.cs" />
     <Compile Include="Examples\DelegatesExplanation.cs" />
@@ -104,6 +108,8 @@
     <Compile Include="Tasks\Task19\TaskClass19.cs" />
     <Compile Include="Tasks\Task1\TaskClass1.cs" />
     <Compile Include="Tasks\Task20\TaskClass20.cs" />
+    <Compile Include="Tasks\Task21\Person.cs" />
+    <Compile Include="Tasks\Task21\TaskClass21.cs" />
     <Compile Include="Tasks\Task2\TaskClass2.cs" />
     <Compile Include="Tasks\Task3\TaskClass3.cs" />
     <Compile Include="Tasks\Task4\TaskClass4.cs" />
@@ -132,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

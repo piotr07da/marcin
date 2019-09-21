@@ -38,6 +38,9 @@ using Reloaded.Tasks.Task17;
 using Reloaded.Tasks.Task18;
 using Reloaded.Tasks.Task19;
 using Reloaded.Tasks.Task20;
+using System.Diagnostics;
+using Reloaded.Tasks.Task21;
+
 
 // test
 
@@ -53,7 +56,7 @@ namespace Reloaded
             //testClass16c.Test();
             //var test = new TestClass16d();
             //test.Test();
-            //var taskSandbox = new TaskClass16fSandbox(new ConsoleCountriesSearchReportWriter());
+            //var taskSandbox = new TaskClass16fSandbox(1, 2, 3, "Państwa", new FileCountriesSearchReportWriter());
             //taskSandbox.Test();
             //Console.ReadKey();
             //var taskClass16e = new TaskClass16e();
@@ -61,10 +64,10 @@ namespace Reloaded
 
 
             //var ae = new AsyncExample();
-            //ae.Working();
+            //ae.Test();
 
             //var tac = new TaskAsyncClass();
-            //tac.Wait();
+            //tac.Test();
 
             //var task17 = new TaskClass17();
             //task17.Test();
@@ -75,8 +78,19 @@ namespace Reloaded
             //var task19 = new TaskClass19();
             //task19.Test();
 
-            var task20 = new TaskClass20();
-            task20.Test();
+            //var task20 = new TaskClass20();
+            //task20.Test();
+
+            //var asy2 = new AsyncExample2();
+            //var t = asy2.Test();
+            //t.Wait();
+
+            //var asex = new AsyncExplanation();
+            //asex.Test();
+
+            var task21 = new TaskClass21();
+            task21.Test();
+
         }
     }
 

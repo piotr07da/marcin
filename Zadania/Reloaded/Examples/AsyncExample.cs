@@ -42,21 +42,28 @@ namespace Reloaded.Examples
         public async Task Test()
         {
             await ShowStringAsync("-", 400);
+            Console.ReadKey();
         }
 
         public async Task ShowStringAsync(string str, int delay)
         {
+            Console.WriteLine();
+            Console.WriteLine($"ShowStringAsync({str}, {delay}) - BEGIN");
+
             // Task.Run to takie magiczne powiedzenie - wykonuje jakieś zadanie z boku - równolegle.
             // No a await oznacza - oczekuj na skończenie tego zadania w ramach tej metody.
             await Task.Run(() =>
             {
                 ShowString(str, delay);
             });
+
+            Console.WriteLine();
+            Console.WriteLine($"ShowStringAsync({str}, {delay}) - END");
         }
 
         public void ShowString(string str, int delay)
         {
-            while (true)
+            for (var i = 0; i < 8; ++i)
             {
                 Console.Write(str);
                 Thread.Sleep(delay);

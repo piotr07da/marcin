@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ZADANIA", "ZADANIA", "{8EA8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reloaded", "Reloaded\Reloaded.csproj", "{8DB63792-3778-4ADE-8580-5F891FC9E82A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExample", "WpfExample\WpfExample.csproj", "{0F0BAE71-2C94-4EBC-ABBF-BED39CB4D6D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{8DB63792-3778-4ADE-8580-5F891FC9E82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DB63792-3778-4ADE-8580-5F891FC9E82A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DB63792-3778-4ADE-8580-5F891FC9E82A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0BAE71-2C94-4EBC-ABBF-BED39CB4D6D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0BAE71-2C94-4EBC-ABBF-BED39CB4D6D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0BAE71-2C94-4EBC-ABBF-BED39CB4D6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0BAE71-2C94-4EBC-ABBF-BED39CB4D6D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

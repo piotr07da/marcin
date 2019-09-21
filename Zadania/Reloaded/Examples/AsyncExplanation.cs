@@ -28,7 +28,7 @@ namespace Reloaded.Examples
             // Czyli podsumowując metoda GetSomeIntAsync zwraca obiekt reprezentujący zadanie, które w rezultacie da int'a,
             // a słowo kluczowe await oczekuje na skończenie zadania i wyłuskuje wynik czyli tego int'a.
 
-
+            
 
             // To o czym Ci jeszcze nie opowiadałem to jest różnica pomiędzy Task, a Thread czyli zadanie a wątek.
             // Wątki są ciężkie - to znaczy powołanie do życia wątku wiąże się z kosztem pracy procesora, ale w wielu sytuacjach się to opłaca.

@@ -12,9 +12,9 @@ namespace Reloaded.Tasks.Task19
         public void Test()
         {
             DateTime dt = DateTime.Now;
-                        
-            File.WriteAllText("data&time.txt", dt.ToString()+" patatajnia");
-            
+
+            File.WriteAllText("data&time.txt", dt.ToString("yyyy-MMM-dd") + " patatajnia");
+
             Console.WriteLine($"{dt}  - zapisano do pliku");
             Console.ReadKey();
         }
