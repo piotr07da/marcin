@@ -20,6 +20,21 @@ namespace Reloaded.Tasks.TaskX.TaskAsync
 
             Console.ReadKey();
         }
+
+        public void TestWithCancellationToken()
+        {
+            var cts = new CancellationTokenSource();
+            var ct = cts.Token;
+
+            Console.WriteLine("Wpisz imię masz na to 10 sekund.");
+            var task = WaitingWithCancellationToken(ct);
+            Name = Console.ReadLine();   // czy jest możliwość odwołania ReadLine jeżeli nie zdążysz wpisać?
+
+            cts.Cancel();
+
+            Console.ReadKey();
+        }
+
         public async Task Waiting()
         {
             await Task.Run(() =>
@@ -35,5 +50,24 @@ namespace Reloaded.Tasks.TaskX.TaskAsync
         }
 
 
+
+
+        public async Task WaitingWithCancellationToken(CancellationToken ct)
+        {
+            Action action = () =>
+            {
+
+                ct.WaitHandle.WaitOne(10000);
+
+                if (string.IsNullOrEmpty(Name))
+                    Console.WriteLine("Nie zdążyłeś");
+                else
+                {
+                    Console.WriteLine("Imię to : " + Name);
+                }
+            };
+
+            await Task.Run(action, ct);
+        }
     }
 }

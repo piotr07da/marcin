@@ -88,8 +88,16 @@ namespace Reloaded
             //var asex = new AsyncExplanation();
             //asex.Test();
 
-            var task21 = new TaskClass21();
-            task21.Test();
+            //var task21 = new TaskClass21();
+            //task21.Test();
+
+
+
+
+
+
+            var taskAsyncClass = new TaskAsyncClass();
+            taskAsyncClass.TestWithCancellationToken();
 
         }
     }
