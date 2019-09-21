@@ -15,7 +15,7 @@ namespace Reloaded.Tasks.TaskX.TaskAsync
         {
             Console.WriteLine("Wpisz imię masz na to 10 sekund.");
             var task = Waiting();
-            Name = Console.ReadLine();
+            Name = Console.ReadLine();   // czy jest możliwość odwołania ReadLine jeżeli nie zdążysz wpisać?
            
 
             Console.ReadKey();
@@ -24,7 +24,7 @@ namespace Reloaded.Tasks.TaskX.TaskAsync
         {
             await Task.Run(() =>
             {
-                Thread.Sleep(10000);
+                Thread.Sleep(10000);                //czy jest jakiś sposób żeby wyłączyć ten wątek zanim się skończy?
                 if (string.IsNullOrEmpty(Name))
                     Console.WriteLine("Nie zdążyłeś");
                 else

@@ -14,13 +14,13 @@ namespace Reloaded.Tasks.Task21
         public void Test()
         {
             var dateOfBirth1 = new DateTime(1982, 03, 13);
-            var person1 = new Person("Pietia", "Goros", dateOfBirth1, Person.ESex.Male);
+            var person1 = new Person("Pietia", "Goros", dateOfBirth1, Sex.Male);
 
             var dateOfBirth2 = new DateTime(1873, 4, 5);
-            var person2 = new Person("Biedia", "Nimojajec", dateOfBirth2, Person.ESex.Male);
+            var person2 = new Person("Biedia", "Nimojajec", dateOfBirth2, Sex.Male);
 
             var dateOfBirth3 = new DateTime(1970, 01, 13);
-            var person3 = new Person("Barbara", "Liskov", dateOfBirth3, Person.ESex.Female);
+            var person3 = new Person("Barbara", "Liskov", dateOfBirth3, Sex.Female);
 
             List<Person> people = new List<Person>();
 
