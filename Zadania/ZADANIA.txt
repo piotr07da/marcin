@@ -233,3 +233,70 @@ Zasady ogólne
 	Wejdź do pliku i zobacz co się zapisało.
 
 
+22. W task 22 zrealizuj kolejno poniższe podzadania:
+    1) Stwórz folder dla tego zadania i dodaj tam nie klasę tylko plik tekstowy o nazwie spaceship.txt. Kliknij z poziomu visual studio na ten plik prawym przyciskiem myszy. Wybierz properties. Następnie w "Copy to output directory" ustaw "Copy if newer" - dzięki temu podczas buildowania plik będzie się kopiował do folderu bin.
+       Dzięki temu w kodzie będzie można zaryć ścieżkę względną do tego pliku
+	2) Skopiuj do tego pliku następującą treść - dokładnie (łącznie ze spacjami) co jest pomiędzy liniami z minusów:
+-----------------------------------------------
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                ##  ##                         
+                  ##                           
+                  ##                           
+               # #  # #                        
+               #      #                        
+                                               
+               #      #                        
+                ##  ##                         
+                 ####                          
+                                               
+                  ##                           
+                  ##                           
+                                               
+                                               
+-----------------------------------------------
+    3) Napisz tymczasowy kod testowy, który wczyta zawartość tego pliku i wyświetli go na konsoli
+    4) Zapoznaj się z kodem w DrawingExample, a także zapoznaj się z plikami spaceship.png i glider.gif dodanymi do repozytorium.
+	5) Spraw aby na podstawie zawartości wczytanego pliku na ekranie konsoli wyświetliła się ta zawartość ale narysowana w formie komórek/kwadratów tak jak to widać w pliku spaceship.png dodanym do repozytorium.
+	6) Przyjmij, że narysowana przez Ciebie macierz kwadratowych komórek dzieli się na komórki żywe (wybierz sobie kolor) i martwe (wybierz sobie inny kolor) i że komórki będą ożywać i umierać
+	   według opisanych niżej zasad. A więc musi być pętla, w której po każdym naciśnięciu przycisku zostanie wyliczony stan życia - to, które komórki żyją, a które nie i po takim wyliczeniu to co jest
+	   na ekranie musi wyrysować się na nowo prezentując nowy stan komórek. Stan życia komórek wczytany z pliku jest tylko stanem początkowym. Każde wduszenie przycisku liczy nowy stan dla każdej komórki i wyświetla nowe stany komórek.
+	7) A zasady życia są następujące:
+	   - Każda komórka posiada 8 komórek sąsiadujących - z lewej, prawej, z góry, z dołu, i po skosach
+	   - Zmiany stanów są następujące:
+	     - urodzenie: Każda martwa komórka, która w aktualnym kroku posiada 3 żywe komórki sąsiadujące w kolejnym kroku stanie się komórką żywą
+	     - śmierć przez odizolowanie: Każda żywa komórka, która w aktualnym kroku posiada zero lub jedną żywą komórkę umiera poprzez odizolowanie i w następnym kroku będzie martwa
+	     - śmierć przez uduszenie: Każda żywa komórka, która w swoim otoczeniu posiada 4 lub więcej żywych sąsiadujących komórek umiera przez uduszenie i w następnym kroku będzie martwa
+		 - przetrwanie: każda żywa komórka, która posiada dwie lub trzy żywe komórki sąsiadujące przetrwa bo ani nie jest odizolowana ani się nie udusi
+	   Przykładowo jeżeli stan początkowy wyglądał by tak:
+	   -----------
+	              
+	        #     
+	              
+       -----------
+	   to kolejny stan wyglądał by tak
+	   -----------
+	              
+	              
+	              
+       -----------
+	   czyli komórka bez sąsiadów umarła, natomiast taki stan:
+	   -----------
+	        ##    
+	        ##    
+	        ##    
+       -----------
+	   w kolejnym kroku da taki stan:
+	   -----------
+	        ##    
+	       #  #   
+	        ##    
+       -----------
+	   Dobrze to obrazuje animowany glider.gif dodany do repozytorium.
+	8) Zaimplementuj zasady życia z punktu 7) oraz pętlę, w której będą liczone nowe stany tak aby uzyskać efekt taki jak w glider.gif (oczywiście bez efektu przesuwania układu współrzędnych czyli jak glider doleci do krawędzi to trudno. Układ współrzędnych pozostaje statyczny).
+	9) Stwórz więcej plików tekstowych ze stanami początkowymi - spaceship.txt, glider.txt i inne wymyślone przez siebie.
+   10) Potestuj program.
