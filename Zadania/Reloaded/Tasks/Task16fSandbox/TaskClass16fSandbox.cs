@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace Reloaded.Tasks.Task16fSandbox
 {
@@ -30,7 +31,19 @@ namespace Reloaded.Tasks.Task16fSandbox
                 var searchText = Console.ReadLine();
 
                 var countries = await _apiClient.GetCountries(searchText);
+                List<CountryDto> countries2 = new List<CountryDto>();
+                               
+                foreach (var country in countries)
+                {                    
+                    var tempCountry = country.Name.ToUpper();
+                    var tempSearch = searchText.ToUpper();
 
+                    if (tempCountry.Contains(tempSearch))
+                    {
+                        countries2.Add(country);
+                    }
+                                   
+                }
                 //...
 
                 _countriesSearchReportWriter.Write(countries);

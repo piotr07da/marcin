@@ -56,9 +56,9 @@ namespace Reloaded
             //testClass16c.Test();
             //var test = new TestClass16d();
             //test.Test();
-            //var taskSandbox = new TaskClass16fSandbox(1, 2, 3, "Państwa", new FileCountriesSearchReportWriter());
-            //taskSandbox.Test();
-            //Console.ReadKey();
+            var taskSandbox = new TaskClass16fSandbox(1, 2, 3, "Państwa", new FileCountriesSearchReportWriter());
+            taskSandbox.Test();
+            Console.ReadKey();
             //var taskClass16e = new TaskClass16e();
             //taskClass16e.Test();
 
@@ -96,8 +96,8 @@ namespace Reloaded
 
 
 
-            var taskAsyncClass = new TaskAsyncClass();
-            taskAsyncClass.TestWithCancellationToken();
+            //var taskAsyncClass = new TaskAsyncClass();
+            //taskAsyncClass.TestWithCancellationToken();
 
         }
     }
