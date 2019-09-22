@@ -50,6 +50,10 @@ namespace Reloaded
     {
         static void Main(string[] args)
         {
+
+            new DrawingExample().Test();
+
+
             //new ClassMembersExplanation().PropertyDalszeWyjasnienia();
             //new PersonTester().Test();
             //var testClass16c = new TestClass16c();
