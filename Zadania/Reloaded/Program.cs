@@ -40,6 +40,7 @@ using Reloaded.Tasks.Task19;
 using Reloaded.Tasks.Task20;
 using System.Diagnostics;
 using Reloaded.Tasks.Task21;
+using Reloaded.Tasks.Task22;
 
 
 // test
@@ -51,7 +52,7 @@ namespace Reloaded
         static void Main(string[] args)
         {
 
-            new DrawingExample().Test();
+            //new DrawingExample().Test();
 
 
             //new ClassMembersExplanation().PropertyDalszeWyjasnienia();
@@ -60,7 +61,7 @@ namespace Reloaded
             //testClass16c.Test();
             //var test = new TestClass16d();
             //test.Test();
-            var taskSandbox = new TaskClass16fSandbox(1, 2, 3, "Państwa", new FileCountriesSearchReportWriter());
+            var taskSandbox = new TaskClass16fSandbox(1, 2, 3, "Państwa", new ConsoleCountriesSearchReportWriter());
             taskSandbox.Test();
             Console.ReadKey();
             //var taskClass16e = new TaskClass16e();
@@ -95,7 +96,8 @@ namespace Reloaded
             //var task21 = new TaskClass21();
             //task21.Test();
 
-
+            //var task22 = new TaskClass22();
+            //task22.Test();
 
 
 

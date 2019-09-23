@@ -42,8 +42,9 @@ namespace Reloaded.Tasks.Task16fSandbox
                     {
                         countries2.Add(country);
                     }
-                                   
+                                                
                 }
+                countries = countries2.ToArray();
                 //...
 
                 _countriesSearchReportWriter.Write(countries);
