@@ -260,6 +260,12 @@ Zasady ogólne
                                                
 -----------------------------------------------
     3) Napisz tymczasowy kod testowy, który wczyta zawartość tego pliku i wyświetli go na konsoli
+	3.1) Po wduszeniu przycisku wyczyść konsolę i wyświetl następujące informacje:
+	     - ile jest linijek w pliku
+		 - ile znaków jest w linijce (pod warunkiem, że w każdej jest tyle samo - jeżeli nie jest to rzuć wyjątek)
+		 - ile łącznie jest krzyżyków
+		 - ile łącznie jest spacji
+		 - ile łącznie jest krzyżyków, które po swojej lewej posiadają krzyżyk i po swojej prawej posiadają krzyżyk (w przykładzie spaceship odpowiedź powinna wynieść 2 bo w tej linijce gdzie są cztery krzyżyki #### te dwa środkowe spełniają ten warunek)
     4) Zapoznaj się z kodem w DrawingExample, a także zapoznaj się z plikami spaceship.png i glider.gif dodanymi do repozytorium.
 	5) Spraw aby na podstawie zawartości wczytanego pliku na ekranie konsoli wyświetliła się ta zawartość ale narysowana w formie komórek/kwadratów tak jak to widać w pliku spaceship.png dodanym do repozytorium.
 	6) Przyjmij, że narysowana przez Ciebie macierz kwadratowych komórek dzieli się na komórki żywe (wybierz sobie kolor) i martwe (wybierz sobie inny kolor) i że komórki będą ożywać i umierać
