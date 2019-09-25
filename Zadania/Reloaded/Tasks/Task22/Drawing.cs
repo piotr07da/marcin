@@ -10,7 +10,7 @@ namespace Reloaded.Tasks.Task22
 {
     public class Drawing
     {
-        public void DrawObjects(int x,int y)
+        public void DrawObjects(int x,int y,Color color)
         {
            
             var hwnd = Process.GetCurrentProcess().MainWindowHandle;
@@ -19,14 +19,14 @@ namespace Reloaded.Tasks.Task22
             var yellowBrusch = new SolidBrush(Color.Yellow);
             var blueBrusch = new SolidBrush(Color.Blue);
 
-            DrawFilledAzureRect5x5(graph,x, y);
+            DrawFilledAzureRect5x5(graph,x, y,color);
 
 
         }
-        public void DrawFilledAzureRect5x5(Graphics graphics, int x, int y)
+        public void DrawFilledAzureRect5x5(Graphics graphics, int x, int y,Color color)
         {
            
-            graphics.FillRectangle(new SolidBrush(Color.Blue), new RectangleF(x * 5, y * 5, 5, 5));
+            graphics.FillRectangle(new SolidBrush(Color.za huja nic, new RectangleF(x * 5, y * 5, 5, 5));
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Drawing;
 
 
 namespace Reloaded.Tasks.Task22
@@ -56,7 +57,7 @@ namespace Reloaded.Tasks.Task22
                     }
                     if (text[line][sing] == '#')
                     {
-                        drawing.DrawObjects(Sing, Line);
+                        drawing.DrawObjects(Sing, Line, Color.Blue);
                     }
 
                     Sing = sing + 1;
