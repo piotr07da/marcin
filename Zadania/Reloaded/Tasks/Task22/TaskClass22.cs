@@ -77,13 +77,14 @@ namespace Reloaded.Tasks.Task22
 
         private CellLifeState ImportCellMatrix(string[] text)
         {
+            CellLifeState[,] lifestate = new CellLifeState[20, 47];
             for (int i = 0; i < text.Length; i++)
             {
                 for (int a = 0; a < text[i].Length; a++)
                 {
                     if (text[i][a] == '#')
                     {
-                        LifeState[i][a] = CellLifeState.Alive;
+                        lifeState[i][a] = CellLifeState.Alive;
                     }
                 }
             }
