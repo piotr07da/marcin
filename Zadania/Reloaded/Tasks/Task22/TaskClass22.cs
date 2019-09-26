@@ -34,13 +34,13 @@ namespace Reloaded.Tasks.Task22
     public class TaskClass22
 
     {
-       
-        
-       
+
+
+
 
         public void Test()
         {
-            
+
             var generat = new FileStatisticsGenerator();
 
             var drawing = new Drawing();
@@ -57,47 +57,44 @@ namespace Reloaded.Tasks.Task22
             generat.ShowStatistics(text);
             Console.ReadKey();
 
-
-            //ImportCellMatrix(text);
-
-
-           
-
-
-
-
-
+                        
             Console.ReadKey();
         }
         private void DrawCellMatrix()
         {
-            
+
         }
 
 
         private CellLifeState ImportCellMatrix(string[] text)
         {
-            CellLifeState[,] lifestate = new CellLifeState[20, 47];
+            CellLifeState[,] lifeState = new CellLifeState[20, 47];
             for (int i = 0; i < text.Length; i++)
             {
                 for (int a = 0; a < text[i].Length; a++)
                 {
                     if (text[i][a] == '#')
                     {
-                        lifeState[i][a] = CellLifeState.Alive;
+                        lifeState[i, a] = CellLifeState.Alive;
+                        //return lifeState[i, a];
                     }
+                    else
+                    {
+                        lifeState[i, a] = CellLifeState.Dead;
+                        //return lifeState[i, a];
+                    }
+                   
                 }
+                
             }
-            //}
-            CellLifeState[,] LifeState[,]  ImportCellMatrix(string[] text)
-        {
-                return CellLifeState LifeState[1, 1] = CellLifeState.Alive
-        }
 
+            //return lifeState[,];
         }
-    enum CellLifeState
-    {
-        Alive,
-        Dead,
+        enum CellLifeState
+        {
+            Alive,
+            Dead,
+        }
     }
 }
+
