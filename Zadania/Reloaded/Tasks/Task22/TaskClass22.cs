@@ -35,12 +35,13 @@ namespace Reloaded.Tasks.Task22
 
     {
 
-
+        CellLifeState[,] lifeState = new CellLifeState[20, 47];
 
 
         public void Test()
         {
-
+            var impor = new Importer();
+            
             var generat = new FileStatisticsGenerator();
 
             var drawing = new Drawing();
@@ -56,45 +57,34 @@ namespace Reloaded.Tasks.Task22
             Console.Clear();
             generat.ShowStatistics(text);
             Console.ReadKey();
-
+            Console.Clear();
+            impor.ImportCellMatrix(text,lifeState);
+            DrawCellMatrix();
                         
             Console.ReadKey();
         }
         private void DrawCellMatrix()
         {
-
-        }
-
-
-        private CellLifeState ImportCellMatrix(string[] text)
-        {
-            CellLifeState[,] lifeState = new CellLifeState[20, 47];
-            for (int i = 0; i < text.Length; i++)
+            var draw = new Drawing();
+            for (int i = 0; i < 20; i++)
             {
-                for (int a = 0; a < text[i].Length; a++)
+                for (int a = 0; a < 47; a++)
                 {
-                    if (text[i][a] == '#')
+                    if (lifeState[i, a] == CellLifeState.Alive)
                     {
-                        lifeState[i, a] = CellLifeState.Alive;
-                        //return lifeState[i, a];
+                        draw.DrawObjects(a, i, Color.Blue);
                     }
                     else
                     {
-                        lifeState[i, a] = CellLifeState.Dead;
-                        //return lifeState[i, a];
+                        draw.DrawObjects(a, i, Color.Yellow);
                     }
-                   
                 }
-                
             }
+        }
 
-            //return lifeState[,];
-        }
-        enum CellLifeState
-        {
-            Alive,
-            Dead,
-        }
+
+       
+       
     }
 }
 
