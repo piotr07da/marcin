@@ -34,6 +34,7 @@ namespace Reloaded.Tasks.Task22
     public class TaskClass22
 
     {
+        int noMoreEntry = 0;
 
         CellLifeState[,] lifeState = new CellLifeState[20, 47];
 
@@ -58,14 +59,27 @@ namespace Reloaded.Tasks.Task22
             generat.ShowStatistics(text);
             Console.ReadKey();
             Console.Clear();
-            impor.ImportCellMatrix(text,lifeState);
+            impor.ImportCellMatrix(text, lifeState);
             DrawCellMatrix();
-                        
+
             Console.ReadKey();
+            for (; ; )
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    for (int a = 0; a < 47; a++)
+                    {
+                        Movement(i,a);
+                        DrawCellMatrix();
+                    }
+                }
+                
+            }
         }
         private void DrawCellMatrix()
         {
             var draw = new Drawing();
+
             for (int i = 0; i < 20; i++)
             {
                 for (int a = 0; a < 47; a++)
@@ -76,12 +90,49 @@ namespace Reloaded.Tasks.Task22
                     }
                     else
                     {
-                        draw.DrawObjects(a, i, Color.Yellow);
+                        if (noMoreEntry == 0) 
+                        {
+                            draw.DrawObjects(a, i, Color.Yellow);
+                            
+                        }
                     }
                 }
             }
+            noMoreEntry = 1;
         }
+        private void Movement(int i, int a)
+        {
+            int neighborAlive = 0;
+            var draw = new Drawing();
 
+
+            if (a > 0) { if (lifeState[i, a - 1] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (a < 46) { if (lifeState[i, a + 1] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (i > 0 && a > 0) { if (lifeState[i - 1, a - 1] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (i > 0) { if (lifeState[i - 1, a] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (i > 0 && a < 46) { if (lifeState[i - 1, a + 1] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (i < 19 && a > 0) { if (lifeState[i + 1, a - 1] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (i < 19) { if (lifeState[i + 1, a] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (i < 19 && a < 46) { if (lifeState[i + 1, a + 1] == CellLifeState.Alive) { neighborAlive += 1; } }
+
+
+
+
+            if (lifeState[i, a] == CellLifeState.Dead)
+            {
+                if (neighborAlive == 3) { lifeState[i, a] = CellLifeState.Alive; }
+            }
+
+            if (lifeState[i, a] == CellLifeState.Alive)
+            {
+                if (neighborAlive < 2 || neighborAlive > 3)
+                {
+                    lifeState[i, a] = CellLifeState.Dead;
+                    draw.DrawObjects(a, i, Color.Yellow);
+                }
+                else { lifeState[i, a] = CellLifeState.Alive; }
+            }
+        }
 
        
        
