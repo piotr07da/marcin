@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Drawing;
+using System.Threading;
 
 // Elegancko. To teraz jak już wiesz jak pobierać współrzędne i jak w ogóle nawigować po takiej dwuwymiarowej tablicy znaków to możesz spokojnie działać dalej ;)
 // Widziałem w poprzednim commit, że elegancko się uruchamia i są niebieskie kwadraty także pięknie :D
@@ -34,17 +35,13 @@ namespace Reloaded.Tasks.Task22
     public class TaskClass22
 
     {
-        bool noMoreEntry = false;
-
-        CellLifeState[,] lifeState = new CellLifeState[20, 47];
-
+        
+        public FileStatisticsGenerator generat = new FileStatisticsGenerator();
 
         public void Test()
         {
             var impor = new Importer();
-            
-            var generat = new FileStatisticsGenerator();
-
+                       
             var drawing = new Drawing();
 
             string[] text = File.ReadAllLines(@"Tasks\Task22\spaceship.txt");
@@ -57,22 +54,40 @@ namespace Reloaded.Tasks.Task22
             Console.ReadKey();
             Console.Clear();
             generat.ShowStatistics(text);
+
+            CellLifeState[,] lifeState = new CellLifeState[generat.line, generat.sing];
+            CellLifeState[,] tempLifeState = new CellLifeState[generat.line, generat.sing];
+
             Console.ReadKey();
             Console.Clear();
             impor.ImportCellMatrix(text, lifeState);
-            DrawCellMatrix();
+
+            //tempLifeState = lifeState;
+            for (int i = 0; i < generat.line; i++)
+            {
+                for (int a = 0; a < generat.sing; a++)
+                {
+                    tempLifeState[i, a] = lifeState[i, a];
+                }
+            }
+
+
+            DrawCellMatrix(lifeState);
 
             Console.ReadKey();
 
-            Wait();
+            Wait(lifeState, tempLifeState);
         }
-        private void DrawCellMatrix()
+        private void DrawCellMatrix(CellLifeState[,] lifeState)
         {
+            
+           
             var draw = new Drawing();
+           
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < generat.line; i++)
             {
-                for (int a = 0; a < 47; a++)
+                for (int a = 0; a < generat.sing; a++)
                 {
                     if (lifeState[i, a] == CellLifeState.Alive)
                     {
@@ -80,72 +95,81 @@ namespace Reloaded.Tasks.Task22
                     }
                     else
                     {
-                        if (noMoreEntry == false) 
-                        {
+                       
                             draw.DrawObjects(a, i, Color.Yellow);
                             
-                        }
+                        
                     }
                 }
             }
-            noMoreEntry = true;
+           
         }
-        private void Movement(int i, int a)
+        private void Movement(int i, int a,CellLifeState[,] lifeState,CellLifeState[,] tempLifeState )
         {
+           
             int neighborAlive = 0;
             var draw = new Drawing();
 
 
             if (a > 0) { if (lifeState[i, a - 1] == CellLifeState.Alive) { neighborAlive += 1; } }
-            if (a < 46) { if (lifeState[i, a + 1] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (a < generat.sing-1) { if (lifeState[i, a + 1] == CellLifeState.Alive) { neighborAlive += 1; } }
             if (i > 0 && a > 0) { if (lifeState[i - 1, a - 1] == CellLifeState.Alive) { neighborAlive += 1; } }
             if (i > 0) { if (lifeState[i - 1, a] == CellLifeState.Alive) { neighborAlive += 1; } }
-            if (i > 0 && a < 46) { if (lifeState[i - 1, a + 1] == CellLifeState.Alive) { neighborAlive += 1; } }
-            if (i < 19 && a > 0) { if (lifeState[i + 1, a - 1] == CellLifeState.Alive) { neighborAlive += 1; } }
-            if (i < 19) { if (lifeState[i + 1, a] == CellLifeState.Alive) { neighborAlive += 1; } }
-            if (i < 19 && a < 46) { if (lifeState[i + 1, a + 1] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (i > 0 && a < generat.sing-1) { if (lifeState[i - 1, a + 1] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (i < generat.line-1 && a > 0) { if (lifeState[i + 1, a - 1] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (i < generat.line-1) { if (lifeState[i + 1, a] == CellLifeState.Alive) { neighborAlive += 1; } }
+            if (i < generat.line-1 && a < generat.sing-1) { if (lifeState[i + 1, a + 1] == CellLifeState.Alive) { neighborAlive += 1; } }
 
 
 
 
             if (lifeState[i, a] == CellLifeState.Dead)
             {
-                if (neighborAlive == 3) { lifeState[i, a] = CellLifeState.Alive; }
+                if (neighborAlive == 3) { tempLifeState[i, a] = CellLifeState.Alive; }
             }
 
             if (lifeState[i, a] == CellLifeState.Alive)
             {
                 if (neighborAlive < 2 || neighborAlive > 3)
                 {
-                    lifeState[i, a] = CellLifeState.Dead;
-                    draw.DrawObjects(a, i, Color.Yellow);
+                    tempLifeState[i, a] = CellLifeState.Dead;                   
                 }
-                else { lifeState[i, a] = CellLifeState.Alive; }
+                else { tempLifeState[i, a] = CellLifeState.Alive; }
             }
         }
-        private void ReadyToFlow()
+        private void ReadyToFlow(CellLifeState[,] lifeState,CellLifeState[,] tempLifeState )
         {
              for (; ; )
             {
-                for (int i = 0; i < 20; i++)
+                for (int i = 0; i < generat.line; i++)
                 {
-                    for (int a = 0; a < 47; a++)
+                    for (int a = 0; a < generat.sing; a++)
                     {
-                        Movement(i,a);
-                        DrawCellMatrix();
+                        Movement(i,a,lifeState, tempLifeState);
+                       
                     }
                 }
-                
+
+                //lifeState = tempLifeState;
+                for (int i = 0; i < generat.line; i++)
+                {
+                    for (int a = 0; a < generat.sing; a++)
+                    {
+                        lifeState[i, a] = tempLifeState[i, a];
+                    }
+                }
+                //Thread.Sleep(100);
+                DrawCellMatrix(lifeState);
             }
         }
-        public async Task WaitAsync()
+        public async Task WaitAsync(CellLifeState[,] lifeState, CellLifeState[,] tempLifeState )
         {           
-            await Task.Run(() => ReadyToFlow());
+            await Task.Run(() => ReadyToFlow(lifeState, tempLifeState));
            
         }
-        private void Wait()
+        private void Wait(CellLifeState[,] lifeState, CellLifeState[,] tempLifeState)
         {
-            WaitAsync();
+            WaitAsync(lifeState, tempLifeState);
             Console.ReadKey();
         }
 

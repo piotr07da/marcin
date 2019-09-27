@@ -26,7 +26,7 @@ namespace Reloaded.Tasks.Task22
         public void DrawFilledAzureRect5x5(Graphics graphics, int x, int y,Color color)
         {
            
-            graphics.FillRectangle(new SolidBrush(color), new RectangleF(x * 5, y * 5, 4, 4));
+            graphics.FillRectangle(new SolidBrush(color), new RectangleF(x * 5, y * 5, 5, 5));
         }
     }
 }

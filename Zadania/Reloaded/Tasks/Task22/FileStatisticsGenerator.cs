@@ -8,10 +8,12 @@ namespace Reloaded.Tasks.Task22
 {
     public class FileStatisticsGenerator
     {
+        public int line;
+        public int sing;
         public void ShowStatistics(string[] text)
         {
-            int line = 0;
-            int sing = 0;
+            //int line = 0;
+            //int sing = 0;
             int space = 0;
             int hash = 0;
             int hashTwoNeighbor = 0;
