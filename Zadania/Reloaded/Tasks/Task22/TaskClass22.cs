@@ -34,7 +34,7 @@ namespace Reloaded.Tasks.Task22
     public class TaskClass22
 
     {
-        int noMoreEntry = 0;
+        bool noMoreEntry = false;
 
         CellLifeState[,] lifeState = new CellLifeState[20, 47];
 
@@ -63,18 +63,8 @@ namespace Reloaded.Tasks.Task22
             DrawCellMatrix();
 
             Console.ReadKey();
-            for (; ; )
-            {
-                for (int i = 0; i < 20; i++)
-                {
-                    for (int a = 0; a < 47; a++)
-                    {
-                        Movement(i,a);
-                        DrawCellMatrix();
-                    }
-                }
-                
-            }
+
+            Wait();
         }
         private void DrawCellMatrix()
         {
@@ -90,7 +80,7 @@ namespace Reloaded.Tasks.Task22
                     }
                     else
                     {
-                        if (noMoreEntry == 0) 
+                        if (noMoreEntry == false) 
                         {
                             draw.DrawObjects(a, i, Color.Yellow);
                             
@@ -98,7 +88,7 @@ namespace Reloaded.Tasks.Task22
                     }
                 }
             }
-            noMoreEntry = 1;
+            noMoreEntry = true;
         }
         private void Movement(int i, int a)
         {
@@ -132,6 +122,31 @@ namespace Reloaded.Tasks.Task22
                 }
                 else { lifeState[i, a] = CellLifeState.Alive; }
             }
+        }
+        private void ReadyToFlow()
+        {
+             for (; ; )
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    for (int a = 0; a < 47; a++)
+                    {
+                        Movement(i,a);
+                        DrawCellMatrix();
+                    }
+                }
+                
+            }
+        }
+        public async Task WaitAsync()
+        {           
+            await Task.Run(() => ReadyToFlow());
+           
+        }
+        private void Wait()
+        {
+            WaitAsync();
+            Console.ReadKey();
         }
 
        
