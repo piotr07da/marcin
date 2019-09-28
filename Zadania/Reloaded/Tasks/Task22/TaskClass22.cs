@@ -30,6 +30,42 @@ using System.Threading;
 //    A teraz jeżeli chodzi o klasę Drawing to dobrze kombiujesz z tym przekazaniem koloru. Tam trzeba tylko przekazać parametr color i zamknąć nawias od konstruktora SolidBrush ;) - jak jest za dużo rzeczy w jednej linii to też nie dobrze bo się zaczyna wszystko mieszać.
 //    Warto sobie wtedy rozłożyć to na czynniki pierwsze i wyciągnąć to do osobnych zmiennych, np. brush, rectangle i dopiero wtedy przekazać te dwie zmienne do FillRectangle
 
+
+
+// UWAGI - część druga:
+// Z metody Test możesz spokojnie usunąć:
+// CellLifeState[,] tempLifeState = new CellLifeState[generat.line, generat.sing];
+// oraz pętlę przepisującą elementy z lifeState do tempLifeState
+// Metoda ReadyToFlow, WaitAsync, oraz Wait także nie potrzebuje argumentu tempLifeState. Argument zostaje tylko w metodzie Movement
+// To jest tylko tymczasowa tablica i możesz ją sobie spokojnie stworzyć w metodzie ReadyToFlow w taki sposób:
+// var tempLifeState = new CellLifeState[lifeState.GetLength(0), lifeState.GetLength(1)];
+// ... ale UWAGA - tę tablicę musisz tworzyć nie na początku metody ReadyToFlow tylko w środku pętli for(; ; ) na samym początku - dzięki temu każdy kolejny krok przeliczający
+// nowe stany komórek będzie otrzymywał nową tablicę, w której zostaną umieszczone nowe stany i nigdy podczas ustalania nowych stanów nie dojdzie do sytujacji,
+// w której referencja do lifeState będzie równa referencji do tempLifeState. Gdybyś to zrobił na początku metody ReadyToFlow to w pierwszym przebiegu for(; ; ) wszystko będzie okej
+// ale już w drugim referencja do lifeState będzie taka sama jak tempLifeState i wrócisz do sytuacji, w której miałeś jedną tablicę, a nie dwie.
+// Czyli tempLifeState to jest za każdym krokiem nowa dwuwymiarowa tablica. Wyjaśniając: lifeState.GetLength(0) pobiera rozmiar pierwszego wymiaru tablicy lifeState,
+// a lifeState.GetLength(1) pobiera rozmiar drugiego wymiaru tablicy lifeState.
+// Dzięki temu utworzysz tempLifeState takich samych rozmiarów co lifeState.
+// I teraz spokojnie możesz wywalić tę pętlę przepisującą z tempLifeState do lifeState a zamaist tego dać lifeState = tempLifeState.
+// Czyli w metodzie ReadyToFlow w głównej pętli for(; ; ) to będzie miało teraz taki przepływ:
+// 1. tworzysz nową tablicę tempLifeState
+// 2. w pętli w pętli przy pomocy metody Movement do tablicy tempLifeState wpisujesz nowe stany komórek - czyli dokładnie tak jak masz teraz
+// 3. do zmiennej lifeState przypisujesz tablicę referowaną przez zmienną tempLifeState (lifeState = tempLifeState) - no bo referencja do starych stanów jest nam już teraz niepoptrzebna więc można to nadpisać nowymi stanami.
+// Ale jak tak to przerobisz to jeszcze nie będzie działać z jednego powodu:
+// Bo domyślnie taka nowa tablica tempLifeState jest zainicjalizowana pierwszą wartością z enuma, a ta wartość to jest Alive,
+// więc trzeba zadbać w metodzie Movement żeby w każdym przypadku nadpisać komórkę z tempLifeState i u Ciebie wiele do tego nie brakuje, a konkretnie brakuje jednego else:
+// Zamiast:
+// if (lifeState[i, a] == CellLifeState.Dead)
+// {
+//    if (neighborAlive == 3) { tempLifeState[i, a] = CellLifeState.Alive; }
+// }
+// Powinno być:
+// if (lifeState[i, a] == CellLifeState.Dead)
+// {
+//    if (neighborAlive == 3) { tempLifeState[i, a] = CellLifeState.Alive; } else { tempLifeState[i, a] = CellLifeState.Dead; }
+// }
+
+
 namespace Reloaded.Tasks.Task22
 {
     public class TaskClass22
