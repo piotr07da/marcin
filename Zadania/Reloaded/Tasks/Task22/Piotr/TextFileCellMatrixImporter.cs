@@ -2,9 +2,9 @@
 {
     public class TextFileCellMatrixImporter
     {
-        public CellMatrix Import(string[] lines)
+        public CellMatrix Import(string[] lines, CellMatrixOverflowPolicy overflowPolicy)
         {
-            var matrix = new CellMatrix(lines[0].Length, lines.Length); // szerokość to długość zerowej linijki, wysokość to liczba linijek
+            var matrix = new CellMatrix(lines[0].Length, lines.Length, overflowPolicy); // szerokość to długość zerowej linijki, wysokość to liczba linijek
 
             for (var x = 0; x < matrix.Width; ++x)
             {

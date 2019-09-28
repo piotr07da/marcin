@@ -123,6 +123,7 @@
     <Compile Include="Tasks\Task22\Importer.cs" />
     <Compile Include="Tasks\Task22\Piotr\CellMatrix.cs" />
     <Compile Include="Tasks\Task22\Piotr\CellMatrixDrawer.cs" />
+    <Compile Include="Tasks\Task22\Piotr\ConwaysGameOfLife.cs" />
     <Compile Include="Tasks\Task22\Piotr\TaskClass22piotr.cs" />
     <Compile Include="Tasks\Task22\Piotr\TextFileCellMatrixImporter.cs" />
     <Compile Include="Tasks\Task22\TaskClass22.cs" />

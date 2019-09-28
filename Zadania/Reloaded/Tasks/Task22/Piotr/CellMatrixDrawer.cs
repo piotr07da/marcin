@@ -15,11 +15,12 @@ namespace Reloaded.Tasks.Task22.Piotr
 
         public void Draw(CellMatrix matrix)
         {
+            _g.Clear(Color.Black);
             DrawFilledRect(0, 0, matrix.Width * 5, matrix.Height * 5, Color.LightGray);
 
             for (var x = 0; x < matrix.Width; ++x)
             {
-                for (var y = 0; y < matrix.Width; ++y)
+                for (var y = 0; y < matrix.Height; ++y)
                 {
                     var state = matrix.GetCellLifeState(x, y);
                     if (state == CellLifeState.Alive)
