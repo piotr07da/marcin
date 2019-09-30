@@ -315,3 +315,27 @@ Zasady ogólne
 	2) Dyski powinny odbijać się także od siebie. Mówimy tutaj o zderzeniu idealnie sprężystym czyli energia kinetyczna nie jest w żaden sposób pochłaniana podczas zderzenia. Przyjmijmy, że dyski mają masę proporcjonalną do ich rozmiaru.
 	3) Tak zmodyfikuj kod żeby dyski otrzymywały losową gęstość materiału z zakresu od 4g/cm^3 do 16g/cm^3. Gęstość materiału powinna być reprezentowana kolorem dysku - np. 4g/cm^3 to kolor zielony, a 16g/cm^ to kolor czerwony - wszystko pomiędzy ma wynikać z liniowego gradientu pomiędzy tymi kolorami.
 	   Masa dysków powinna wynikać z gęstości i rozmiaru dysku. Przyjmij, że jeden pixel na ekranie reprezentuje jeden centymetr. Przyjmij, że wszystkie dyski mają grubość 2cm.
+
+24. W trybie graficznym narysuj prostokąt o losowej szerokości i wysokości tak jak w zadaniu 23. Spraw aby na górze prostokąta czyli na długości całej górnej krawędzi pojawiały się małe białe kółka. Kółka mają opadać na dół imitując padający śnieg.
+    Podzadania:
+	1) Spraw żeby niektóre płatki śniegu opadały nieco szybciej, a inne nieco wolniej.
+	2) Spraw żeby płatki delikatnie dryfowały losowo lewo/prawo.
+	3) Spraw żeby wduszenie strzałki w lewo generowało wiatr wiejący z prawej do lewej, a strzałki w prawo z lewej do prawej.
+	   Kolejne wduszenie strzałki w tym samym kierunku powinno zwięszyć siłę wiatru - niech to będą 3 stopnie siły wiatru w każdym kierunku czyli: mocny lewy, średni lewy, słaby lewy, brak, słaby prawy, średni prawy, mocny prawy.
+	4) Spraw żeby wiatr, niektóre płatki porywał nieco mocniej niż inne - tzn. żeby nie było takiego nienaturalnego efektu, że wszystkie lecą z identyczną prędkością - niech będą minimalne róznice.
+
+25. Przygotuj kilka plików tekstowych z długim tekstem w kilku różnych językach - ściągnij choćby z wikipedii.
+    Napisz program, który poprosi o podanie ścieżki do katalogu z tymi plikami. 
+	Nazwy plików niech będą w formacie text.{culture}.txt czyli np.:
+	text.pl-PL.txt
+	text.en-US.txt
+	text.zh-HK.txt
+	Warto poczytać co to jest kultura (culture). Np. tutaj jest wykaz kultur http://www.codedigest.com/CodeDigest/207-Get-All-Language-Country-Code-List-for-all-Culture-in-C---ASP-Net.aspx
+	albo tutaj o klasie CultureInfo https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8 - jak widać w tym linku też jest kultura zaraz po docs.microsoft.com jest en-us.
+	W skrócie to jest taki format, który reprezentuje język i kraj. Np. en-US (angielski - Stany Zjednoczone), en-GB (angielski - Wielka Brytania), zh-HK (chiński, Hongkong). Od kultury zależy potem wyświetalnie daty, waluty, format liczb - np. w Polsce separatorem dziesiętnym jest przecinek, a w stanach kropka itd.
+	Do tego zadania jest Ci to zupełnie niepotrzebne ale tak tylko piszę żeby słowo kultura nie dziwiło ;)
+	Wracając do zadania - program ma wczytać wszystkie pliki ze wskazanego katalogu.
+	Ma utworzyć listę, a w liście ma przechowywać statystyki języka dla każdego kraju - przyda się więc klasa CultureLanguageStatistics.
+	I teraz o jakie statystyki chodzi - chciałbym mieć w nich informację ile było wystąpień każdego znaku. Chciałbym żeby te znaki były posortowane wedle liczby wystąpień od najczęściej występującego znaku do najrzadziej występującego.
+	Chciałbym dla każdego znaku mieć informację o ile rzadziej wystąpił od swojego częstszego sąsiada i o ile częściej wystąpił od swojego rzadszego sąsiada. Chciałbym też wiedzieć procentowo jaki stanowi udział w całym tekście.
+	No i takie statystyki niech się pokaża na ekranie dla każdego języka dla pierwszych czeterech najczęstszych znaków w każdym z języków.
