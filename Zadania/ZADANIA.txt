@@ -306,3 +306,12 @@ Zasady ogólne
 	8) Zaimplementuj zasady życia z punktu 7) oraz pętlę, w której będą liczone nowe stany tak aby uzyskać efekt taki jak w glider.gif (oczywiście bez efektu przesuwania układu współrzędnych czyli jak glider doleci do krawędzi to trudno. Układ współrzędnych pozostaje statyczny).
 	9) Stwórz więcej plików tekstowych ze stanami początkowymi - spaceship.txt, glider.txt i inne wymyślone przez siebie.
    10) Potestuj program.
+
+23. W trybie graficznym narysuj duży prostokąt - rozmiar prostokąta ma być losowy w jakimś zakresie - np. szerokość pomiędzy 400, a 600, wysokość pomiędzy 200, a 300. W środku prostokąta ma być koło o losowej średnicy pomiędzy 10, a 40
+    i losowej pozycji w obrębie prostokąta - musi mieścić się całe i mieć margines od krawędzi prostokąta conajmniej 20. Koło ma się poruszać z jakąś sensowną losową prędkością - sam przyjmij w jakim zakresie. Podczas dotknięcia krawędzi prostokąta koło ma się odbijać symetrycznie
+	tak jak kula bilardowa od krawędzi stołu. Przyjmujemy odbicie idealnie elastyczne czyli energia kinetyczna nie jest wytracana. Brak tarcia.
+	Podzadania:
+	1) Zamiast jednego koła (dysku) powinno pojawić się 5 dysków
+	2) Dyski powinny odbijać się także od siebie. Mówimy tutaj o zderzeniu idealnie sprężystym czyli energia kinetyczna nie jest w żaden sposób pochłaniana podczas zderzenia. Przyjmijmy, że dyski mają masę proporcjonalną do ich rozmiaru.
+	3) Tak zmodyfikuj kod żeby dyski otrzymywały losową gęstość materiału z zakresu od 4g/cm^3 do 16g/cm^3. Gęstość materiału powinna być reprezentowana kolorem dysku - np. 4g/cm^3 to kolor zielony, a 16g/cm^ to kolor czerwony - wszystko pomiędzy ma wynikać z liniowego gradientu pomiędzy tymi kolorami.
+	   Masa dysków powinna wynikać z gęstości i rozmiaru dysku. Przyjmij, że jeden pixel na ekranie reprezentuje jeden centymetr. Przyjmij, że wszystkie dyski mają grubość 2cm.
