@@ -92,27 +92,18 @@ namespace Reloaded.Tasks.Task22
             generat.ShowStatistics(text);
 
             CellLifeState[,] lifeState = new CellLifeState[generat.line, generat.sing];
-            CellLifeState[,] tempLifeState = new CellLifeState[generat.line, generat.sing];
-
+           
             Console.ReadKey();
             Console.Clear();
             impor.ImportCellMatrix(text, lifeState);
 
-            //tempLifeState = lifeState;
-            for (int i = 0; i < generat.line; i++)
-            {
-                for (int a = 0; a < generat.sing; a++)
-                {
-                    tempLifeState[i, a] = lifeState[i, a];
-                }
-            }
-
+            
 
             DrawCellMatrix(lifeState);
 
             Console.ReadKey();
 
-            Wait(lifeState, tempLifeState);
+            Wait(lifeState);
         }
         private void DrawCellMatrix(CellLifeState[,] lifeState)
         {
@@ -140,7 +131,7 @@ namespace Reloaded.Tasks.Task22
             }
            
         }
-        private void Movement(int i, int a,CellLifeState[,] lifeState,CellLifeState[,] tempLifeState )
+        private void Movement(int i, int a,CellLifeState[,] lifeState,CellLifeState[,] tempLifeState)
         {
            
             int neighborAlive = 0;
@@ -161,7 +152,7 @@ namespace Reloaded.Tasks.Task22
 
             if (lifeState[i, a] == CellLifeState.Dead)
             {
-                if (neighborAlive == 3) { tempLifeState[i, a] = CellLifeState.Alive; }
+                if (neighborAlive == 3) { tempLifeState[i, a] = CellLifeState.Alive; } else { tempLifeState[i, a] = CellLifeState.Dead; }
             }
 
             if (lifeState[i, a] == CellLifeState.Alive)
@@ -173,39 +164,34 @@ namespace Reloaded.Tasks.Task22
                 else { tempLifeState[i, a] = CellLifeState.Alive; }
             }
         }
-        private void ReadyToFlow(CellLifeState[,] lifeState,CellLifeState[,] tempLifeState )
+        private void ReadyToFlow(CellLifeState[,] lifeState )
         {
              for (; ; )
             {
+                var tempLifeState = new CellLifeState[lifeState.GetLength(0), lifeState.GetLength(1)];
                 for (int i = 0; i < generat.line; i++)
                 {
                     for (int a = 0; a < generat.sing; a++)
                     {
-                        Movement(i,a,lifeState, tempLifeState);
+                        Movement(i,a,lifeState,tempLifeState);
                        
                     }
                 }
 
-                //lifeState = tempLifeState;
-                for (int i = 0; i < generat.line; i++)
-                {
-                    for (int a = 0; a < generat.sing; a++)
-                    {
-                        lifeState[i, a] = tempLifeState[i, a];
-                    }
-                }
+                lifeState = tempLifeState;
+               
                 //Thread.Sleep(100);
                 DrawCellMatrix(lifeState);
             }
         }
-        public async Task WaitAsync(CellLifeState[,] lifeState, CellLifeState[,] tempLifeState )
+        public async Task WaitAsync(CellLifeState[,] lifeState)
         {           
-            await Task.Run(() => ReadyToFlow(lifeState, tempLifeState));
+            await Task.Run(() => ReadyToFlow(lifeState));
            
         }
-        private void Wait(CellLifeState[,] lifeState, CellLifeState[,] tempLifeState)
+        private void Wait(CellLifeState[,] lifeState)
         {
-            WaitAsync(lifeState, tempLifeState);
+            WaitAsync(lifeState);
             Console.ReadKey();
         }
 

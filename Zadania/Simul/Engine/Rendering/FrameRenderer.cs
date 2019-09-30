@@ -9,11 +9,13 @@ namespace Simul.Engine.Rendering
     {
         private IComponent _owner;
         private double _width;
+        private double _height;
         private readonly IMainCanvasProvider _mainCanvasProvider;
 
         public FrameRenderer(double width, double height, IMainCanvasProvider mainCanvasProvider)
         {
             _width = width;
+            _height = height;
             _mainCanvasProvider = mainCanvasProvider;
         }
 
@@ -29,7 +31,7 @@ namespace Simul.Engine.Rendering
                 var rect = new Rectangle()
                 {
                     Width = _width,
-                    Height = _width,
+                    Height = _height,
                     Stroke = new SolidColorBrush(Colors.Blue),
                     StrokeThickness = 2,
                 };
@@ -38,7 +40,7 @@ namespace Simul.Engine.Rendering
 
                 var p = _owner.Transform.Position;
                 Canvas.SetLeft(rect, p.X - _width / 2.0);
-                Canvas.SetTop(rect, p.Y - _width / 2.0);
+                Canvas.SetTop(rect, p.Y - _height / 2.0);
             });
         }
     }

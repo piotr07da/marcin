@@ -6,7 +6,7 @@ namespace Simul.Engine
 {
     public class Runner
     {
-        private const double FixedDeltaTime = 0.250;
+        private const double FixedDeltaTime = (1000.0/60/1000);
 
         private readonly IMainCanvasProvider _mainCanvasProvider;
         private bool _stopRequested;

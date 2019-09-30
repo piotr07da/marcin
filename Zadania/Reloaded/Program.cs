@@ -41,6 +41,8 @@ using Reloaded.Tasks.Task20;
 using System.Diagnostics;
 using Reloaded.Tasks.Task21;
 using Reloaded.Tasks.Task22;
+using Reloaded.Tasks.Task22.Piotr;
+using Reloaded.Tasks.Task23;
 
 
 // test
@@ -96,8 +98,8 @@ namespace Reloaded
             //var task21 = new TaskClass21();
             //task21.Test();
 
-            var task22 = new TaskClass22();
-            task22.Test();
+            var task23 = new TaskClass23();
+            task23.Test();
 
 
 

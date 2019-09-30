@@ -127,6 +127,9 @@
     <Compile Include="Tasks\Task22\Piotr\TaskClass22piotr.cs" />
     <Compile Include="Tasks\Task22\Piotr\TextFileCellMatrixImporter.cs" />
     <Compile Include="Tasks\Task22\TaskClass22.cs" />
+    <Compile Include="Tasks\Task23\Circle.cs" />
+    <Compile Include="Tasks\Task23\Drawing.cs" />
+    <Compile Include="Tasks\Task23\TaskClass23.cs" />
     <Compile Include="Tasks\Task2\TaskClass2.cs" />
     <Compile Include="Tasks\Task3\TaskClass3.cs" />
     <Compile Include="Tasks\Task4\TaskClass4.cs" />
@@ -168,6 +171,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
