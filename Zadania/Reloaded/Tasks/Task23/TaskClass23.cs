@@ -12,39 +12,50 @@ namespace Reloaded.Tasks.Task23
 
         public void Test()
         {
-            Random random = new Random();
+            List<Circle> circList = new List<Circle>();
 
+            Random random = new Random();
+                       
             var circle1 = new Circle();
+            var circle2 = new Circle();
+            var circle3 = new Circle();
+            var circle4 = new Circle();
+            var circle5 = new Circle();
+
+            circList.Add(circle1);
+            circList.Add(circle2);
+            circList.Add(circle3);
+            circList.Add(circle4);
+            circList.Add(circle5);
 
             var draw = new Drawing();
 
             int width = random.Next(400, 600);
             int height = random.Next(200, 300);
+            int delay = random.Next(5, 10);
 
             int x = 100;
             int y = 100;
 
             draw.DrawRect(width, height, x, y);
 
-           
+            foreach (var item in circList)
+            {
+                item.Start(item, width, height,circList);
+                Thread.Sleep(25);
+            }
+
             for (; ; )
             {
-                circle1.Radius = random.Next(5, 20);
-
-                CircleStart(circle1, width, height);
-
-                draw.DrawCirc(circle1);
-
-                //Thread.Sleep(10);
-
-                Console.ReadKey();
+                foreach (var item in circList)
+                {
+                    item.Move(item, width, height, circList);
+                    Thread.Sleep(delay);
+                }
+                            
             }
+
         }
-        private void CircleStart(Circle circle1, int width, int height)
-        {
-            Random random = new Random();
-            circle1.CircleX = random.Next(120, width + 100 - 20 - circle1.Radius*2);
-            circle1.CircleY = random.Next(120, height + 100 - 20 - circle1.Radius*2);
-        }
+       
     }
 }

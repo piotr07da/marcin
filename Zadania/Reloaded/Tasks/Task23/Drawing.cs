@@ -10,27 +10,33 @@ namespace Reloaded.Tasks.Task23
 {
     public class Drawing
     {
+        private readonly Graphics _graph;
+        public Drawing()
+        {
+            var hwnd = Process.GetCurrentProcess().MainWindowHandle;
+            _graph = Graphics.FromHwnd(hwnd);
+        }
 
         public void DrawRect(int width, int height, int x, int y)
         {
-            var hwnd = Process.GetCurrentProcess().MainWindowHandle;
-            var graph = Graphics.FromHwnd(hwnd);
+            _graph.Clear(Color.Black);
 
             var blueBrush = new SolidBrush(Color.Blue);
 
             var bluePen = new Pen(blueBrush);
 
-            graph.DrawRectangle(bluePen, new Rectangle(new Point(x, y), new Size(width, height)));
+            _graph.DrawRectangle(bluePen, new Rectangle(new Point(x, y), new Size(width, height)));
 
         }
-        public void DrawCirc(Circle circle1)
+        public void DrawCirc(Circle circle)
         {
-            
-            var hwnd = Process.GetCurrentProcess().MainWindowHandle;
-            var graph = Graphics.FromHwnd(hwnd);
-
             var redBrush = new SolidBrush(Color.Red);
-            graph.FillPie(redBrush, circle1.CircleX, circle1.CircleY, circle1.Radius,circle1.Radius,0,360);
+            _graph.FillEllipse(redBrush, circle.X, circle.Y, circle.Diameter,circle.Diameter);
+        }
+        public void DelCirc(Circle circle1)
+        {
+            var blackBrush = new SolidBrush(Color.Black);
+            _graph.FillEllipse(blackBrush, circle1.BackX, circle1.BackY, circle1.Diameter, circle1.Diameter);
         }
        
     }
