@@ -42,6 +42,8 @@ namespace Reloaded.Examples
             // Rysujemy linie, zobacz co znaczy, który parametr.
             g.DrawLine(purplePen, 0, 10, 400, 200);
 
+            g.DrawEllipse(purplePen, 150, 180, 50, 30);
+
             Console.ReadKey();
         }
 

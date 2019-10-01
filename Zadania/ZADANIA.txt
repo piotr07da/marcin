@@ -315,6 +315,9 @@ Zasady ogólne
 	2) Dyski powinny odbijać się także od siebie. Mówimy tutaj o zderzeniu idealnie sprężystym czyli energia kinetyczna nie jest w żaden sposób pochłaniana podczas zderzenia. Przyjmijmy, że dyski mają masę proporcjonalną do ich rozmiaru.
 	3) Tak zmodyfikuj kod żeby dyski otrzymywały losową gęstość materiału z zakresu od 4g/cm^3 do 16g/cm^3. Gęstość materiału powinna być reprezentowana kolorem dysku - np. 4g/cm^3 to kolor zielony, a 16g/cm^ to kolor czerwony - wszystko pomiędzy ma wynikać z liniowego gradientu pomiędzy tymi kolorami.
 	   Masa dysków powinna wynikać z gęstości i rozmiaru dysku. Przyjmij, że jeden pixel na ekranie reprezentuje jeden centymetr. Przyjmij, że wszystkie dyski mają grubość 2cm.
+	UWAGA - złośliwy trol w dowolnym momencie może sobie zażyczyć:
+	- zmiany marginesu z 20 na dowolną inną wartość ;)
+	- zmiany odsunięcia prostokąta od początku układu współrzędnych z punktu (100,100) na dowolną inną pozycję
 
 24. W trybie graficznym narysuj prostokąt o losowej szerokości i wysokości tak jak w zadaniu 23. Spraw aby na górze prostokąta czyli na długości całej górnej krawędzi pojawiały się małe białe kółka. Kółka mają opadać na dół imitując padający śnieg.
     Podzadania:
