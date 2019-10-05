@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
+using System.Drawing;
 
 namespace Reloaded.Tasks.Task23
 {
@@ -11,81 +11,88 @@ namespace Reloaded.Tasks.Task23
     public class Circle
     {
         private const int margin = 20;
-        int weight = 50;
+        private const int discFat = 2;
+       
         private readonly Random _random;
-        
 
-        public Circle()
+
+        public Circle(Random random)
         {
-            //MoveX = 2;
-            //MoveY = 1;
-            _random = new Random();
+           
+            _random = random;
 
         }
         public Drawing draw = new Drawing();
 
-        //public int RX { get; set; }
-        //public int RY { get; set; }
-        public  int MoveX { get; set; }
-        public  int MoveY { get; set; }        
+        
+        public Vector Back { get; set; }
+        public Vector Position { get; set; }
+        public Vector MoveDistance { get; set; }
+        public int Density { get; set; }
         public int Diameter { get; set; }
-        public int X { get; set; }
-        public int BackX { get; set; }
-        public int BackY { get; set; }
-        public int Y { get; set; }        
+        public double Weight { get; set; }
+        public Color Color { get; set; }
+         
 
-        public void Start(Circle circle, int width, int height,List<Circle> circlList,int x, int y)
+        public void Start(Circle circle, int width, int height, List<Circle> circlList, int x, int y)
         {
-            bool colision=false;
-            Random random = new Random();
+            bool colision = false;
+           
+
 
             for (; ; )
-            {                
-                circle.Diameter = random.Next(10, 40);
-                circle.X = random.Next(x+margin, width + x-margin - circle.Diameter);
-                circle.Y = random.Next(y+margin, height + y-margin - circle.Diameter);
+            {
+                
+                circle.Diameter = _random.Next(10, 40);
+                circle.Density = _random.Next(4, 16);
+                int r = 255 / 16 *circle.Density ;
+                int g = 255 -r;
+                circle.Position = new Vector();
+                circle.Position.X = _random.Next(x + margin, width + x - margin - circle.Diameter);
+                circle.Position.Y = _random.Next(y + margin, height + y - margin - circle.Diameter);
+                circle.Weight = (Math.PI * Math.Pow(circle.Diameter / 2, 2) * discFat)*circle.Density;
+                circle.Color = (Color.FromArgb(r, g, 0));
 
                 foreach (var item in circlList)
-                {   if (circle != item)
+
+                {
+                    
+                    if (circle != item)
                     {
-                        if (!(ColisionObject(circle, item))) {colision =false ; }
+                        if (!(ColisionObject(circle, item))) { colision = false; }
                     }
-                   
+
                 }
                 if (!(colision)) { break; }
-                //Thread.Sleep(10);
+              
             }
-           
+
 
             draw.DrawCirc(circle);
 
-            circle.MoveX = random.Next(1, 5);
-            Thread.Sleep(20);
-            circle.MoveY = random.Next(1, 5);
-            Thread.Sleep(20);
+            circle.MoveDistance = new Vector();
+            circle.MoveDistance.X = _random.Next(1, 5);
+            
+            circle.MoveDistance.Y = _random.Next(1, 5);
+           
 
 
 
         }
-        public void Move(Circle circle, int width, int height, List<Circle> circList,int x,int y)
+        public void Move(Circle circle, double width, double height, List<Circle> circList, double x, double y)
         {
-           
-            circle.BackX = circle.X;
-            circle.BackY = circle.Y;
+
+            circle.Back = new Vector(circle.Position);
 
             Colision(circle, circList);
 
-            if (circle.X >= x-circle.MoveX + width - circle.Diameter) {  circle.MoveX = -circle.MoveX; }
-            if (circle.X <= x-circle.MoveX) { circle.MoveX = -circle.MoveX; }
-            if (circle.Y >= y-circle.MoveY + height - circle.Diameter) { circle.MoveY = -circle.MoveY; }
-            if (circle.Y <= y-circle.MoveY) { circle.MoveY = -circle.MoveY; }
+            if (circle.Position.X >= x - circle.MoveDistance.X + width - circle.Diameter) { circle.MoveDistance.X = -circle.MoveDistance.X; }
+            if (circle.Position.X <= x - circle.MoveDistance.X) { circle.MoveDistance.X = -circle.MoveDistance.X; }
+            if (circle.Position.Y >= y - circle.MoveDistance.Y + height - circle.Diameter) { circle.MoveDistance.Y = -circle.MoveDistance.Y; }
+            if (circle.Position.Y <= y - circle.MoveDistance.Y) { circle.MoveDistance.Y = -circle.MoveDistance.Y; }
 
-           
-            circle.X = circle.X + circle.MoveX;
-            circle.Y = circle.Y + circle.MoveY;
+            circle.Position = circle.Position + circle.MoveDistance;
 
-
-                        
             draw.DelCirc(circle);
             draw.DrawCirc(circle);
 
@@ -96,46 +103,56 @@ namespace Reloaded.Tasks.Task23
             {
                 if (circle != item)
                 {
-                    //ColisionObject(circle, item);
+                   
 
-                    if (ColisionObject(circle,item))
+
+
+
+                    if (ColisionObject(circle, item))
                     {
-                        //circle.MoveX = -circle.MoveX;
-                        //circle.MoveY = -circle.MoveY;
-                        //item.MoveX = -item.MoveX;
-                        //item.MoveY = -item.MoveY;
+                        
 
-                        var v = new VectorMath();
+                        circle.MoveDistance = NewMoveDistance(circle, item);
 
-                        var v1 = new Vector(circle.MoveX, circle.MoveY);
-                        var v2 = new Vector(item.MoveX, item.MoveY);
+                        item.MoveDistance = NewMoveDistance(item, circle);
 
-                        var x1 = new Vector(circle.X, circle.Y);
-                        var x2 = new Vector(item.X, item.Y);
 
-                        int weights = (2 * item.Diameter) / (circle.Diameter + item.Diameter);
-                        int weights2 = (2 * circle.Diameter) / (circle.Diameter + item.Diameter);
-                        double patatajnia = (v.DotProduct(v.VectorSub(v1, v2), v.VectorSub(x1, x2)) / ((v.Lenght(v.VectorSub(x1, x2))) * (v.Lenght(v.VectorSub(x1, x2)))));
-                        double patatajnia2 = (v.DotProduct(v.VectorSub(v2, v1), v.VectorSub(x2, x1)) / ((v.Lenght(v.VectorSub(x2, x1))) * (v.Lenght(v.VectorSub(x2, x1)))));
+                        circle.Position = circle.Position + circle.MoveDistance;
 
-                        v1 = v.VectorSub(v1, v.Mul(v.VectorSub(x1, x2), (weights * patatajnia)));
-                        v2 = v.VectorSub(v2, v.Mul(v.VectorSub(x2, x1), (weights * patatajnia)));
-
-                        circle.MoveX = Convert.ToInt32(v1.VX);
-                        circle.MoveY = Convert.ToInt32(v1.VY);
-                        item.MoveX = Convert.ToInt32(v2.VX);
-                        item.MoveY = Convert.ToInt32(v2.VY);
+                        draw.DelCirc(circle);
+                        draw.DrawCirc(circle);
                     }
                 }
             }
         }
-        private bool ColisionObject(Circle circle,Circle item)
+        private bool ColisionObject(Circle circle, Circle item)
         {
-            if ((circle.X < item.X + item.Diameter && circle.X + circle.Diameter > item.X) && (circle.Y < item.Y + item.Diameter && circle.Y + circle.Diameter > item.Y))
+            var v = new VectorMath();
+            if (v.Lenght(v.VectorSub(circle.Position, item.Position)) < (circle.Diameter / 2 + item.Diameter / 2))
             {
                 return true;
             }
             else { return false; }
+        }
+        private Vector NewMoveDistance(Circle c1, Circle c2)
+        {
+            var v = new VectorMath();
+
+            var v1 = c1.MoveDistance;
+            var v2 = c2.MoveDistance;
+
+            var x1 = c1.Position;
+            var x2 = c2.Position;
+
+            double weights = (2.0 * c2.Weight) / (c1.Weight + c2.Weight);
+
+            double patatajnia = (v.DotProduct(v1 - v2, v.VectorSub(x1, x2)) / ((v.Lenght(v.VectorSub(x1, x2))) * (v.Lenght(v.VectorSub(x1, x2)))));
+
+
+            var newMoveDist = v.VectorSub(v1, v.Mul(v.VectorSub(x1, x2), (weights * patatajnia)));
+
+            return newMoveDist;
+
         }
     }
 }

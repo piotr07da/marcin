@@ -47,7 +47,7 @@ namespace Reloaded.Tasks.Task16c
         }
         public double ObliczMiejsceZerowe()
         {
-            return -(A / B);
+            return -(B / A);
         }
     }
 }

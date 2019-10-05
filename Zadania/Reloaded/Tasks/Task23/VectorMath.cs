@@ -12,27 +12,27 @@ namespace Reloaded.Tasks.Task23
         {
             var vector = new Vector();
 
-            vector.VX = a.VX - b.VX;
-            vector.VY = a.VY - b.VY;
+            vector.X = a.X - b.X;
+            vector.Y = a.Y - b.Y;
            
             return vector;
         }
         public double DotProduct(Vector a, Vector b)
         {
-            return a.VX * b.VX + a.VY * b.VY;
+            return a.X * b.X + a.Y * b.Y;
         }
         public double Lenght(Vector a)
         {
-            a.VX = Math.Pow(a.VX,2);
-            a.VY = Math.Pow(a.VY, 2);
+            a.X = Math.Pow(a.X,2);
+            a.Y = Math.Pow(a.Y, 2);
            
-            return Math.Sqrt(a.VX + a.VY);
+            return Math.Sqrt(a.X + a.Y);
         }
         public Vector Mul(Vector a, double factor)
         {
             var vector = new Vector();
-            vector.VX = a.VX * factor;
-            vector.VY = a.VY * factor;
+            vector.X = a.X * factor;
+            vector.Y = a.Y * factor;
            
             return vector;
         }
