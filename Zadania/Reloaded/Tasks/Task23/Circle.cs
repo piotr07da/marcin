@@ -51,7 +51,7 @@ namespace Reloaded.Tasks.Task23
                 circle.Position.X = _random.Next(x + margin, width + x - margin - circle.Diameter);
                 circle.Position.Y = _random.Next(y + margin, height + y - margin - circle.Diameter);
                 circle.Weight = (Math.PI * Math.Pow(circle.Diameter / 2, 2) * discFat)*circle.Density;
-                circle.Color = (Color.FromArgb(r, g, 0));
+                circle.Color = (Color.FromArgb(127,r, g, 0));
 
                 foreach (var item in circlList)
 
