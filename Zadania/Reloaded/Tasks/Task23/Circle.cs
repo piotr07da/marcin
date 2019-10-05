@@ -146,10 +146,10 @@ namespace Reloaded.Tasks.Task23
 
             double weights = (2.0 * c2.Weight) / (c1.Weight + c2.Weight);
 
-            double patatajnia = (v.DotProduct(v1 - v2, v.VectorSub(x1, x2)) / ((v.Lenght(v.VectorSub(x1, x2))) * (v.Lenght(v.VectorSub(x1, x2)))));
+            double patatajnia = (v.DotProduct(v1 - v2, x1 - x2) / ((v.Lenght(x1 - x2)) * (v.Lenght(x1 - x2))));
 
 
-            var newMoveDist = v.VectorSub(v1, v.Mul(v.VectorSub(x1, x2), (weights * patatajnia)));
+            var newMoveDist = v.VectorSub(v1, v.Mul(x1 - x2, (weights * patatajnia)));
 
             return newMoveDist;
 
