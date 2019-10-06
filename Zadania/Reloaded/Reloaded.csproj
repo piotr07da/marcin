@@ -132,6 +132,8 @@
     <Compile Include="Tasks\Task23\TaskClass23.cs" />
     <Compile Include="Tasks\Task23\Vector.cs" />
     <Compile Include="Tasks\Task23\VectorMath.cs" />
+    <Compile Include="Tasks\Task26\TaskClass26a.cs" />
+    <Compile Include="Tasks\Task26\TaskClass26b.cs" />
     <Compile Include="Tasks\Task2\TaskClass2.cs" />
     <Compile Include="Tasks\Task3\TaskClass3.cs" />
     <Compile Include="Tasks\Task4\TaskClass4.cs" />
