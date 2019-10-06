@@ -10,14 +10,15 @@ namespace Reloaded.Tasks.Task24
     public class Snow
     {
         private readonly Random _random;
-
+        private int _wind;
         public Snow()
         {
 
         }
-        public Snow(Random random)
+        public Snow(Random random,int wind)
         {
             _random = random;
+            _wind = wind;
         }
         public Vector Position { get; set; }
         public Vector Move { get; set; }
@@ -40,13 +41,13 @@ namespace Reloaded.Tasks.Task24
             //draw.DSnow(snow, flake);
         }
          
-        public void SMove(Snow snow,int flake,int width,int height,int x,int y,Snow wind)
+        public void SMove(Snow snow,int flake,int width,int height,int x,int y,int _wind)
         {
 
             snow.Back = new Vector();
             snow.Back = snow.Position.CreateCopy();
             snow.Move.X = _random.Next(-2, 2);
-            snow.Move.X = snow.Move.X + wind.Wind;
+            snow.Move.X = snow.Move.X + _wind;
 
             snow.Position = snow.Position + snow.Move;
 

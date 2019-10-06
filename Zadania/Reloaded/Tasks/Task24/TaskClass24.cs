@@ -87,32 +87,34 @@ namespace Reloaded.Tasks.Task24
         private const int x = 100;
         private const int y = 100;
         private const int flake = 10;
+        private int _wind = 0;
 
         public void Test()
         {
-            var wind = new Snow();
+            //var _wind = new Snow();
             var drav = new Draving();
             var random = new Random();
             int width = random.Next(400, 600);
             int height = random.Next(200, 300);
             int space = flake * 3;
-            int quantity = width / space;
-            int quantity2 = height / space;
+            int widthQuantity = width / space;
+            int heightQuantiti = height / space;
             int firstspace = (space) / 2;
-            var snow = new Snow(random);
+            var snow = new Snow(random, _wind);
+            
 
 
             drav.Rect(width, height, x, y);
 
-            Snow[,] flakes = new Snow[quantity2, quantity];
+            Snow[,] flakes = new Snow[heightQuantiti, widthQuantity];
 
             List<Snow> fList = new List<Snow>();
 
-            for (int a = 0; a < quantity2; a++)
+            for (int a = 0; a < heightQuantiti; a++)
             {
 
 
-                for (int i = 0; i < quantity; i++)
+                for (int i = 0; i < widthQuantity; i++)
                 {
                     flakes[a, i] = new Snow();
                     snow.Start(flakes[a, i], firstspace, space, flake, i, x, y, a);
@@ -120,23 +122,25 @@ namespace Reloaded.Tasks.Task24
                 }
             }
 
-            var task = Flurry(quantity, quantity2, snow, flakes, width, height, wind);
+            var task = Flurry(widthQuantity, heightQuantiti, snow, flakes, width, height, _wind);
             for (; ; )
             {
-                if (Console.ReadKey().Key == ConsoleKey.RightArrow)
+                var key = Console.ReadKey().Key;
+
+                if (key == ConsoleKey.RightArrow)
                 {
-                    wind.Wind += 3;
-                    if (wind.Wind > 9) { wind.Wind = 9; }
+                    _wind += 3;
+                    if (_wind > 9) { _wind = 9; }
                 }
-                if (Console.ReadKey().Key == ConsoleKey.LeftArrow)
+                if (key == ConsoleKey.LeftArrow)
                 {
-                    wind.Wind -= 3;
-                    if (wind.Wind < -9) { wind.Wind = -9; }
+                    _wind -= 3;
+                    if (_wind < -9) { _wind = -9; }
                 }
             }
 
         }
-        public async Task Flurry(int quantity, int quantity2, Snow snow, Snow[,] flakes, int width, int height, Snow wind)
+        public async Task Flurry(int quantity, int quantity2, Snow snow, Snow[,] flakes, int width, int height, int _wind)
         {
             await Task.Run(() =>
             {
@@ -149,7 +153,7 @@ namespace Reloaded.Tasks.Task24
                         //Thread.Sleep(2);
                         for (int i = 0; i < quantity; i++)
                         {
-                            snow.SMove(flakes[a, i], flake, width, height, x, y, wind);
+                            snow.SMove(flakes[a, i], flake, width, height, x, y, _wind);
                         }
                     }
                 }
