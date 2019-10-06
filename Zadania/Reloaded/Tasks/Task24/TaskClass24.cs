@@ -143,6 +143,7 @@ namespace Reloaded.Tasks.Task24
             {
                 for (; ; )
                 {
+                    //Thread.Sleep(100);
                     for (int a = 0; a < quantity2; a++)
                     {
                                                                        

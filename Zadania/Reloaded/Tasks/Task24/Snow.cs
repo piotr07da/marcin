@@ -9,8 +9,9 @@ namespace Reloaded.Tasks.Task24
 {
     public class Snow
     {
+        
         private readonly Random _random;
-        private int _wind;
+        
         public Snow()
         {
 
@@ -23,6 +24,7 @@ namespace Reloaded.Tasks.Task24
         public Vector Position { get; set; }
         public Vector Move { get; set; }
         public Vector Back { get; set; }
+        public int GroundSnow { get; set; }
        
        
         Draving draw = new Draving();
@@ -42,7 +44,7 @@ namespace Reloaded.Tasks.Task24
          
         public void SMove(Snow snow,int flakeSize,int width,int height,Wind wind)
         {
-           
+            
             snow.Back = new Vector();
             snow.Back = snow.Position.CreateCopy();
             snow.Move.X = _random.Next(-2, 2);
@@ -66,9 +68,9 @@ namespace Reloaded.Tasks.Task24
                 }
                 else
                 {
-                    if (snow.Position.X > width +  1 - flakeSize)
+                    if (snow.Position.X > width -  1 - flakeSize)
                     {
-                        snow.Position.X = (snow.Position.X % width) ;
+                        snow.Position.X = (snow.Move.X+ snow.Position.X) % width ;
                     }
                     else
                     {
@@ -76,9 +78,10 @@ namespace Reloaded.Tasks.Task24
                     }
 
                 }
-                if (snow.Position.Y > height  - 1 - flakeSize - snow.Move.Y)
+                if (snow.Position.Y > height - 1 - flakeSize - snow.Move.Y - snow.GroundSnow) 
                 {
-                    snow.Position.Y = (snow.Position.Y + snow.Move.Y + flakeSize) % height;
+                    snow.Position.Y = (snow.Position.Y + snow.Move.Y + flakeSize + snow.GroundSnow) % height;
+                    snow.GroundSnow += (6 - Convert.ToInt32(snow.Move.Y));
                 }
             }
            
