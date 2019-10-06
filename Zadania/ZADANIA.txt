@@ -342,3 +342,14 @@ Zasady ogólne
 	I teraz o jakie statystyki chodzi - chciałbym mieć w nich informację ile było wystąpień każdego znaku. Chciałbym żeby te znaki były posortowane wedle liczby wystąpień od najczęściej występującego znaku do najrzadziej występującego.
 	Chciałbym dla każdego znaku mieć informację o ile rzadziej wystąpił od swojego częstszego sąsiada i o ile częściej wystąpił od swojego rzadszego sąsiada. Chciałbym też wiedzieć procentowo jaki stanowi udział w całym tekście.
 	No i takie statystyki niech się pokaża na ekranie dla każdego języka dla pierwszych czeterech najczęstszych znaków w każdym z języków.
+
+26. Przejdź do przygotowanego folderu Task26 z przygotowanymi klasami i zastosuj dobre praktyki programowania.
+    Wszystkie zadania realizuj poprzez skopiowanie klasy z zadania do nowej klasy z przyrostkiem Fixed - np. TaskClass26a - nie zmieniaj tej klasy - skopiuj ją (tzn. cały plik) i zmień nazwę pliku i klasy z TaskClass26a na TaskClass26aFixed - w tej nowej klasie dopiero zrób wersję poprawioną.
+	Dzięki temu będziesz miał porównanie pomiędzy złym, a dobrym kodem.
+    a) TaskClass26a
+	   - Wydziel powielony kod tworzący instancję klasy Person do nowej metody CreatePerson. Zauważ, że obecny powielony kod odpowiedzialny za tworzenie instancji klasy Person ma błąd i z imienia "MaRciN" zamiast zrobić "Marcin" robi "Parcin". 
+	     Przy takim powielaniu kodu o taki błąd bardzo łatwo. Zobacz o ile mniej błędogenny będzie kod po wydzieleniu metody CreatePerson.
+	   - Wydziel powielony kod wyświetlający dane osoby do nowej metody ShowPersonData.
+	b) TaskClass26a
+	   - Wydziel powielony kod metody Calculate
+	   - Zauważ, że po wydzieleniu kodu do metody Calculate w takiej pojedynczej linijce dalej jest fragment kodu, który też jest w ramach takiej jednej linijki powielony - wydziel go do metody o adekwatnej nazwie ;)
