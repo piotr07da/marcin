@@ -59,6 +59,8 @@
     <Compile Include="Examples\ClassMembersExplanation.cs" />
     <Compile Include="Examples\DelegatesExplanation.cs" />
     <Compile Include="Examples\DrawingExample.cs" />
+    <Compile Include="Examples\FieldsAndParametersExample2.cs" />
+    <Compile Include="Examples\FieldsAndParametersExample.cs" />
     <Compile Include="Examples\InterfaceExample.cs" />
     <Compile Include="Examples\PersonExamples.cs" />
     <Compile Include="Examples\PropertyExample.cs" />
