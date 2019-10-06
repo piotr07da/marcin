@@ -43,6 +43,7 @@ using Reloaded.Tasks.Task21;
 using Reloaded.Tasks.Task22;
 using Reloaded.Tasks.Task22.Piotr;
 using Reloaded.Tasks.Task23;
+using Reloaded.Tasks.Task24;
 
 
 // test
@@ -98,10 +99,11 @@ namespace Reloaded
             //var task21 = new TaskClass21();
             //task21.Test();
 
-            var task23 = new TaskClass23();
-            task23.Test();
+            //var task23 = new TaskClass23();
+            //task23.Test();
 
-
+            var task24 = new TaskClass24();
+            task24.Test();
 
 
             //var taskAsyncClass = new TaskAsyncClass();
