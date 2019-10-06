@@ -70,8 +70,12 @@ using System.Threading;
 //     var boxArea = width * height;
 //     a potem ustalić rozmiar tablicy jako boxArea podzielone przez jakąś stałą.
 //     Oczywiście to co napisałem wyżej rozwala ten Twój kawałek kodu, który wywołuje metodę Start i przekazuje tam "i" do środka.
-//     Rozumiem o co chodzi w tym kawałku kodu - o równomierne rozmieszczenie płatków. Ale możesz ten same efekt uzyskać poprzez zwyczajne losowanie pozycji na osi X
+//     Rozumiem o co chodzi w tym kawałku kodu - o równomierne rozmieszczenie płatków. Ale możesz ten sam efekt uzyskać poprzez zwyczajne losowanie pozycji na osi X
 //     przy pomocy _random - po prostu to musi być losowanie z zakresu od 0 do width i przy odpowiedniej liczbie płatków rozkład i tak będzie równomierny.
+//     No, a w osi Y to powinna być losowana pozycja od -height to 0.
+//     Bo z tego co widzę Twój kod dokładnie to teraz realizuje - tzn rozlosowuje płatki w pudełku leżącym tak jakby powyżej głównego pudełka i one zaczynają spadać,
+//     a jak ich pozycja Y zaczyna wkraczać w normalne pudełko to dopiero wtedy się pojawiają.
+//     Czyli to co proponuję powinno zadziałać czyli dla każego płatka pozycja X to jest random między 0, a width, a pozycja Y to jest random pomiędzy -height, a 0.
 //
 //  7. fList - to jest do wywalenia bo nie pełni żadnej funkcji - do nieczego to nie służy
 
