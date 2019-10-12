@@ -44,6 +44,7 @@ using Reloaded.Tasks.Task22;
 using Reloaded.Tasks.Task22.Piotr;
 using Reloaded.Tasks.Task23;
 using Reloaded.Tasks.Task24;
+using Reloaded.Tasks.Task25;
 
 
 // test
@@ -102,13 +103,15 @@ namespace Reloaded
             //var task23 = new TaskClass23();
             //task23.Test();
 
-            var task24 = new TaskClass24();
-            task24.Test();
+            //var task24 = new TaskClass24();
+            //task24.Test();
 
 
             //var taskAsyncClass = new TaskAsyncClass();
             //taskAsyncClass.TestWithCancellationToken();
 
+            var task25 = new TaskClass25();
+            task25.Test();
         }
     }
 
