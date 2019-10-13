@@ -4,6 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// UWAGI:
+// 1. Coś tu nie pasuje - jeżeli spacja występuje 4826 razy, a litera "a" występuje 1682 razy to znaczy, że spacja występuje 2.87 razy więcej niż "a".
+//    " " 4826 razy, o 3144 razy wiecej niz "a"
+//    "a" 1682 razy, o 93 razy wiecej niz "e" i o 3144 razy mniej niz " "
+//    "e" 1589 razy, o 85 razy wiecej niz "i" i o 93 razy mniej niz "a"
+//    "i" 1504 razy, o 178 razy wiecej niz "o" i o 85 razy mniej niz "e"
+// 2. Zmieniam zasady - chcę widzieć nie 4 najczęstsze znaki tylko wszystkie ;) DRY ;P
+// 3. Zmieniam zasady - chcę żeby program obsługiwał każdą możliwą kulturę :) nie ważne ile będzie plików o nazwie text.##-##.txt to chcę żeby się wyśtwietlały wszystki - czyli jak nie ma plików to wyświetli się informacja, że nie ma plików,
+//    a jak jest jeden plik to wyświetlą się statystki tylko dla jednego, a jak jest 100 plików to wyświetlą się dane dla wszystkich stu.
+
 namespace Reloaded.Tasks.Task25
 {
     public class CultureLanguageStatistics
