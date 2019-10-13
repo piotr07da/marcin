@@ -45,6 +45,6 @@ namespace Reloaded.Tasks.Task27
             Console.WriteLine("...............................");
         }
 
-        
+
     }
 }
