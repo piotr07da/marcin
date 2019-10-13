@@ -45,7 +45,7 @@ namespace Reloaded.Tasks.Task24
         public void SMove(Snow snow,int flakeSize,int width,int height,Wind wind)
         {
             
-            snow.Back = new Vector();
+            //snow.Back = new Vector();
             snow.Back = snow.Position.CreateCopy();
             snow.Move.X = _random.Next(-2, 2);
             snow.Move.X = snow.Move.X + wind.Strength;
@@ -81,7 +81,7 @@ namespace Reloaded.Tasks.Task24
                 if (snow.Position.Y > height - 1 - flakeSize - snow.Move.Y - snow.GroundSnow) 
                 {
                     snow.Position.Y = (snow.Position.Y + snow.Move.Y + flakeSize + snow.GroundSnow) % height;
-                    snow.GroundSnow += (6 - Convert.ToInt32(snow.Move.Y));
+                    snow.GroundSnow += 6 - Convert.ToInt32(snow.Move.Y);
                 }
             }
            
