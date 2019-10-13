@@ -136,6 +136,7 @@
     <Compile Include="Tasks\Task23\VectorMath.cs" />
     <Compile Include="Tasks\Task24\Wind.cs" />
     <Compile Include="Tasks\Task26\TaskClass26a.cs" />
+    <Compile Include="Tasks\Task26\TaskClass26c.cs" />
     <Compile Include="Tasks\Task26\TaskClass26b.cs" />
     <Compile Include="Tasks\Task24\Draving.cs" />
     <Compile Include="Tasks\Task24\Snow.cs" />

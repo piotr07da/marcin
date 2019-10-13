@@ -353,3 +353,6 @@ Zasady ogólne
 	b) TaskClass26a
 	   - Wydziel powielony kod metody Calculate
 	   - Zauważ, że po wydzieleniu kodu do metody Calculate w takiej pojedynczej linijce dalej jest fragment kodu, który też jest w ramach takiej jednej linijki powielony - wydziel go do metody o adekwatnej nazwie ;)
+	c) TaskClass26c
+	   - Wydziel powielony kod do metody TakeMoreThanValues
+
