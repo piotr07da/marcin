@@ -65,7 +65,7 @@ namespace Reloaded.Examples
             get { return _imie; }
             set
             {
-                _nazwisko = WalidujImieLubNazwisko("imię", value);
+                _imie = WalidujImieLubNazwisko("imię", value);
             }
         }
 
@@ -128,7 +128,7 @@ namespace Reloaded.Examples
         private bool CzyImieAlboNazwiskoJestOkej(string imieAlboNazwisko)
         {
             var rx = new Regex("^[a-zA-Z]+$"); // to sprawdza czy są wyłącznie znaki a-z lub A-Z w liczbie od 1 do nieskończoności
-            return rx.IsMatch(imieAlboNazwisko);
+            return true;// rx.IsMatch(imieAlboNazwisko);   ******************************************************************************** DOPISAŁEM true;//
         }
     }
 
