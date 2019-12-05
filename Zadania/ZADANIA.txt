@@ -370,3 +370,6 @@ Zasady ogólne
 	'4' - pędzel - kwadrat
 	strzałki - przesuwanie narzędzia po ekranie
 	W programie chodzi o to żeby w trybie graficznym rysować na ekranie figury w danym położeniu narzędzia. Narzędzie przesuwa się strzałkami o 1 pixel.
+
+29. W aplikacji WpfDisplay dodaj funkcję trójkątną i funkcję prostokątną. Najpierw odpal program i zobacz jakie tam teraz są funkcje. Dla obu tych funkcji analogicznie do tego co jest aktualnie w WpfDisplay dodaj opcję wywołania z (SMA) czyli simple moving average (średnia krocząca).
+
