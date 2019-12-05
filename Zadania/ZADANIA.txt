@@ -356,3 +356,17 @@ Zasady ogólne
 	c) TaskClass26c
 	   - Wydziel powielony kod do metody TakeMoreThanValues
 
+27. Napisz program, który poprosi użytkownika o podanie liczby całkowitej n większej od 0. Następnie w pętli wykonywanej od 0 do n będzie losować punkty. Punkty powinny być losowane w pewnym kwadratowym zakresie np. od 0 do 100 dla x i y. Dla każdego punktu sprawdź czy leży w okręgu o promieniu 50 wpisanym w ten kwadrat.
+	Tzn. np. kwadrat ma środek w punkcie 0,0 i rozmiar 100x100 i okrąg jest wpisany w ten kwadrat więc ma środek też w punkcie 0,0 i promień 50. To dla takiego przykłądu jeżeli punkt zostanie wylosowany w punkcie 5.24,9.19 to taki punkt leży w okręgu, a jeżeli jest w punkcie 49.9,-28.4 to leży poza okręgiem.
+	W każdym wywołaniu pętli zliczaj liczbę punktów leżących w okręgu. W każdym wywołaniu pętli wypisuj na ekranie wartość (4 * c / s) gdzie:
+	c - liczba wszsystkich dotychczasz wylosowanych punktów mieszczących się w okręgu
+	s - liczba dotychcasz wylosowanych punktów w ogóle (w okręgu i poza)
+	Zaobserwuj jak zmienia się podawany wynik wraz z każdą kolejną iteracją - powiedz czy z czymś Ci sięten wynik kojarzy. Prawdopodobnie żeby zaczął się z czymś kojarzyć będzie potrzeba sporo iteracji.
+
+28. Napisz program do rysowania, który pozwoli użytkownikowi używać następujących znaków z przypisanymi następującymi funkcjami:
+	'1' - gumka
+	'2' - pędzel o rozmiarze 1 pixel
+	'3' - pędzel - kółko
+	'4' - pędzel - kwadrat
+	strzałki - przesuwanie narzędzia po ekranie
+	W programie chodzi o to żeby w trybie graficznym rysować na ekranie figury w danym położeniu narzędzia. Narzędzie przesuwa się strzałkami o 1 pixel.
