@@ -3,50 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Reloaded.Tasks.Task0;
-using Reloaded.Tasks.Task1;
-using Reloaded.Tasks.Task2;
-using Reloaded.Tasks.Task3;
-using Reloaded.Tasks.Task4;
-using Reloaded.Tasks.Task5;
-using Reloaded.Tasks.Task6;
-using Reloaded.Tasks.Task7;
-using Reloaded.Tasks.Task8;
-using Reloaded.Tasks.Task9;
-using Reloaded.Tasks.Task10;
-using Reloaded.Tasks.Task11;
-using Reloaded.Tasks.Task12;
-using Reloaded.Tasks.Task13;
-using Reloaded.Tasks.Task14;
-using Reloaded.Tasks;
-using Reloaded.Examples;
-using Reloaded.Tasks.Task16;
-using Reloaded.Tasks.Task16a;
-using Reloaded.Tasks.Task16b;
-using Reloaded.Tasks.Task16c;
-using Reloaded.Tasks.Task16d;
-using Reloaded.Tasks.Task16e;
-using Reloaded.Tasks.TaskX.Task13;
-using Reloaded.Tasks.TaskX.Task16a;
-using Reloaded.Tasks.TaskX.Task16b;
-using Reloaded.Tasks.TaskX.Task16c;
-using Reloaded.Tasks.TaskX.Task16d;
-using Reloaded.Tasks.Task16fSandbox;
-using System.Threading;
-using Reloaded.Tasks.TaskX.TaskAsync;
-using Reloaded.Tasks.Task17;
-using Reloaded.Tasks.Task18;
-using Reloaded.Tasks.Task19;
-using Reloaded.Tasks.Task20;
-using System.Diagnostics;
-using Reloaded.Tasks.Task21;
-using Reloaded.Tasks.Task22;
-using Reloaded.Tasks.Task22.Piotr;
-using Reloaded.Tasks.Task23;
-using Reloaded.Tasks.Task24;
-using Reloaded.Tasks.Task25;
-using Reloaded.Tasks.Task26;
-
+//using Reloaded.Tasks.Task0;
+//using Reloaded.Tasks.Task1;
+//using Reloaded.Tasks.Task2;
+//using Reloaded.Tasks.Task3;
+//using Reloaded.Tasks.Task4;
+//using Reloaded.Tasks.Task5;
+//using Reloaded.Tasks.Task6;
+//using Reloaded.Tasks.Task7;
+//using Reloaded.Tasks.Task8;
+//using Reloaded.Tasks.Task9;
+//using Reloaded.Tasks.Task10;
+//using Reloaded.Tasks.Task11;
+//using Reloaded.Tasks.Task12;
+////using Reloaded.Tasks.Task13;
+////using Reloaded.Tasks.Task14;
+//using Reloaded.Tasks;
+//using Reloaded.Examples;
+////using Reloaded.Tasks.Task16;
+//using Reloaded.Tasks.Task16a;
+//using Reloaded.Tasks.Task16b;
+//using Reloaded.Tasks.Task16c;
+//using Reloaded.Tasks.Task16d;
+//using Reloaded.Tasks.Task16e;
+//using Reloaded.Tasks.TaskX.Task16a;
+//using Reloaded.Tasks.TaskX.Task16b;
+//using Reloaded.Tasks.TaskX.Task16c;
+//using Reloaded.Tasks.TaskX.Task16d;
+//using Reloaded.Tasks.Task16fSandbox;
+//using System.Threading;
+//using Reloaded.Tasks.TaskX.TaskAsync;
+//using Reloaded.Tasks.Task17;
+//using Reloaded.Tasks.Task18;
+//using Reloaded.Tasks.Task19;
+//using Reloaded.Tasks.Task20;
+//using System.Diagnostics;
+//using Reloaded.Tasks.Task21;
+//using Reloaded.Tasks.Task22;
+//using Reloaded.Tasks.Task22.Piotr;
+//using Reloaded.Tasks.Task23;
+//using Reloaded.Tasks.Task24;
+//using Reloaded.Tasks.Task25;
+//using Reloaded.Tasks.Task26;
+//using Reloaded.Tasks.TaskX.Task1;
+using Reloaded.Tasks.Task27;
 
 // test
 
@@ -73,49 +73,12 @@ namespace Reloaded
             //taskClass16e.Test();
 
 
-            //var ae = new AsyncExample();
-            //ae.Test();
 
-            //var tac = new TaskAsyncClass();
-            //tac.Test();
-
-            //var task17 = new TaskClass17();
-            //task17.Test();
-
-            //var task18 = new TaskClass18();
-            //task18.Test();
-
-            //var task19 = new TaskClass19();
-            //task19.Test();
-
-            //var task20 = new TaskClass20();
-            //task20.Test();
-
-            //var asy2 = new AsyncExample2();
-            //var t = asy2.Test();
-            //t.Wait();
-
-            //var asex = new AsyncExplanation();
-            //asex.Test();
-
-            //var task21 = new TaskClass21();
-            //task21.Test();
-
-            //var task23 = new TaskClass23();
-            //task23.Test();
-
-            //var task24 = new TaskClass24();
-            //task24.Test();
-
-
-            //var taskAsyncClass = new TaskAsyncClass();
-            //taskAsyncClass.TestWithCancellationToken();
-
-            //var task25 = new TaskClass25();
-            //task25.Test();
-
-            var task26a = new TaskClass26aFixed();
-            task26a.Test();
+            //var task26a = new TaskClass26aFixed();
+            //task26a.Test();
+            var class27 = new Class27();
+            class27.Test();
+           
         }
     }
 

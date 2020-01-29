@@ -10,26 +10,25 @@ namespace Reloaded.Tasks
     {
         public double ReadDouble(string enterValueMessage)
         {
-            double value;
             Console.Clear();
-            Console.Write(enterValueMessage);
+            double value;
+          
             for (; ; )
             {
+                Console.WriteLine(enterValueMessage);
                 bool results = double.TryParse(Console.ReadLine(), out value);
+
                 if (results)
                 {
                     if (value <= 0)
                     {
-                        Console.Write("Wpisz wartość większą od 0 : ");
+                        Console.WriteLine("Wpisz liczbę większą od zera:");
                     }
-                    else
-                    {
-                        break;                       
-                    }
+                    else break;
                 }
                 else
                 {
-                    Console.Write("Wpisz LICZBE : ");
+                    Console.WriteLine("Wpisz LICZBę większą od zera:");
                 }
             }
             return value;

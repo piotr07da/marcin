@@ -146,6 +146,8 @@
     <Compile Include="Tasks\Task24\Snow.cs" />
     <Compile Include="Tasks\Task24\TaskClass24.cs" />
     <Compile Include="Tasks\Task24\Vector.cs" />
+    <Compile Include="Tasks\Task27\Class27.cs" />
+    <Compile Include="Tasks\Task27\InCircle.cs" />
     <Compile Include="Tasks\Task2\TaskClass2.cs" />
     <Compile Include="Tasks\Task3\TaskClass3.cs" />
     <Compile Include="Tasks\Task4\TaskClass4.cs" />
@@ -154,9 +156,10 @@
     <Compile Include="Tasks\Task7\TaskClass7.cs" />
     <Compile Include="Tasks\Task8\TaskClass8.cs" />
     <Compile Include="Tasks\Task9\TaskClass9.cs" />
-    <Compile Include="Tasks\TaskX\Task13\CircleX.cs" />
-    <Compile Include="Tasks\TaskX\Task13\RectangleX.cs" />
-    <Compile Include="Tasks\TaskX\Task13\TaskClass13X.cs" />
+    <Compile Include="Tasks\TaskX\Task13\Class13.cs" />
+    <Compile Include="Tasks\TaskX\Task13\Rectangle.cs" />
+    <Compile Include="Tasks\TaskX\Task14\Circle.cs" />
+    <Compile Include="Tasks\TaskX\Task14\Class14.cs" />
     <Compile Include="Tasks\TaskX\Task16a\AutorKsiazki.cs" />
     <Compile Include="Tasks\TaskX\Task16a\Book.cs" />
     <Compile Include="Tasks\TaskX\Task16a\TaskClass16aX.cs" />
@@ -170,6 +173,17 @@
     <Compile Include="Tasks\TaskX\Task16c\TestClass16c.cs" />
     <Compile Include="Tasks\TaskX\Task16d\RichTekst.cs" />
     <Compile Include="Tasks\TaskX\Task16d\TestClass16d.cs" />
+    <Compile Include="Tasks\TaskX\Task16\Circle.cs" />
+    <Compile Include="Tasks\TaskX\Task16\Class16.cs" />
+    <Compile Include="Tasks\TaskX\Task16\IScalable.cs" />
+    <Compile Include="Tasks\TaskX\Task16\Rectangle.cs" />
+    <Compile Include="Tasks\TaskX\Task18\Class18.cs" />
+    <Compile Include="Tasks\TaskX\Task18\Cone.cs" />
+    <Compile Include="Tasks\TaskX\Task18\Cube.cs" />
+    <Compile Include="Tasks\TaskX\Task18\Cylinder.cs" />
+    <Compile Include="Tasks\TaskX\Task18\ICalculateVolumes.cs" />
+    <Compile Include="Tasks\TaskX\Task18\Sphere.cs" />
+    <Compile Include="Tasks\TaskX\Task1\Class1.cs" />
     <Compile Include="Tasks\TaskX\TaskAsync\TaskAsyncClass.cs" />
   </ItemGroup>
   <ItemGroup>
