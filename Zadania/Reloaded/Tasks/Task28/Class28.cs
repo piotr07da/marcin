@@ -20,13 +20,14 @@ namespace Reloaded.Tasks.Task28
             int yBackCursorPosition = 1;
             int sizeObject = _sizeObjectSmall;
             var drawing = new Drawing(_width, _height);
-            int tool = 1;            
+            int tool = 1;
+
 
             drawing.FirstDraw();
             for (; ; )
             {
                 var consoleKey = Console.ReadKey().Key;
-                var move = new Move(consoleKey, xCursorPosition, yCursorPosition, xBackCursorPosition, yBackCursorPosition, sizeObject, _width, _height);
+
                 if (consoleKey == ConsoleKey.D2)
                 {
                     sizeObject = _sizeObjectSmall;
@@ -76,9 +77,36 @@ namespace Reloaded.Tasks.Task28
                         sizeObject = _sizeObjectSmall;
                     }
                 }
-
-                move.MoveTool();
                 
+
+                if (consoleKey == ConsoleKey.LeftArrow)   //**********************************************************************************************************************************
+                {                                                  //Jeżeli chciałbym to zrobić w innej klasie, to parametry bym musiał przekazać przez metodę? Bo widzę i na logikę i w poprzednim 
+                    xBackCursorPosition = xCursorPosition;         //przykładzie, że przez konstruktor nie da rady, czyli trzeba nasrać parametrów do metody?
+                    xCursorPosition -= 1;
+                    if (xCursorPosition < 1) { xCursorPosition = 1; }
+
+                }
+                if (consoleKey == ConsoleKey.RightArrow)
+                {
+                    xBackCursorPosition = xCursorPosition;
+                    xCursorPosition += 1;
+                    if (xCursorPosition > _width - sizeObject - 1) { xCursorPosition = _width - sizeObject - 1; }
+
+                }
+                if (consoleKey == ConsoleKey.UpArrow)
+                {
+                    yBackCursorPosition = yCursorPosition;
+                    yCursorPosition -= 1;
+                    if (yCursorPosition < 1) { yCursorPosition = 1; }
+
+                }
+                if (consoleKey == ConsoleKey.DownArrow)
+                {
+                    yBackCursorPosition = yCursorPosition;
+                    yCursorPosition += 1;
+                    if (yCursorPosition > _height - sizeObject - 1) { yCursorPosition = _height - sizeObject - 1; }
+
+                }
                 drawing.DrawObject(xCursorPosition, yCursorPosition, tool, sizeObject);
             }
         }

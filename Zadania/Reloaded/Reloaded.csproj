@@ -150,7 +150,6 @@
     <Compile Include="Tasks\Task27\InCircle.cs" />
     <Compile Include="Tasks\Task28\Class28.cs" />
     <Compile Include="Tasks\Task28\Drawing.cs" />
-    <Compile Include="Tasks\Task28\Move.cs" />
     <Compile Include="Tasks\Task2\TaskClass2.cs" />
     <Compile Include="Tasks\Task3\TaskClass3.cs" />
     <Compile Include="Tasks\Task4\TaskClass4.cs" />
