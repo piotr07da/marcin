@@ -21,11 +21,13 @@ namespace Reloaded.Tasks.TaskX.TaskPatatajnia
         int yCirc = _height - _circleSize - 1;
         int xRec = 50;
         int yRec = _height;
-        private int _end = 0;
+        //private int _end = 0;
+        private Circle _end; 
         public int EndProg { get; set; }
 
         public void Test()
         {
+            var _end= new Circle();
             var draw = new Drawing(_width, _height,_circleSize,_widthRec,_heightRec);
             var circ = new Circle(_width, _height, _circleSize, _widthRec, _end);
             draw.DrawSquar();
@@ -38,7 +40,7 @@ namespace Reloaded.Tasks.TaskX.TaskPatatajnia
 
             for (; ; )
             {
-                if (circ.EndProg()==1)// Już próbowałem wszystkiego, property, hujerty, bool, srull i nie mogę zatrzymać programu.
+                if (_end.End)// Już próbowałem wszystkiego, property, hujerty, bool, srull i nie mogę zatrzymać programu.
                 {
                     break;
                 }

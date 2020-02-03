@@ -10,14 +10,15 @@ namespace Reloaded.Tasks.TaskX.TaskPatatajnia
     {
         public int XCircleMove { get; set; }
         public int YCircleMove { get; set; }
+        public bool End { get; set; }
         
         private int _width;
         private int _height;
         private int _circleSize;
         private int _widthRec;
-        private int _end;
+        private Circle _end;
 
-        public Circle(int width, int height, int circleSize, int widthRec, int end)
+        public Circle(int width, int height, int circleSize, int widthRec, Circle end)
         {
             _width = width;
             _height = height;
@@ -26,11 +27,17 @@ namespace Reloaded.Tasks.TaskX.TaskPatatajnia
             _end = end;
             XCircleMove = 2;
             YCircleMove = -3;
+            //_end.End = false;
+        }
+        public Circle()
+        {
+           
         }
        
 
         public void CircleColision(int circX, int circY, int recX, int recY)
         {
+            
             if (circX < 1)
             {
                 XCircleMove = -XCircleMove;
@@ -49,15 +56,15 @@ namespace Reloaded.Tasks.TaskX.TaskPatatajnia
                 {
                     Console.WriteLine("You lose");
                     Console.ReadKey();
-                    _end = 1;
+                    _end.End = true;
                    
                 }
             }
-        }public int EndProg()
-        {
-            if (_end==1) { return 1; }
+        //}public int EndProg()
+        //{
+        //    if (_end==1) { return 1; }
            
-            else { return 0; }
+        //    else { return 0; }
            
         }
     }
