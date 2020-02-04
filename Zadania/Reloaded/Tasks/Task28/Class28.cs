@@ -81,7 +81,7 @@ namespace Reloaded.Tasks.Task28
 
                 if (consoleKey == ConsoleKey.LeftArrow)   //**********************************************************************************************************************************
                 {                                                  //Jeżeli chciałbym to zrobić w innej klasie, to parametry bym musiał przekazać przez metodę? Bo widzę i na logikę i w poprzednim 
-                    xBackCursorPosition = xCursorPosition;         //przykładzie, że przez konstruktor nie da rady, czyli trzeba nasrać parametrów do metody?
+                    xBackCursorPosition = xCursorPosition;         //przykładzie, że przez konstruktor nie da rady, czyli trzeba nasrać parametrów do metody? Czy lepiej to wszystko yebnąć w Propers Droppers
                     xCursorPosition -= 1;
                     if (xCursorPosition < 1) { xCursorPosition = 1; }
 
