@@ -140,6 +140,7 @@
     <Compile Include="Tasks\Task25\TaskClass25.cs" />
     <Compile Include="Tasks\Task26\TaskClass26aFixed.cs" />
     <Compile Include="Tasks\Task26\TaskClass26a.cs" />
+    <Compile Include="Tasks\Task26\TaskClass26bFixed.cs" />
     <Compile Include="Tasks\Task26\TaskClass26c.cs" />
     <Compile Include="Tasks\Task26\TaskClass26b.cs" />
     <Compile Include="Tasks\Task24\Draving.cs" />
