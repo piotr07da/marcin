@@ -76,7 +76,7 @@ namespace Reloaded
 
             //var task26a = new TaskClass26aFixed();
             //task26a.Test();
-            var test = new TaskClass26bFixed();
+            var test = new TaskClass26cFixed();
             test.Test();
            
         }

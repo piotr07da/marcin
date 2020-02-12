@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Reloaded.Tasks.Task27
+namespace Reloaded.Tasks.Task26
 {
     public class TaskClass26c
     {
