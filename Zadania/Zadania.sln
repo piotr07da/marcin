@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simul", "Simul\Simul.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ZADANIA", "ZADANIA", "{8EA8D831-A4E2-46E6-9D34-E476A740CAC1}"
 	ProjectSection(SolutionItems) = preProject
+		ZADANIA-ConsoleTasks.txt = ZADANIA-ConsoleTasks.txt
 		ZADANIA.txt = ZADANIA.txt
 	EndProjectSection
 EndProject
@@ -17,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExample", "WpfExample\WpfExample.csproj", "{0F0BAE71-2C94-4EBC-ABBF-BED39CB4D6D2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfPatatajnia", "WpfPatatajnia\WpfPatatajnia.csproj", "{7F4B7FA2-7E65-42D0-A579-1A69ACDA6CC2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTasks", "ConsoleTasks\ConsoleTasks.csproj", "{0715D913-4221-4D52-9529-DBA2CF4D1C01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +47,10 @@ Global
 		{7F4B7FA2-7E65-42D0-A579-1A69ACDA6CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F4B7FA2-7E65-42D0-A579-1A69ACDA6CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F4B7FA2-7E65-42D0-A579-1A69ACDA6CC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0715D913-4221-4D52-9529-DBA2CF4D1C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0715D913-4221-4D52-9529-DBA2CF4D1C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0715D913-4221-4D52-9529-DBA2CF4D1C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0715D913-4221-4D52-9529-DBA2CF4D1C01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

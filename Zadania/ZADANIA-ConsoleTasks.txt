@@ -1,0 +1,4 @@
+﻿30. Zadanie testowe
+
+31. Napisz program, który poprosi uzytkownika o podanie trzech wartości i odpowie czy jest możliwe zbudowanie trójkąta o bokach równych tym wartościom. Np. dla wartości [1, 100, 1] udzieli odpowiedzi false, a dla wartości [2,3,3] udzieli odpowiedzi true.
+
