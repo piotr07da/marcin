@@ -50,5 +50,16 @@ namespace Reloaded.Tasks.Task25
 
             stat.ShowStat();
         }
+
+        public void Example(string path)
+        {
+            string[] files = Directory.GetFiles(path);
+
+            List<string> texts = new List<string>();
+            foreach(var file in files)
+            {
+                texts.Add(File.ReadAllText(file));
+            }
+        }
     }
 }

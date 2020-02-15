@@ -155,6 +155,11 @@ namespace Reloaded.Tasks.Task28
         }
         public bool Check(int xCursorPosition, int yCursorPosition, int sizeObject)
         {
+            return xCursorPosition + sizeObject < _width - 1 && yCursorPosition + sizeObject < _height - 1;
+
+            var result = xCursorPosition + sizeObject < _width - 1 && yCursorPosition + sizeObject < _height - 1;
+            return result;
+
             if (xCursorPosition + sizeObject < _width-1  && yCursorPosition + sizeObject < _height-1 ) { return true; }
             else return false;
         }

@@ -47,7 +47,7 @@ namespace WpfDisplay
 
         private void SineSmaButton_Click(object sender, RoutedEventArgs e)
         {
-            Draw(new SimpleMovingAverageFunction(new SineFunction(0.05, 1), 10));
+            Draw(new SimpleMovingAverageFunction(new SineFunction(0.05, 1), 100));
         }
 
         private void Draw(IFunction function)
@@ -109,6 +109,16 @@ namespace WpfDisplay
             polyLine.Points = new PointCollection(points);
             MainCanvas.Children.Clear();
             MainCanvas.Children.Add(polyLine);
+
+            var ellipse = new Ellipse();
+            ellipse.StrokeThickness = 1;
+            ellipse.Stroke = new SolidColorBrush(Colors.Black);
+            ellipse.Fill = new SolidColorBrush(Colors.Yellow);
+            ellipse.Width = 200;
+            ellipse.Height = 100;
+            MainCanvas.Children.Add(ellipse);
+            Canvas.SetLeft(ellipse, 100);
+            Canvas.SetTop(ellipse, 50);
         }
     }
 }
