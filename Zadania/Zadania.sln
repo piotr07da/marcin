@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfPatatajnia", "WpfPatataj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTasks", "ConsoleTasks\ConsoleTasks.csproj", "{0715D913-4221-4D52-9529-DBA2CF4D1C01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiotrPlayground", "PiotrPlayground\PiotrPlayground.csproj", "{BACD841E-C670-4AA5-997B-7567748600AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{0715D913-4221-4D52-9529-DBA2CF4D1C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0715D913-4221-4D52-9529-DBA2CF4D1C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0715D913-4221-4D52-9529-DBA2CF4D1C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BACD841E-C670-4AA5-997B-7567748600AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BACD841E-C670-4AA5-997B-7567748600AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BACD841E-C670-4AA5-997B-7567748600AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BACD841E-C670-4AA5-997B-7567748600AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
