@@ -11,6 +11,9 @@ namespace PiotrPlayground.DatabasePlayground
         private readonly DatabaseExecutor _databaseExecutor;
         private readonly DepartmentReader _departmentReader;
         private readonly DepartmentWriter _departmentWriter;
+        private readonly NodeReader _nodeReader;
+        private readonly NodeWriter _nodeWriter;
+
 
         public DatabasePlaygroundRunner()
         {
@@ -19,6 +22,8 @@ namespace PiotrPlayground.DatabasePlayground
             _databaseExecutor = new DatabaseExecutor(_connectionString);
             _departmentReader = new DepartmentReader(_databaseExecutor);
             _departmentWriter = new DepartmentWriter(_databaseExecutor);
+            _nodeReader = new NodeReader(_databaseExecutor);
+            _nodeWriter = new NodeWriter(_databaseExecutor);
 
         }
 
@@ -42,6 +47,7 @@ namespace PiotrPlayground.DatabasePlayground
                         return;
 
                     case "add-node":
+                        AddNode();
                         break;
 
                     case "add-department":
@@ -52,6 +58,7 @@ namespace PiotrPlayground.DatabasePlayground
                         break;
 
                     case "show-nodes":
+                        ShowNodes();
                         break;
 
                     case "show-departments":
@@ -85,6 +92,26 @@ namespace PiotrPlayground.DatabasePlayground
                 Console.WriteLine($"Department {i + 1}:");
                 Console.WriteLine($" - Id: {dep.Id}");
                 Console.WriteLine($" - Name: {dep.Name}");
+            }
+        }
+        private void AddNode()
+        {
+            Console.WriteLine("Node name: ");
+            var nodeName = Console.ReadLine();
+            var node = new Node();
+            node.Id = Guid.NewGuid();
+            node.Name = nodeName;
+            _nodeWriter.WriteNode(node);
+        }
+        private void ShowNodes()
+        {
+            var nodes = _nodeReader.ReadAllNodes();
+            for (int i = 0; i < nodes.Length; i++)
+            {
+                var node = nodes[i];
+                Console.WriteLine($"Node {i+1} :");
+                Console.WriteLine($" - Id : {node.Id}");
+                Console.WriteLine($" - Name : {node.Name}");
             }
         }
     }
