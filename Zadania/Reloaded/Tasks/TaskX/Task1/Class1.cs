@@ -10,39 +10,37 @@ namespace Reloaded.Tasks.TaskX.Task1
     {
         public void Test()
         {
-            int[] tab = new int[20];
-            for (int i = 0; i < tab.Length; i++)
-            {
-                tab[i] = i;
-            }
-            List<int> tabList = new List<int>();
+            StringModiferDelegat del = ModifyString1;
+            var string1 = del("Test A");
+            Console.WriteLine(string1);
 
-            for (int i = 0; i < tab.Length; i++)
-            {
-                if (i % 2 == 1)
-                {
-                    tabList.Add(tab[i]);
-                }
-            }
+            del = ModifyString2;
+            var string2 = del("Test B");
+            Console.WriteLine(string2);
 
-            for (int i = 0; i < tabList.Count; i++)
+            Console.ReadKey();
+
+            del = val =>
             {
-                Console.Write(tabList[i] + ", ");
-            }
-            Console.WriteLine();
-            foreach (var item in tabList)
-            {
-                Console.Write(item + ", ");
-            }
-            Console.WriteLine();
-            int a = 0;
-            while (a < tabList.Count)
-            {
-                Console.Write(tabList[a] + ", ");
-                a++;
-            }
+                return "*" + val + "*";
+            };
+            var string3 = del("baran");
+            Console.WriteLine(string3);
+
             Console.ReadKey();
         }
+
+        private string ModifyString1(string value)
+        {
+            return value.ToUpper();
+        }
+
+        private string ModifyString2(string value)
+        {
+            return value.ToLower();
+        }
+
+        public delegate string StringModiferDelegat(string inputString);
 
     }
 }

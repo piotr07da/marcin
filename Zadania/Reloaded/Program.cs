@@ -45,8 +45,8 @@ using System.Threading.Tasks;
 //using Reloaded.Tasks.Task24;
 //using Reloaded.Tasks.Task25;
 //using Reloaded.Tasks.Task26;
-//using Reloaded.Tasks.TaskX.TaskPatatajnia;
-using Reloaded.Tasks.Task26;
+using Reloaded.Tasks.TaskX.Task1;
+//using Reloaded.Tasks.Task26;
 
 
 // test
@@ -80,6 +80,8 @@ namespace Reloaded
             //var test = new TaskClass26cFixed();
             //test.Test();
 
+            var test = new Class1();
+            test.Test();
            
         }
     }
