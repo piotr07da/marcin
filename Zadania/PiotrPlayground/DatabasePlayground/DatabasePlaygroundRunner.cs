@@ -12,7 +12,7 @@ namespace PiotrPlayground.DatabasePlayground
         private readonly DepartmentReader _departmentReader;
         private readonly DepartmentWriter _departmentWriter;
         //private readonly NodeReader _nodeReader;
-        //private readonly NodeWriter _nodeWriter;
+        private readonly EmployeeWriter _employeeWriter;
 
 
         public DatabasePlaygroundRunner()
@@ -23,7 +23,7 @@ namespace PiotrPlayground.DatabasePlayground
             _departmentReader = new DepartmentReader(_databaseExecutor);
             _departmentWriter = new DepartmentWriter(_databaseExecutor);
             //_nodeReader = new NodeReader(_databaseExecutor);
-            //_nodeWriter = new NodeWriter(_databaseExecutor);
+            _employeeWriter = new EmployeeWriter(_databaseExecutor);
 
         }
 
@@ -117,6 +117,10 @@ namespace PiotrPlayground.DatabasePlayground
                     employe.DepartmentId = dep.Id;
                 }
             }
+            employe.FirstName = empName;
+            employe.LastName = empLastName;
+
+            _employeeWriter.WriteEmployee(employe);
         }
         private void ShowEmployee()
         {
