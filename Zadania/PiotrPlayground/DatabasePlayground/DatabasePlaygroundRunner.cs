@@ -29,43 +29,57 @@ namespace PiotrPlayground.DatabasePlayground
 
         public void Run()
         {
-            Console.WriteLine("Hello World!");
-
             var dbInitializer = new DatabaseInitializer();
             dbInitializer.InitializeIfNotExist(_databaseFilePath);
 
             while (true)
             {
+                Console.WriteLine();
+
                 Console.WriteLine("Select operation");
-                Console.WriteLine("| exit | add-node | add-department | add-employee | show-nodes | show-departments | show-employees |");
+                Console.WriteLine("| exit [e] |");
+                Console.WriteLine("| add-node [a-nod] | add-department [a-dep] | add-employee [a-emp] |");
+                Console.WriteLine("| show-nodes [sh-nod] | show-departments [sh-dep] | show-employees [sh-emp] |");
+                Console.WriteLine("| assign-employee-department [as-emp-dep] | assign-employee-supervisor [as-emp-sup] |");
+
+                Console.WriteLine();
 
                 var consoleCommand = Console.ReadLine();
 
+                Console.WriteLine();
+
                 switch (consoleCommand)
                 {
+                    case "e":
                     case "exit":
                         return;
 
+                    case "a-nod":
                     case "add-node":
                         //AddNode();
                         break;
 
+                    case "a-dep":
                     case "add-department":
                         AddDepartment();
                         break;
 
+                    case "a-emp":
                     case "add-employee":
                         AddEmployee();
                         break;
 
+                    case "sh-nod":
                     case "show-nodes":
                         //ShowNodes();
                         break;
 
+                    case "sh-dep":
                     case "show-departments":
                         ShowDepartments();
                         break;
 
+                    case "sh-emp":
                     case "show-employees":
                         ShowEmployee();
                         break;
