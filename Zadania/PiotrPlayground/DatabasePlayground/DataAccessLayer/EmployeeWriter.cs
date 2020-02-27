@@ -22,7 +22,7 @@ namespace PiotrPlayground.DatabasePlayground.DataAccessLayer
             {
                 cmd.CommandText = "insert into Employees (Id, DepartmentId, FirstName, LastName) values ($Id, $DepartmentId, $FirstName, $LastName)";
                 AddParameter(cmd, "$Id", employee.Id.ToByteArray());
-                AddParameter(cmd, "$DepartmentId", employee.DepartmentId.ToByteArray());
+                AddParameter(cmd, "$Id", employee.DepartmentId.ToByteArray());
                 AddParameter(cmd, "$FirstName", employee.FirstName);
                 AddParameter(cmd, "$LastName", employee.LastName);
                 cmd.ExecuteNonQuery();
