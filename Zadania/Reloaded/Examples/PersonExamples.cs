@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Reloaded.Tasks.TaskX.Task1;
 
 namespace Reloaded.Examples
 {
@@ -36,6 +37,8 @@ namespace Reloaded.Examples
             piotr.DataUrodzenia = new DateTime(1985, 12, 12);
             piotr.Plec = Plec.Mezczyzna;
             //piotr._poziomGlodu = 9999999;
+
+           
 
             piotr.Nakarm(bulka);
 

@@ -188,6 +188,9 @@
     <Compile Include="Tasks\TaskX\Task18\ICalculateVolumes.cs" />
     <Compile Include="Tasks\TaskX\Task18\Sphere.cs" />
     <Compile Include="Tasks\TaskX\Task1\Class1.cs" />
+    <Compile Include="Tasks\TaskX\Task1\Class2.cs" />
+    <Compile Include="Tasks\TaskX\Task1\Class3.cs" />
+    <Compile Include="Tasks\TaskX\Task1\Class4.cs" />
     <Compile Include="Tasks\TaskX\TaskAsync\TaskAsyncClass.cs" />
     <Compile Include="Tasks\TaskX\TaskPatatajnia\Circle.cs" />
     <Compile Include="Tasks\TaskX\TaskPatatajnia\Drawing.cs" />

@@ -11,8 +11,8 @@ namespace PiotrPlayground.DatabasePlayground
         private readonly DatabaseExecutor _databaseExecutor;
         private readonly DepartmentReader _departmentReader;
         private readonly DepartmentWriter _departmentWriter;
-        private readonly NodeReader _nodeReader;
-        private readonly NodeWriter _nodeWriter;
+        //private readonly NodeReader _nodeReader;
+        //private readonly NodeWriter _nodeWriter;
 
 
         public DatabasePlaygroundRunner()
@@ -22,8 +22,8 @@ namespace PiotrPlayground.DatabasePlayground
             _databaseExecutor = new DatabaseExecutor(_connectionString);
             _departmentReader = new DepartmentReader(_databaseExecutor);
             _departmentWriter = new DepartmentWriter(_databaseExecutor);
-            _nodeReader = new NodeReader(_databaseExecutor);
-            _nodeWriter = new NodeWriter(_databaseExecutor);
+            //_nodeReader = new NodeReader(_databaseExecutor);
+            //_nodeWriter = new NodeWriter(_databaseExecutor);
 
         }
 
@@ -47,7 +47,7 @@ namespace PiotrPlayground.DatabasePlayground
                         return;
 
                     case "add-node":
-                        AddNode();
+                        //AddNode();
                         break;
 
                     case "add-department":
@@ -55,10 +55,11 @@ namespace PiotrPlayground.DatabasePlayground
                         break;
 
                     case "add-employee":
+                        AddEmployee();
                         break;
 
                     case "show-nodes":
-                        ShowNodes();
+                        //ShowNodes();
                         break;
 
                     case "show-departments":
@@ -66,6 +67,7 @@ namespace PiotrPlayground.DatabasePlayground
                         break;
 
                     case "show-employees":
+                        ShowEmployee();
                         break;
 
                 }
@@ -94,25 +96,33 @@ namespace PiotrPlayground.DatabasePlayground
                 Console.WriteLine($" - Name: {dep.Name}");
             }
         }
-        private void AddNode()
+        private void AddEmployee()
         {
-            Console.WriteLine("Node name: ");
-            var nodeName = Console.ReadLine();
-            var node = new Node();
-            node.Id = Guid.NewGuid();
-            node.Name = nodeName;
-            _nodeWriter.WriteNode(node);
-        }
-        private void ShowNodes()
-        {
-            var nodes = _nodeReader.ReadAllNodes();
-            for (int i = 0; i < nodes.Length; i++)
+            Console.WriteLine("Employee name: ");
+            var empName = Console.ReadLine();
+            Console.WriteLine("Employe lastname");
+            var empLastName = Console.ReadLine();
+            var employe = new Employee();
+            var department = new Department();
+            employe.Id = Guid.NewGuid();
+            Console.WriteLine("Department name: ");
+            var depRead = Console.ReadLine();
+
+            var deps = _departmentReader.ReadAllDepartments();
+            for (var i = 0; i < deps.Length; ++i)
             {
-                var node = nodes[i];
-                Console.WriteLine($"Node {i+1} :");
-                Console.WriteLine($" - Id : {node.Id}");
-                Console.WriteLine($" - Name : {node.Name}");
+                var dep = deps[i];
+                if (dep.Name == depRead) 
+                {
+                    employe.DepartmentId = dep.Id;
+                }
             }
         }
+        private void ShowEmployee()
+        {
+
+        }
+       
+      
     }
 }

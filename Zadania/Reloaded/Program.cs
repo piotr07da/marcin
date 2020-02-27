@@ -80,7 +80,7 @@ namespace Reloaded
             //var test = new TaskClass26cFixed();
             //test.Test();
 
-            var test = new Class1();
+            var test = new Class4();
             test.Test();
            
         }
