@@ -25,6 +25,7 @@ namespace PiotrPlayground.DatabasePlayground.DataAccessLayer
                     CreateNodesTable(connection);
                     CreateDepartmentsTable(connection);
                     CreateEmployeesTable(connection);
+                    CreateSupervisorTable(connection);
                 }
             }
             catch
@@ -102,6 +103,26 @@ namespace PiotrPlayground.DatabasePlayground.DataAccessLayer
                 command.CommandText = commandText; // przypisujemy treść polecenia do polecenia
 
                 // wywołujemy polecenie na bazie danych
+
+                command.ExecuteNonQuery();
+            }
+        }
+        private void CreateSupervisorTable(SQLiteConnection connection)
+        {
+            using (var command = new SQLiteConnection(connection))
+            {
+                var commandTextBuilder = new StringBuilder();
+
+                commandTextBuilder.Append("create table Supervisors (");
+                commandTextBuilder.Append("Id blob not null,");
+                commandTextBuilder.Append("FirstName text,");
+                commandTextBuilder.Append("LastName text,");
+                commandTextBuilder.Append("DepartmentId blob null,");
+                commandTextBuilder.Append("primary key (Id))");
+
+                var commandText = commandTextBuilder.ToString();
+
+                command.CommandText = commandTextBuilder;
 
                 command.ExecuteNonQuery();
             }

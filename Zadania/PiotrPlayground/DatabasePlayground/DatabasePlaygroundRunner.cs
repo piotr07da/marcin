@@ -13,6 +13,7 @@ namespace PiotrPlayground.DatabasePlayground
         private readonly DepartmentWriter _departmentWriter;
         //private readonly NodeReader _nodeReader;
         private readonly EmployeeWriter _employeeWriter;
+        private readonly EmployeeReader _employeeReader;
 
 
         public DatabasePlaygroundRunner()
@@ -24,6 +25,7 @@ namespace PiotrPlayground.DatabasePlayground
             _departmentWriter = new DepartmentWriter(_databaseExecutor);
             //_nodeReader = new NodeReader(_databaseExecutor);
             _employeeWriter = new EmployeeWriter(_databaseExecutor);
+            _employeeReader = new EmployeeReader(_databaseExecutor);
 
         }
 
@@ -116,9 +118,9 @@ namespace PiotrPlayground.DatabasePlayground
             var empName = Console.ReadLine();
             Console.WriteLine("Employe lastname");
             var empLastName = Console.ReadLine();
-            var employe = new Employee();
+            var employee = new Employee();
             var department = new Department();
-            employe.Id = Guid.NewGuid();
+            employee.Id = Guid.NewGuid();
             Console.WriteLine("Department name: ");
             var depRead = Console.ReadLine();
 
@@ -128,17 +130,27 @@ namespace PiotrPlayground.DatabasePlayground
                 var dep = deps[i];
                 if (dep.Name == depRead) 
                 {
-                    employe.DepartmentId = dep.Id;
+                    employee.DepartmentId = dep.Id;
                 }
             }
-            employe.FirstName = empName;
-            employe.LastName = empLastName;
+            employee.FirstName = empName;
+            employee.LastName = empLastName;
 
-            _employeeWriter.WriteEmployee(employe);
+            _employeeWriter.WriteEmployee(employee);
         }
         private void ShowEmployee()
         {
-
+            var emps = _employeeReader.ReadAllEmployees();
+            for (int i = 0; i < emps.Length; i++)
+            {
+                var emp = emps[i];
+                Console.WriteLine($"Employee {i+1}:");
+                Console.WriteLine($" - Id: {emp.Id}");
+                Console.WriteLine($" - First Name: {emp.FirstName}");
+                Console.WriteLine($" - Last Name: {emp.LastName}");
+                //Console.WriteLine($" - SupervisorId: {emp.SupervisorId}");
+                Console.WriteLine($" - DepartmentId: {emp.DepartmentId}");
+            }
         }
        
       
