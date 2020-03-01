@@ -1,0 +1,26 @@
+﻿1. Scyzoryk MacGyvera czyli menu. Do zrobienia - nowy folder Menu w folderze DatabasePlayground, a w środku:
+   - interfejs: IMenuItem z property LongName, ShortName i metodą Execute
+   - klasy implementujące interfejs IMenuItem: AddDepartmentMenuItem, ShowEmployeesMenuItem, ShowDepartmentsMenuItem itd.
+     przykładowo klasa AddDepartmentMenuItem powinna w implementacji property LongName zawracać "add-department", w implementacji property ShortName zwracać "a-dep", w implementacji metody Execute robić to co teraz robi metoda AddDepartment w klasie DatabasePlaygroundRunner
+   Następnie trzeba w klasie DatabasePlaygroundRunner zastąpić cały ten kod:
+     Console.WriteLine("| exit [e] |");
+     Console.WriteLine("| add-node [a-nod] | add-department [a-dep] | add-employee [a-emp] |");
+     itd.
+     oraz cały switch
+   kodem:
+     var menuItems = new List<MenuItem>();
+     potem wypełnić tę kolekcję wszystkimi menu itemami na zasadzie: menuItems.Add(new AddDepartmentMenuItem());
+     na podstawie tej kolekcji wyświetlić użytkownikowi wszystkie dostępne opcje, np. po kolei każda opcja menu w osobnej linijce:
+       exit [e]
+       add-department [a-dep]
+       add-employee [a-emp]
+     potem trzeba na podstawie tego jaką operację użytkownik wybrał (zmienna consoleCommand) wykonać ten menu item, który pasuje albo po krótkiej, albo po długiej nazwie.
+
+2. Dodać polecenie AssignEmployeeDepartmentMenuItem - przypisuje już istniejącemu pracownikowi dział. Będzie trzeba zastosować sql'ową klauzulę: UPDATE
+
+3. Dodać polecenie AssignEmployeeSupervisorMenuItem - przypisuje już istniejącemu pracownikowi jego przełożonego. (UPDATE)
+
+4. Dodać polecenie ShowSubordinatesMenuItem - wyświetla wszystkich podwładnych określonego pracownika. Tutaj będzie trzeba pobrać na początku imię i nazwisko. Na podstawie imienia i nazwiska pobrać Id pracownika, a później na podstawie tego Id pobrać wszystkich przełożonych (SELECT ... WHERE)
+
+5. Dodać polecenie ShowDepartmentEmployess - podobnie jak wyżej tylko tym razem na podstawie podanej przez użytkownika nazwy działu trzeba wylistować wszystkich pracowników pracujących w tym dziale - da się to zrobić albo dwoma selectami, albo selectem z podzapytaniem, albo jednym selectem z joinem - proponuję zrobić to tym razem ostatnim sposobem czyli z JOIN
+
