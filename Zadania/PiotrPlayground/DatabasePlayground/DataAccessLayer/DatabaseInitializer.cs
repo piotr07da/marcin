@@ -25,7 +25,7 @@ namespace PiotrPlayground.DatabasePlayground.DataAccessLayer
                     CreateNodesTable(connection);
                     CreateDepartmentsTable(connection);
                     CreateEmployeesTable(connection);
-                    CreateSupervisorTable(connection);
+                    //CreateSupervisorTable(connection);
                 }
             }
             catch
@@ -107,25 +107,25 @@ namespace PiotrPlayground.DatabasePlayground.DataAccessLayer
                 command.ExecuteNonQuery();
             }
         }
-        private void CreateSupervisorTable(SQLiteConnection connection)
-        {
-            using (var command = new SQLiteConnection(connection))
-            {
-                var commandTextBuilder = new StringBuilder();
+        //private void CreateSupervisorTable(SQLiteConnection connection)
+        //{
+        //    using (var command = new SQLiteCommand(connection))
+        //    {
+        //        var commandTextBuilder = new StringBuilder();
 
-                commandTextBuilder.Append("create table Supervisors (");
-                commandTextBuilder.Append("Id blob not null,");
-                commandTextBuilder.Append("FirstName text,");
-                commandTextBuilder.Append("LastName text,");
-                commandTextBuilder.Append("DepartmentId blob null,");
-                commandTextBuilder.Append("primary key (Id))");
+        //        commandTextBuilder.Append("create table Supervisors (");
+        //        commandTextBuilder.Append("Id blob not null,");
+        //        commandTextBuilder.Append("FirstName text,");
+        //        commandTextBuilder.Append("LastName text,");
+        //        commandTextBuilder.Append("DepartmentId blob null,");
+        //        commandTextBuilder.Append("primary key (Id))");
 
-                var commandText = commandTextBuilder.ToString();
+        //        var commandText = commandTextBuilder.ToString();
 
-                command.CommandText = commandTextBuilder;
+        //        command.CommandText = commandTextBuilder;
 
-                command.ExecuteNonQuery();
-            }
-        }
+        //        command.ExecuteNonQuery();
+        //    }
+        //}
     }
 }
